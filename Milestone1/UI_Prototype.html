@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ActivityHub — UI Prototype</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f3ef;
+    color: #1a1a2e;
+    padding: 40px 20px;
+  }
+
+  .page-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+  }
+
+  .page-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 50px;
+  }
+
+  .screens {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .screen-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .screen-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  .screen {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border: 1px solid #e8e6e1;
+  }
+
+  /* ─── SCREEN 1: LANDING ─── */
+  .landing-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2b55 50%, #4a3f6b 100%);
+    padding: 60px 48px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .landing-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,183,77,0.15) 0%, transparent 70%);
+  }
+
+  .landing-hero .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .landing-hero .logo span { color: #ffb74d; }
+
+  .landing-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    line-height: 1.2;
+    max-width: 500px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .landing-hero p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    max-width: 420px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: #ffb74d;
+    color: #1a1a2e;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 0.3px;
+  }
+
+  .landing-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 48px;
+    background: #faf9f7;
+    border-top: 1px solid #eee;
+    font-size: 13px;
+    color: #888;
+  }
+
+  .landing-nav .nav-links { display: flex; gap: 28px; }
+  .landing-nav .nav-links span { cursor: pointer; }
+  .landing-nav .nav-links span:hover { color: #1a1a2e; }
+
+  /* ─── SCREEN 2: QUIZ ─── */
+  .quiz-header {
+    padding: 24px 48px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .quiz-header .logo-sm {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .quiz-header .logo-sm span { color: #ffb74d; }
+
+  .quiz-progress {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .quiz-progress .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e0ddd8;
+  }
+
+  .quiz-progress .dot.active { background: #ffb74d; }
+  .quiz-progress .dot.done { background: #4a3f6b; }
+
+  .quiz-body {
+    padding: 48px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .quiz-step-label {
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .quiz-question {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 28px;
+    line-height: 1.3;
+  }
+
+  .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .quiz-option {
+    padding: 16px 20px;
+    border: 2px solid #e8e6e1;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+  }
+
+  .quiz-option:hover { border-color: #ccc; }
+
+  .quiz-option.selected {
+    border-color: #4a3f6b;
+    background: #f3f0fa;
+    color: #4a3f6b;
+  }
+
+  .quiz-option .icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .quiz-footer {
+    padding: 20px 48px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .quiz-btn {
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+  }
+
+  .quiz-btn.back { background: transparent; color: #888; border: 1px solid #ddd; }
+  .quiz-btn.next { background: #4a3f6b; color: white; }
+
+  /* ─── SCREEN 3: RESULTS ─── */
+  .results-header {
+    padding: 24px 48px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .results-header .logo-sm {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .results-header .logo-sm span { color: #ffb74d; }
+
+  .results-header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #666;
+  }
+
+  .results-header .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #4a3f6b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .results-body {
+    padding: 36px 48px;
+  }
+
+  .results-intro {
+    margin-bottom: 28px;
+  }
+
+  .results-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .results-intro p { font-size: 14px; color: #888; }
+
+  .results-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    padding: 6px 14px;
+    background: #f3f0fa;
+    color: #4a3f6b;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .results-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .result-card {
+    display: flex;
+    border: 1px solid #e8e6e1;
+    border-radius: 14px;
+    overflow: hidden;
+    background: white;
+  }
+
+  .result-card .card-accent {
+    width: 6px;
+    flex-shrink: 0;
+  }
+
+  .result-card:nth-child(1) .card-accent { background: #ffb74d; }
+  .result-card:nth-child(2) .card-accent { background: #4a3f6b; }
+  .result-card:nth-child(3) .card-accent { background: #81c784; }
+
+  .result-card .card-body {
+    padding: 20px 24px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .card-info .studio { font-size: 13px; color: #888; margin-bottom: 8px; }
+
+  .card-details {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #666;
+  }
+
+  .card-details span { display: flex; align-items: center; gap: 4px; }
+
+  .card-match {
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .match-score {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4a3f6b;
+  }
+
+  .match-label { font-size: 11px; color: #999; }
+
+  /* ─── SCREEN 4: STUDIO DASHBOARD ─── */
+  .dash-header {
+    padding: 24px 48px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dash-header .logo-sm {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .dash-header .logo-sm span { color: #ffb74d; }
+  .dash-header .dash-label {
+    font-size: 12px;
+    padding: 6px 14px;
+    background: #fff3e0;
+    color: #e65100;
+    border-radius: 50px;
+    font-weight: 600;
+  }
+
+  .dash-body { padding: 36px 48px; }
+
+  .dash-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .dash-body .dash-sub { font-size: 14px; color: #888; margin-bottom: 28px; }
+
+  .dash-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .stat-card {
+    background: #faf9f7;
+    border: 1px solid #e8e6e1;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-card .stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #4a3f6b;
+  }
+
+  .stat-card .stat-label {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+  }
+
+  .segment-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #e8e6e1;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+
+  .segment-table thead th {
+    background: #4a3f6b;
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .segment-table tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f0eeea;
+  }
+
+  .segment-table tbody tr:last-child td { border-bottom: none; }
+  .segment-table tbody tr:nth-child(even) { background: #faf9f7; }
+
+  .segment-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .segment-badge.high { background: #e8f5e9; color: #2e7d32; }
+  .segment-badge.medium { background: #fff3e0; color: #e65100; }
+  .segment-badge.low { background: #fce4ec; color: #c62828; }
+</style>
+</head>
+<body>
+
+<h1 class="page-title">ActivityHub — UI Prototype</h1>
+<p class="page-subtitle">Low-fidelity screens for the Personalized Activity Matching Platform</p>
+
+<div class="screens">
+
+  <!-- SCREEN 1: LANDING -->
+  <div class="screen-section">
+    <span class="screen-label">Screen 1 — Landing Page</span>
+    <div class="screen">
+      <div class="landing-hero">
+        <div class="logo">Activity<span>Hub</span></div>
+        <h1>Find the perfect class for you in Yerevan</h1>
+        <p>Take a 2-minute quiz and get personalized recommendations for dance, yoga, fitness, and music classes that match your personality, schedule, and goals.</p>
+        <a class="cta-btn" href="#">Take the Quiz →</a>
+      </div>
+      <div class="landing-nav">
+        <div class="nav-links">
+          <span>How it Works</span>
+          <span>Browse Studios</span>
+          <span>For Studios</span>
+        </div>
+        <span>Sign In</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: QUIZ -->
+  <div class="screen-section">
+    <span class="screen-label">Screen 2 — Onboarding Quiz (Step 3 of 6)</span>
+    <div class="screen">
+      <div class="quiz-header">
+        <div class="logo-sm">Activity<span>Hub</span></div>
+        <div class="quiz-progress">
+          <div class="dot done"></div>
+          <div class="dot done"></div>
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="quiz-body">
+        <div class="quiz-step-label">Step 3 of 6 — Personality</div>
+        <div class="quiz-question">What kind of environment do you prefer?</div>
+        <div class="quiz-options">
+          <div class="quiz-option selected">
+            <span class="icon">🧘</span>
+            Calm & Quiet
+          </div>
+          <div class="quiz-option">
+            <span class="icon">⚡</span>
+            High Energy
+          </div>
+          <div class="quiz-option">
+            <span class="icon">👥</span>
+            Group Sessions
+          </div>
+          <div class="quiz-option">
+            <span class="icon">🙋</span>
+            Private / 1-on-1
+          </div>
+        </div>
+      </div>
+      <div class="quiz-footer">
+        <button class="quiz-btn back">← Back</button>
+        <button class="quiz-btn next">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: RESULTS -->
+  <div class="screen-section">
+    <span class="screen-label">Screen 3 — Personalized Recommendations</span>
+    <div class="screen">
+      <div class="results-header">
+        <div class="logo-sm">Activity<span>Hub</span></div>
+        <div class="user-info">
+          <span>Anna</span>
+          <div class="avatar">A</div>
+        </div>
+      </div>
+      <div class="results-body">
+        <div class="results-intro">
+          <h2>Your Top Matches</h2>
+          <p>Based on your preferences, schedule, and personality</p>
+        </div>
+        <div class="results-tags">
+          <span class="tag">Beginner</span>
+          <span class="tag">Evenings</span>
+          <span class="tag">Calm</span>
+          <span class="tag">Group</span>
+          <span class="tag">≤ 5000 AMD</span>
+        </div>
+        <div class="results-cards">
+          <div class="result-card">
+            <div class="card-accent"></div>
+            <div class="card-body">
+              <div class="card-info">
+                <h3>Hatha Yoga — Beginner</h3>
+                <div class="studio">Zen Studio • Saryan St</div>
+                <div class="card-details">
+                  <span>📅 Tue & Thu</span>
+                  <span>🕐 7:00 PM</span>
+                  <span>💰 4,000 AMD</span>
+                  <span>📍 1.2 km</span>
+                </div>
+              </div>
+              <div class="card-match">
+                <div class="match-score">94%</div>
+                <div class="match-label">match</div>
+              </div>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="card-accent"></div>
+            <div class="card-body">
+              <div class="card-info">
+                <h3>Contemporary Dance — Intro</h3>
+                <div class="studio">Motion Arts • Cascade Area</div>
+                <div class="card-details">
+                  <span>📅 Mon & Wed</span>
+                  <span>🕐 6:30 PM</span>
+                  <span>💰 5,000 AMD</span>
+                  <span>📍 2.0 km</span>
+                </div>
+              </div>
+              <div class="card-match">
+                <div class="match-score">87%</div>
+                <div class="match-label">match</div>
+              </div>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="card-accent"></div>
+            <div class="card-body">
+              <div class="card-info">
+                <h3>Pilates — All Levels</h3>
+                <div class="studio">BodyWorks • Mashtots Ave</div>
+                <div class="card-details">
+                  <span>📅 Wed & Fri</span>
+                  <span>🕐 7:30 PM</span>
+                  <span>💰 4,500 AMD</span>
+                  <span>📍 1.8 km</span>
+                </div>
+              </div>
+              <div class="card-match">
+                <div class="match-score">82%</div>
+                <div class="match-label">match</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 4: STUDIO DASHBOARD -->
+  <div class="screen-section">
+    <span class="screen-label">Screen 4 — Studio Dashboard (Admin View)</span>
+    <div class="screen">
+      <div class="dash-header">
+        <div class="logo-sm">Activity<span>Hub</span></div>
+        <span class="dash-label">Studio Admin</span>
+      </div>
+      <div class="dash-body">
+        <h2>Zen Studio — Audience Insights</h2>
+        <p class="dash-sub">Which user segments are most likely to book your classes</p>
+
+        <div class="dash-stats">
+          <div class="stat-card">
+            <div class="stat-number">342</div>
+            <div class="stat-label">Matched Users</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">68%</div>
+            <div class="stat-label">Predicted Booking Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4.2x</div>
+            <div class="stat-label">vs. Untargeted Ads</div>
+          </div>
+        </div>
+
+        <table class="segment-table">
+          <thead>
+            <tr>
+              <th>Segment</th>
+              <th>Description</th>
+              <th>Size</th>
+              <th>Booking Likelihood</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Calm Beginners</strong></td>
+              <td>Women 20–28, evenings, calm, group, budget ≤5K</td>
+              <td>148</td>
+              <td><span class="segment-badge high">High — 78%</span></td>
+            </tr>
+            <tr>
+              <td><strong>Fitness Seekers</strong></td>
+              <td>Mixed 22–35, mornings, high-energy, progress-oriented</td>
+              <td>94</td>
+              <td><span class="segment-badge medium">Medium — 52%</span></td>
+            </tr>
+            <tr>
+              <td><strong>Social Explorers</strong></td>
+              <td>Students 18–24, evenings, group, social/fun goal</td>
+              <td>100</td>
+              <td><span class="segment-badge low">Low — 31%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
