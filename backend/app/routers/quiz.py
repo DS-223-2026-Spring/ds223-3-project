@@ -1,5 +1,6 @@
 from fastapi import APIRouter
-from typing import Any
+
+from app.models.schemas import QuizRequest, QuizResponse
 
 router = APIRouter()
 
@@ -14,9 +15,9 @@ DUMMY_ANSWERS = {
 }
 
 
-@router.post("/")
-def submit_quiz(body: dict[str, Any]):
-    return {"user_id": 1, "message": "Quiz submitted successfully"}
+@router.post("/", response_model=QuizResponse)
+def submit_quiz(body: QuizRequest):
+    return QuizResponse(user_id=1, message="Quiz submitted successfully")
 
 
 @router.get("/{user_id}")
@@ -24,9 +25,9 @@ def get_quiz(user_id: int):
     return {**DUMMY_ANSWERS, "user_id": user_id}
 
 
-@router.put("/{user_id}")
-def update_quiz(user_id: int, body: dict[str, Any]):
-    return {"message": "Quiz updated successfully"}
+@router.put("/{user_id}", response_model=QuizResponse)
+def update_quiz(user_id: int, body: QuizRequest):
+    return QuizResponse(user_id=user_id, message="Quiz updated successfully")
 
 
 @router.delete("/{user_id}")
