@@ -6,14 +6,20 @@ router = APIRouter()
 
 DUMMY_ANSWERS = {
     "user_id": 1,
-    "age_group": "18-25",
-    "preferred_activities": ["yoga", "dance"],
-    "availability": ["weekday_evenings", "weekend_mornings"],
-    "budget_amd": 15000,
-    "location_preference": "Kentron",
+    "age": 23,
+    "gender": "female",
+    "activity_interest": ["yoga", "dance"],
+    "preferred_style": "hatha",
     "experience_level": "beginner",
+    "group_preference": "group",
+    "energy_preference": "calm",
+    "structure_preference": "structured",
+    "goal": "stress relief",
+    "district": "Kentron",
+    "budget_max_amd": 15000,
+    "preferred_days": ["Monday", "Wednesday", "Friday"],
+    "preferred_time": "evening",
 }
-
 
 @router.post("/", response_model=QuizResponse)
 def submit_quiz(body: QuizRequest):
