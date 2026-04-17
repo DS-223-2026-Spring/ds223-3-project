@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
-from app.routers import users, recommend, studios, segments
+from app.routers import quiz, recommend, studios, segments, users
+app.include_router(users.router, prefix="/users")
 
 app = FastAPI(title="ActivityHub Backend")
 
