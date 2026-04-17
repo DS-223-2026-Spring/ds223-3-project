@@ -39,6 +39,10 @@ docker compose up --build
 | GET | `/segments/{segment_id}` | Get a single segment |
 | POST | `/segments/` | Create a new segment |
 | DELETE | `/segments/{segment_id}` | Delete a segment |
+| POST | `/users/` | Create a new user |
+| GET | `/users/{user_id}` | Get user profile |
+| PUT | `/users/{user_id}` | Update user profile |
+| DELETE | `/users/{user_id}` | Delete a user |
 
 ---
 
