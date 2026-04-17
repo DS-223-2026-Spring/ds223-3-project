@@ -25,6 +25,11 @@ class QuizRequest(BaseModel):
     energy_preference: str
     structure_preference: str
     goal: str
+    # These are for filtering, not for the model:
+    district: str | None = None
+    budget_max_amd: int | None = None
+    preferred_days: list[str] | None = None
+    preferred_time: str | None = None
 
 
 class QuizResponse(BaseModel):
