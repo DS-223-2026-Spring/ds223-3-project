@@ -5,8 +5,8 @@ from app.models.schemas import Studio, StudioCreate, StudioResponse
 router = APIRouter()
 
 DUMMY_STUDIOS = [
-    Studio(id=1, name="Cascade Dance Studio", location="Kentron, Yerevan", activity_type="dance"),
-    Studio(id=2, name="ArmYoga Center", location="Arabkir, Yerevan", activity_type="yoga"),
+    Studio(studio_id=1, name="Cascade Dance Studio", district="Kentron", address="Abovyan St 12, Yerevan", instagram="@cascadedance", price_tier="mid", studio_type="dance"),
+    Studio(studio_id=2, name="ArmYoga Center", district="Arabkir", address="Komitas Ave 51, Yerevan", instagram="@armyoga", price_tier="low", studio_type="yoga"),
 ]
 
 
@@ -17,7 +17,7 @@ def list_studios():
 
 @router.get("/{studio_id}", response_model=Studio)
 def get_studio(studio_id: int):
-    return next((s for s in DUMMY_STUDIOS if s.id == studio_id), DUMMY_STUDIOS[0])
+    return next((s for s in DUMMY_STUDIOS if s.studio_id == studio_id), DUMMY_STUDIOS[0])
 
 
 @router.post("/", response_model=StudioResponse)

@@ -1,14 +1,30 @@
 from pydantic import BaseModel
 
 
+# User schemas
+class UserCreate(BaseModel):
+    age: int
+    gender: str
+    activity_interest: list[str]
+    preferred_style: str | None = None
+    experience_level: str
+    group_preference: str
+    energy_preference: str
+    structure_preference: str
+    goal: str
+
+
 # Quiz schemas
 class QuizRequest(BaseModel):
-    age_group: str
-    preferred_activities: list[str]
-    availability: list[str]
-    budget_amd: int
-    location_preference: str
+    age: int
+    gender: str
+    activity_interest: list[str]
+    preferred_style: str | None = None
     experience_level: str
+    group_preference: str
+    energy_preference: str
+    structure_preference: str
+    goal: str
 
 
 class QuizResponse(BaseModel):
@@ -18,16 +34,22 @@ class QuizResponse(BaseModel):
 
 # Studio schemas
 class Studio(BaseModel):
-    id: int
+    studio_id: int
     name: str
-    location: str
-    activity_type: str
+    district: str
+    address: str
+    instagram: str | None = None
+    price_tier: str
+    studio_type: str
 
 
 class StudioCreate(BaseModel):
     name: str
-    location: str
-    activity_type: str
+    district: str
+    address: str
+    instagram: str | None = None
+    price_tier: str
+    studio_type: str
 
 
 class StudioResponse(BaseModel):
@@ -35,22 +57,42 @@ class StudioResponse(BaseModel):
     studio_id: int
 
 
+# Class schemas
+class Class(BaseModel):
+    class_id: int
+    studio_id: int
+    activity_type: str
+    style: str
+    day: str
+    time: str
+    duration_min: int
+    price_amd: int
+    experience_required: str
+    group_or_private: str
+    energy_level: str
+    structure_level: str
+
+
 # Recommendation schemas
 class RecommendRequest(BaseModel):
     user_id: int
 
 
-class RecommendedClass(BaseModel):
-    class_name: str
-    studio: str
-    match_score: float
-    schedule: str
+class RecommendationResponse(BaseModel):
+    class_id: int
+    studio_name: str
+    activity_type: str
+    style: str
+    day: str
+    time: str
     price_amd: int
+    score: float
+    rank: int
 
 
 class RecommendResponse(BaseModel):
     user_id: int
-    recommendations: list[RecommendedClass]
+    recommendations: list[RecommendationResponse]
 
 
 # Segment schemas
