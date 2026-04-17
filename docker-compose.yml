@@ -1,0 +1,11 @@
+services:
+  back:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    networks:
+      - activityhub
+
+networks:
+  activityhub:
+    driver: bridge
