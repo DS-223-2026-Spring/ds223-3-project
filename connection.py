@@ -1,8 +1,8 @@
+cat > connection.py <<'EOF'
 import psycopg2
 import os
 
 def get_connection():
-    """Connect to PostgreSQL and return connection object."""
     conn = psycopg2.connect(
         host=os.getenv("DB_HOST", "localhost"),
         port=os.getenv("DB_PORT", "5432"),
@@ -13,7 +13,6 @@ def get_connection():
     return conn
 
 def test_connection():
-    """Verify database connection works."""
     try:
         conn = get_connection()
         cur = conn.cursor()
@@ -29,3 +28,4 @@ def test_connection():
 
 if __name__ == "__main__":
     test_connection()
+EOF
