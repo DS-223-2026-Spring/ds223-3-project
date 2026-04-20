@@ -54,13 +54,58 @@ Bad:
 - Data files: `studios.csv`, `synthetic_users.csv`
 
 ## Folder Structure
-Each service has its own folder. Only work inside your assigned folder:
-
 ds223-3-project/
-data/           — shared CSV files (studios, classes, survey)
-db/             — PostgreSQL setup, schemas, CRUD helpers
-backend/        — FastAPI service
-frontend/       — Streamlit app
-ds/             — notebooks, scripts, models
-orch/           — Prefect flows and config
-docs/           — mkdocs documentation
+│   .gitignore
+│   CONTRIBUTING.md
+│   docker-compose.yml
+│   mkdocs.yml
+│   README.md
+│
+├── api/                    ← Ani
+│   │   Dockerfile
+│   │   requirements.txt
+│   └── app/
+│       │   main.py
+│       │   database.py
+│       ├── models/
+│       │       schemas.py
+│       └── routers/
+│               quiz.py
+│               recommend.py
+│               segments.py
+│               studios.py
+│               users.py
+│
+├── app/                    ← Maria
+│       app.py
+│       Dockerfile
+│       requirements.txt
+│       pages/
+│
+├── db/                     ← Liana 
+│       init.sql
+│
+├── etl/                    ← Hmayak
+│       connection.py
+│       config.py
+│       Dockerfile
+│       orchestration_plan.md
+│       flows/
+│           load_data.py
+│           train_model.py
+│           validate_data.py
+│           generate_recommendations.py
+│
+├── model/                  ← Meline
+│       Dockerfile
+│       requirements.txt
+│       notebooks/
+│       scripts/
+│       data/
+│       models/
+│
+├── data/                   ← shared CSVs
+│
+├── Milestone1/             ← deliverables
+│
+└── docs/                   ← mkdocs
