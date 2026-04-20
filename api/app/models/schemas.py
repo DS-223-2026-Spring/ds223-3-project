@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel
 
 
@@ -5,31 +6,23 @@ from pydantic import BaseModel
 class UserCreate(BaseModel):
     age: int
     gender: str
-    activity_interest: list[str]
-    preferred_style: str | None = None
-    experience_level: str
-    group_preference: str
-    energy_preference: str
-    structure_preference: str
-    goal: str
+    district: Optional[str] = None
 
 
 # Quiz schemas
 class QuizRequest(BaseModel):
     age: int
     gender: str
-    activity_interest: list[str]
-    preferred_style: str | None = None
+    district: Optional[str] = None
     experience_level: str
     group_preference: str
     energy_preference: str
     structure_preference: str
     goal: str
-    # These are for filtering, not for the model:
-    district: str | None = None
-    budget_max_amd: int | None = None
-    preferred_days: list[str] | None = None
-    preferred_time: str | None = None
+    budget_max_amd: Optional[int] = None
+    preferred_days: Optional[list[str]] = None
+    preferred_time: Optional[str] = None
+    max_travel_km: Optional[str] = None
 
 
 class QuizResponse(BaseModel):
@@ -40,19 +33,19 @@ class QuizResponse(BaseModel):
 # Studio schemas
 class Studio(BaseModel):
     studio_id: int
-    name: str
-    district: str
-    address: str
-    instagram: str | None = None
-    price_tier: str
-    studio_type: str
+    studio_name: str
+    district: Optional[str] = None
+    address: Optional[str] = None
+    instagram: Optional[str] = None
+    price_tier: Optional[str] = None
+    studio_type: Optional[str] = None
 
 
 class StudioCreate(BaseModel):
-    name: str
+    studio_name: str
     district: str
     address: str
-    instagram: str | None = None
+    instagram: Optional[str] = None
     price_tier: str
     studio_type: str
 
