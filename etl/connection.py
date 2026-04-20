@@ -1,31 +1,36 @@
-import psycopg2
+"""Reusable SQLAlchemy engine and session for the database service."""
 import os
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
-def get_connection():
-    """Connect to PostgreSQL and return connection object."""
-    conn = psycopg2.connect(
-        host=os.getenv("DB_HOST", "localhost"),
-        port=os.getenv("DB_PORT", "5432"),
-        database=os.getenv("DB_NAME", "activityhub"),
-        user=os.getenv("DB_USER", "admin"),
-        password=os.getenv("DB_PASSWORD", "admin")
-    )
-    return conn
+DB_HOST = os.getenv("DB_HOST", "db")
+DB_PORT = os.getenv("DB_PORT", "5432")
+DB_NAME = os.getenv("DB_NAME", "activityhub")
+DB_USER = os.getenv("DB_USER", "admin")
+DB_PASS = os.getenv("DB_PASSWORD", "admin")
 
-def test_connection():
-    """Verify database connection works."""
+DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+
+engine = create_engine(DATABASE_URL, pool_pre_ping=True)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+
+def get_session():
+    """Returns a new SQLAlchemy session. Caller must close it."""
+    return SessionLocal()
+
+
+def test_connection() -> bool:
+    """Verifies DB connection works. Returns True on success."""
+    from sqlalchemy import text
     try:
-        conn = get_connection()
-        cur = conn.cursor()
-        cur.execute("SELECT 1")
-        result = cur.fetchone()
-        print(f"Connection successful! Result: {result}")
-        cur.close()
-        conn.close()
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
         return True
     except Exception as e:
-        print(f"Connection failed: {e}")
+        print(f"DB connection failed: {e}")
         return False
 
+
 if __name__ == "__main__":
-    test_connection()
+    print("OK" if test_connection() else "FAIL")
