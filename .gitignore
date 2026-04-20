@@ -4,3 +4,6 @@ __pycache__/
 *.pkl
 .DS_Store
 postgres_data/
+.ipynb_checkpoints/
+model/models/*.pkl
+!model/models/.gitkeep
