@@ -75,7 +75,7 @@ services:
       DB_NAME: ${DB_NAME:-activityhub}
     depends_on:
       db:
-        condition: service-healthy
+        condition: service_healthy
     networks:
       - activityhub
 
