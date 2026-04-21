@@ -1,0 +1,401 @@
+user_id,age,gender,activity_interest,yoga_style,dance_style,fitness_style,max_travel_km,group_preference,energy_preference,experience_level,goal,structure_preference,data_source
+1,20,Female,"Yoga,Dance",Aerial,Salsa / latin / ballroom,,Under 10km,Group,Depends on mood,Intermediate,Learning a new skill,Mix,real
+2,20,Female,Dance,,Hip-hop / street,,Under 5km,Private,Calm,Beginner,Creative expression,Mix,real
+3,19,Female,Fitness,,,Strength training,Under 5km,No preference,Calm,Intermediate,Physical fitness / health,Structured,real
+4,21,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,real
+5,21,Female,Fitness,,,HIIT / cardio,Under 1km,Group,Depends on mood,Intermediate,Physical fitness / health,Structured,real
+6,23,Female,Dance,,Contemporary / ballet,,Under 1km,Private,Depends on mood,Intermediate,Creative expression,Mix,real
+7,20,Female,Yoga,,,,Under 1km,Group,Calm,Intermediate,Physical fitness / health,Freestyle,real
+8,20,Male,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,HIIT / cardio,Under 10km,No preference,Depends on mood,Intermediate,Creative expression,Mix,real
+9,20,Male,"Yoga,Fitness,Dance",Restorative,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Intermediate,Stress relief,Freestyle,real
+10,26,Male,"Fitness,Dance",,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Advanced,Learning a new skill,Mix,real
+11,18,Female,Dance,,Contemporary / ballet,,Under 10km,Group,High,Advanced,Stress relief,Structured,real
+12,21,Female,Dance,,Contemporary / ballet,,Under 5km,Group,Calm,Beginner,Creative expression,Structured,real
+13,24,Female,Fitness,,,HIIT / cardio,Under 10km,Private,High,Intermediate,Stress relief,Freestyle,real
+14,20,Female,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,Pilates,Under 1km,Group,Depends on mood,Intermediate,Stress relief,Structured,real
+15,22,Female,Dance,,Armenian / Joxovrdakan,,Under 10km,Group,Depends on mood,Advanced,Social,Mix,real
+16,30,Female,Fitness,,,Pilates,Over 10km,No preference,Calm,Advanced,Stress relief,Mix,real
+17,18,Other,Dance,,Hip-hop / street,,Under 1km,Group,High,Beginner,Social,Mix,real
+18,21,Female,"Yoga,Dance",Aerial,,,Under 5km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,real
+19,21,Male,Fitness,,,Strength training,Under 1km,No preference,High,Beginner,Physical fitness / health,Structured,real
+20,18,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,real
+21,23,Male,Fitness,,,Strength training,Under 10km,No preference,High,Intermediate,Physical fitness / health,Structured,real
+22,21,Female,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 1km,No preference,High,Advanced,Physical fitness / health,Mix,real
+23,20,Male,Yoga,Aerial,,,Under 5km,Private,Calm,Beginner,Creative expression,Freestyle,real
+24,50,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,real
+25,26,Female,Fitness,,,HIIT / cardio,Over 10km,Private,Depends on mood,Beginner,Physical fitness / health,Freestyle,real
+26,49,Female,"Yoga,Dance",Hatha,Salsa / latin / ballroom,,Under 5km,Group,Depends on mood,Beginner,Stress relief,Structured,real
+27,34,Male,Fitness,,,Strength training,Under 10km,Private,Depends on mood,Intermediate,Physical fitness / health,Freestyle,real
+28,26,Female,Yoga,Vinyasa,,,Under 10km,Group,Calm,Advanced,Stress relief,Structured,real
+29,29,Male,"Fitness,Dance",,Armenian / Joxovrdakan,HIIT / cardio,Under 10km,Group,High,Intermediate,Social,Structured,real
+30,18,Male,"Fitness,Dance",,Hip-hop / street,Strength training,Under 1km,Group,High,Advanced,Learning a new skill,Mix,real
+31,23,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,real
+32,21,Female,Fitness,,,Strength training,Under 1km,Private,High,Intermediate,Physical fitness / health,Freestyle,real
+33,20,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,real
+34,20,Female,"Yoga,Dance",,Salsa / latin / ballroom,,Under 5km,Group,High,Intermediate,Learning a new skill,Mix,real
+35,20,Female,"Yoga,Dance",,Hip-hop / street,,Under 5km,No preference,Depends on mood,Beginner,Learning a new skill,Mix,real
+36,19,Female,"Yoga,Fitness",,,Strength training,Under 1km,No preference,Depends on mood,Beginner,Physical fitness / health,Mix,real
+37,21,Male,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Over 10km,Group,Calm,Beginner,Stress relief,Mix,real
+38,25,Male,Fitness,,,Strength training,Under 5km,Group,High,Intermediate,Physical fitness / health,Structured,real
+39,20,Female,Dance,,Hip-hop / street,,Under 5km,Group,Depends on mood,Beginner,Learning a new skill,Structured,real
+40,21,Female,Dance,,,,Under 5km,Group,Depends on mood,Intermediate,Stress relief,Mix,real
+41,21,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Intermediate,Stress relief,Structured,real
+42,22,Female,"Fitness,Dance",,Hip-hop / street,HIIT / cardio,Under 5km,Group,High,Beginner,Stress relief,Mix,real
+43,21,Female,"Fitness,Dance",,,Strength training,Under 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Mix,real
+44,21,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,real
+45,19,Female,Dance,,,,Under 5km,Group,Depends on mood,Intermediate,Stress relief,Mix,synthetic
+46,21,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+47,22,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+48,20,Other,Dance,,Hip-hop / street,,Under 5km,Group,High,Beginner,Social,Mix,synthetic
+49,34,Male,Fitness,,,Strength training,Under 10km,Private,Depends on mood,Intermediate,Physical fitness / health,Freestyle,synthetic
+50,23,Female,Fitness,,,Strength training,Under 1km,No preference,High,Beginner,Physical fitness / health,Structured,synthetic
+51,22,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Intermediate,Stress relief,Structured,synthetic
+52,18,Female,"Yoga,Dance",,Hip-hop / street,,Under 5km,No preference,Depends on mood,Beginner,Learning a new skill,Mix,synthetic
+53,18,Female,Fitness,,,HIIT / cardio,Under 10km,Group,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+54,21,Male,Fitness,,,Strength training,Under 10km,No preference,High,Beginner,Physical fitness / health,Structured,synthetic
+55,21,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,synthetic
+56,24,Other,Fitness,,,Strength training,Under 10km,No preference,High,Intermediate,Physical fitness / health,Structured,synthetic
+57,22,Male,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Over 10km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+58,22,Female,"Yoga,Dance",Aerial,,,Under 5km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+59,19,Female,"Yoga,Dance",Aerial,,,Under 5km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+60,23,Female,Dance,,Contemporary / ballet,,Under 1km,Private,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+61,17,Female,Dance,,Contemporary / ballet,,Under 10km,Group,High,Advanced,Stress relief,Structured,synthetic
+62,52,Female,"Yoga,Dance",Hatha,Salsa / latin / ballroom,,Under 5km,Group,Depends on mood,Beginner,Stress relief,Structured,synthetic
+63,20,Male,Fitness,,,Strength training,Under 10km,No preference,High,Intermediate,Physical fitness / health,Structured,synthetic
+64,22,Female,"Yoga,Dance",Aerial,Salsa / latin / ballroom,,Under 10km,No preference,Depends on mood,Intermediate,Learning a new skill,Mix,synthetic
+65,51,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+66,19,Female,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,Pilates,Under 1km,Group,Depends on mood,Intermediate,Stress relief,Structured,synthetic
+67,18,Female,Fitness,,,Strength training,Under 5km,Private,High,Intermediate,Physical fitness / health,Freestyle,synthetic
+68,21,Female,"Yoga,Dance",Aerial,Salsa / latin / ballroom,,Under 10km,Group,Depends on mood,Intermediate,Learning a new skill,Mix,synthetic
+69,20,Male,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,HIIT / cardio,Under 10km,No preference,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+70,22,Male,Fitness,,,Strength training,Under 1km,No preference,High,Beginner,Physical fitness / health,Structured,synthetic
+71,21,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+72,21,Female,Dance,,Hip-hop / street,,Under 5km,Private,Depends on mood,Beginner,Learning a new skill,Structured,synthetic
+73,24,Female,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 1km,No preference,High,Advanced,Physical fitness / health,Mix,synthetic
+74,21,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+75,26,Male,"Fitness,Dance",,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Advanced,Learning a new skill,Mix,synthetic
+76,20,Female,"Yoga,Dance",,Hip-hop / street,,Under 5km,No preference,Depends on mood,Beginner,Learning a new skill,Mix,synthetic
+77,31,Female,Fitness,,,Pilates,Over 10km,No preference,Calm,Advanced,Stress relief,Mix,synthetic
+78,25,Male,Fitness,,,Strength training,Under 10km,No preference,High,Intermediate,Physical fitness / health,Structured,synthetic
+79,24,Female,"Fitness,Dance",,,Strength training,Under 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Mix,synthetic
+80,17,Female,Fitness,,,Strength training,Under 5km,No preference,Calm,Intermediate,Physical fitness / health,Structured,synthetic
+81,26,Male,"Fitness,Dance",,Armenian / Joxovrdakan,HIIT / cardio,Under 10km,Group,High,Intermediate,Social,Structured,synthetic
+82,37,Male,Fitness,,,Strength training,Under 10km,Private,Depends on mood,Intermediate,Physical fitness / health,Freestyle,synthetic
+83,17,Other,Dance,,Hip-hop / street,,Under 1km,Private,High,Beginner,Social,Mix,synthetic
+84,24,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,synthetic
+85,24,Female,Fitness,,,Strength training,Under 1km,Private,High,Intermediate,Physical fitness / health,Freestyle,synthetic
+86,20,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,synthetic
+87,23,Female,Yoga,,,,Under 1km,Group,Calm,Intermediate,Physical fitness / health,Freestyle,synthetic
+88,16,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+89,24,Male,"Fitness,Dance",,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Advanced,Learning a new skill,Mix,synthetic
+90,16,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Advanced,Stress relief,Structured,synthetic
+91,23,Male,Fitness,,,Strength training,Under 5km,Group,High,Intermediate,Physical fitness / health,Structured,synthetic
+92,18,Female,"Fitness,Dance",,,Strength training,Under 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Mix,synthetic
+93,18,Female,"Yoga,Dance",,Hip-hop / street,,Under 10km,No preference,Depends on mood,Beginner,Learning a new skill,Mix,synthetic
+94,28,Female,Yoga,Vinyasa,,,Under 10km,Group,Calm,Advanced,Stress relief,Structured,synthetic
+95,29,Female,Fitness,,,HIIT / cardio,Over 10km,Private,Depends on mood,Beginner,Physical fitness / health,Freestyle,synthetic
+96,20,Male,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Over 10km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+97,21,Female,"Fitness,Dance",,,Strength training,Under 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Mix,synthetic
+98,22,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+99,23,Female,Dance,,Armenian / Joxovrdakan,,Under 10km,Group,Depends on mood,Advanced,Social,Mix,synthetic
+100,20,Other,Dance,,Hip-hop / street,,Under 1km,Group,High,Beginner,Social,Mix,synthetic
+101,22,Male,"Yoga,Fitness,Dance",Restorative,Salsa / latin / ballroom,Strength training,Under 1km,Private,High,Intermediate,Stress relief,Freestyle,synthetic
+102,24,Male,Fitness,,,Strength training,Under 5km,Group,High,Intermediate,Physical fitness / health,Structured,synthetic
+103,32,Male,Fitness,,,Strength training,Under 10km,Private,Depends on mood,Intermediate,Physical fitness / health,Freestyle,synthetic
+104,51,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+105,26,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+106,16,Male,"Fitness,Dance",,Hip-hop / street,Strength training,Under 5km,Group,High,Advanced,Learning a new skill,Mix,synthetic
+107,52,Female,"Yoga,Dance",Hatha,Salsa / latin / ballroom,,Under 5km,Group,Depends on mood,Beginner,Stress relief,Structured,synthetic
+108,19,Female,"Yoga,Dance",Aerial,Salsa / latin / ballroom,,Under 10km,Group,Depends on mood,Intermediate,Learning a new skill,Mix,synthetic
+109,20,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,synthetic
+110,22,Other,Yoga,,,,Under 1km,Group,Calm,Intermediate,Physical fitness / health,Freestyle,synthetic
+111,19,Female,Dance,,,,Under 5km,Group,Depends on mood,Intermediate,Stress relief,Mix,synthetic
+112,20,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+113,18,Female,Yoga,Aerial,,,Under 5km,Private,Calm,Beginner,Stress relief,Mix,synthetic
+114,52,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+115,27,Male,Fitness,,,Strength training,Under 5km,Group,High,Intermediate,Physical fitness / health,Structured,synthetic
+116,22,Female,Fitness,,,Strength training,Under 1km,Private,High,Intermediate,Physical fitness / health,Freestyle,synthetic
+117,20,Female,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,Pilates,Under 1km,Group,Depends on mood,Intermediate,Stress relief,Structured,synthetic
+118,20,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,synthetic
+119,48,Female,"Yoga,Dance",Hatha,Salsa / latin / ballroom,,Under 1km,Group,Depends on mood,Beginner,Stress relief,Structured,synthetic
+120,25,Female,Dance,,Contemporary / ballet,,Under 1km,Private,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+121,24,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+122,17,Female,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,Pilates,Under 1km,Group,Depends on mood,Intermediate,Stress relief,Structured,synthetic
+123,21,Female,Dance,,Armenian / Joxovrdakan,,Under 10km,Group,Depends on mood,Advanced,Social,Mix,synthetic
+124,24,Female,"Yoga,Dance",Aerial,,,Under 5km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+125,18,Female,Dance,,Contemporary / ballet,,Under 5km,Group,Calm,Beginner,Creative expression,Structured,synthetic
+126,31,Female,Fitness,,,Pilates,Over 10km,No preference,Calm,Advanced,Stress relief,Mix,synthetic
+127,35,Male,Fitness,,,Strength training,Under 1km,Private,Depends on mood,Intermediate,Physical fitness / health,Freestyle,synthetic
+128,21,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,synthetic
+129,19,Female,"Yoga,Dance",,Salsa / latin / ballroom,,Under 5km,Private,High,Intermediate,Learning a new skill,Mix,synthetic
+130,49,Female,"Yoga,Dance",Hatha,Salsa / latin / ballroom,,Under 5km,Group,Depends on mood,Beginner,Stress relief,Structured,synthetic
+131,18,Female,Fitness,,,HIIT / cardio,Under 1km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+132,22,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Intermediate,Stress relief,Structured,synthetic
+133,19,Female,"Yoga,Dance",,Salsa / latin / ballroom,,Under 5km,No preference,High,Intermediate,Learning a new skill,Mix,synthetic
+134,23,Male,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,HIIT / cardio,Under 10km,No preference,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+135,20,Female,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,Pilates,Under 1km,Group,Depends on mood,Intermediate,Stress relief,Structured,synthetic
+136,18,Male,"Fitness,Dance",,Hip-hop / street,Strength training,Under 1km,Group,High,Advanced,Learning a new skill,Mix,synthetic
+137,17,Other,Dance,,Hip-hop / street,,Under 1km,Group,High,Beginner,Social,Mix,synthetic
+138,26,Other,Dance,,Contemporary / ballet,,Over 10km,Private,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+139,21,Male,"Yoga,Fitness,Dance",Restorative,Salsa / latin / ballroom,Strength training,Under 10km,Private,High,Intermediate,Stress relief,Freestyle,synthetic
+140,24,Female,"Fitness,Dance",,,Strength training,Under 10km,Private,Depends on mood,Intermediate,Physical fitness / health,Mix,synthetic
+141,19,Female,Dance,,Hip-hop / street,,Under 5km,Group,Depends on mood,Beginner,Learning a new skill,Structured,synthetic
+142,21,Other,"Fitness,Dance",,,Strength training,Under 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Mix,synthetic
+143,22,Female,"Yoga,Dance",Aerial,,,Under 5km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+144,22,Female,Dance,,,,Under 5km,Group,Depends on mood,Intermediate,Stress relief,Mix,synthetic
+145,24,Male,"Fitness,Dance",,,Strength training,Under 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Mix,synthetic
+146,17,Female,Yoga,Aerial,,,Under 1km,No preference,Calm,Beginner,Stress relief,Mix,synthetic
+147,46,Other,"Yoga,Dance",Hatha,Salsa / latin / ballroom,,Under 1km,Group,Depends on mood,Beginner,Stress relief,Structured,synthetic
+148,34,Male,Fitness,,,Strength training,Under 10km,Private,Depends on mood,Intermediate,Physical fitness / health,Freestyle,synthetic
+149,22,Male,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+150,23,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Over 10km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+151,29,Male,"Fitness,Dance",,Armenian / Joxovrdakan,HIIT / cardio,Under 10km,Private,High,Intermediate,Social,Structured,synthetic
+152,19,Male,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,HIIT / cardio,Under 10km,No preference,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+153,16,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+154,16,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+155,17,Male,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,HIIT / cardio,Under 10km,No preference,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+156,23,Female,Dance,,Armenian / Joxovrdakan,,Under 10km,Group,Depends on mood,Advanced,Social,Mix,synthetic
+157,52,Female,"Yoga,Dance",Hatha,Salsa / latin / ballroom,,Under 5km,Group,Depends on mood,Beginner,Stress relief,Structured,synthetic
+158,24,Female,Fitness,,,HIIT / cardio,Under 1km,Group,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+159,21,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Intermediate,Stress relief,Structured,synthetic
+160,21,Female,Dance,,Contemporary / ballet,,Under 10km,Group,High,Advanced,Stress relief,Structured,synthetic
+161,47,Male,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+162,17,Female,"Yoga,Dance",,Salsa / latin / ballroom,,Under 5km,Group,High,Intermediate,Learning a new skill,Mix,synthetic
+163,24,Female,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 1km,No preference,High,Advanced,Physical fitness / health,Mix,synthetic
+164,19,Male,Yoga,Aerial,,,Under 5km,Private,Calm,Beginner,Creative expression,Freestyle,synthetic
+165,27,Female,Fitness,,,Pilates,Under 5km,No preference,Calm,Advanced,Stress relief,Mix,synthetic
+166,19,Female,"Fitness,Dance",,Hip-hop / street,HIIT / cardio,Over 10km,Group,High,Beginner,Stress relief,Mix,synthetic
+167,25,Male,Fitness,,,Strength training,Under 5km,Group,High,Intermediate,Physical fitness / health,Structured,synthetic
+168,20,Female,Dance,,,,Under 5km,Group,Depends on mood,Intermediate,Stress relief,Mix,synthetic
+169,21,Female,Fitness,,,HIIT / cardio,Under 1km,Group,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+170,20,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+171,20,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+172,20,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,synthetic
+173,19,Female,Fitness,,,Strength training,Under 5km,No preference,Calm,Intermediate,Physical fitness / health,Structured,synthetic
+174,20,Female,Dance,,Hip-hop / street,,Under 5km,Group,Depends on mood,Beginner,Learning a new skill,Structured,synthetic
+175,23,Other,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 5km,No preference,High,Advanced,Physical fitness / health,Mix,synthetic
+176,30,Male,"Fitness,Dance",,Armenian / Joxovrdakan,HIIT / cardio,Under 10km,Group,High,Intermediate,Social,Structured,synthetic
+177,21,Male,Fitness,,,Strength training,Under 1km,No preference,High,Beginner,Physical fitness / health,Structured,synthetic
+178,23,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Intermediate,Stress relief,Structured,synthetic
+179,25,Female,Fitness,,,HIIT / cardio,Over 10km,Private,Depends on mood,Beginner,Physical fitness / health,Freestyle,synthetic
+180,23,Female,Dance,,Hip-hop / street,,Under 1km,Private,Depends on mood,Beginner,Learning a new skill,Structured,synthetic
+181,20,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+182,22,Female,Dance,,Contemporary / ballet,,Under 1km,Private,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+183,22,Male,"Yoga,Fitness,Dance",Restorative,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Intermediate,Stress relief,Freestyle,synthetic
+184,17,Female,"Yoga,Dance",,Salsa / latin / ballroom,,Under 5km,Group,High,Intermediate,Learning a new skill,Mix,synthetic
+185,49,Other,Dance,,Salsa / latin / ballroom,,Under 5km,Group,High,Intermediate,Stress relief,Mix,synthetic
+186,22,Female,Fitness,,,HIIT / cardio,Under 10km,Private,High,Intermediate,Stress relief,Freestyle,synthetic
+187,21,Female,Yoga,,,,Under 1km,Group,Calm,Intermediate,Physical fitness / health,Freestyle,synthetic
+188,21,Female,Fitness,,,Strength training,Under 5km,Private,Calm,Intermediate,Physical fitness / health,Structured,synthetic
+189,24,Male,"Fitness,Dance",,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Advanced,Learning a new skill,Mix,synthetic
+190,23,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,synthetic
+191,27,Male,"Fitness,Dance",,Armenian / Joxovrdakan,HIIT / cardio,Under 10km,Group,High,Intermediate,Social,Structured,synthetic
+192,26,Female,Dance,,Contemporary / ballet,,Over 10km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+193,27,Female,Fitness,,,HIIT / cardio,Over 10km,Private,Depends on mood,Beginner,Physical fitness / health,Freestyle,synthetic
+194,18,Male,Dance,,Hip-hop / street,,Under 5km,Group,Depends on mood,Beginner,Learning a new skill,Structured,synthetic
+195,16,Female,"Yoga,Fitness",,,Strength training,Under 1km,Group,Depends on mood,Beginner,Physical fitness / health,Mix,synthetic
+196,17,Female,Dance,,Contemporary / ballet,,Under 10km,Group,High,Advanced,Stress relief,Structured,synthetic
+197,21,Female,Dance,,Contemporary / ballet,,Under 1km,Private,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+198,31,Male,Fitness,,,Strength training,Under 10km,Private,Depends on mood,Intermediate,Physical fitness / health,Freestyle,synthetic
+199,22,Female,Dance,,Contemporary / ballet,,Under 1km,No preference,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+200,21,Female,"Fitness,Dance",,Hip-hop / street,HIIT / cardio,Under 5km,Group,High,Beginner,Stress relief,Mix,synthetic
+201,25,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+202,18,Female,Dance,,,,Under 5km,Group,Depends on mood,Intermediate,Stress relief,Mix,synthetic
+203,21,Female,"Yoga,Fitness",,,Strength training,Under 1km,No preference,Depends on mood,Beginner,Physical fitness / health,Mix,synthetic
+204,29,Female,Fitness,,,Pilates,Under 5km,No preference,Calm,Advanced,Stress relief,Mix,synthetic
+205,16,Male,"Fitness,Dance",,Hip-hop / street,Strength training,Over 10km,No preference,High,Advanced,Learning a new skill,Mix,synthetic
+206,19,Male,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Over 10km,Private,Calm,Beginner,Stress relief,Mix,synthetic
+207,31,Female,Fitness,,,Pilates,Over 10km,Private,Calm,Advanced,Stress relief,Mix,synthetic
+208,22,Female,Fitness,,,HIIT / cardio,Under 1km,Group,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+209,20,Male,Dance,,Hip-hop / street,,Under 5km,Private,Calm,Beginner,Creative expression,Mix,synthetic
+210,20,Other,Dance,,Hip-hop / street,,Under 1km,Group,High,Beginner,Social,Mix,synthetic
+211,18,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Intermediate,Stress relief,Structured,synthetic
+212,18,Female,Fitness,,,Strength training,Under 5km,No preference,Calm,Intermediate,Physical fitness / health,Structured,synthetic
+213,21,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,synthetic
+214,17,Male,"Yoga,Fitness,Dance",Restorative,Salsa / latin / ballroom,Strength training,Under 5km,Group,High,Intermediate,Stress relief,Freestyle,synthetic
+215,22,Female,Fitness,,,Strength training,Under 1km,No preference,Calm,Intermediate,Physical fitness / health,Structured,synthetic
+216,52,Female,"Yoga,Dance",Hatha,Salsa / latin / ballroom,,Under 5km,Group,Depends on mood,Beginner,Stress relief,Structured,synthetic
+217,23,Female,Fitness,,,HIIT / cardio,Under 10km,Private,High,Intermediate,Stress relief,Freestyle,synthetic
+218,20,Female,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 10km,No preference,High,Advanced,Physical fitness / health,Mix,synthetic
+219,29,Male,"Fitness,Dance",,Armenian / Joxovrdakan,HIIT / cardio,Under 10km,Group,High,Intermediate,Social,Structured,synthetic
+220,53,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+221,23,Female,Dance,,Contemporary / ballet,,Under 1km,Private,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+222,20,Male,Fitness,,,Strength training,Under 10km,No preference,High,Intermediate,Physical fitness / health,Structured,synthetic
+223,24,Female,Yoga,Vinyasa,,,Under 10km,Private,Calm,Advanced,Stress relief,Structured,synthetic
+224,21,Female,Dance,,,,Under 5km,Group,Depends on mood,Intermediate,Stress relief,Mix,synthetic
+225,23,Female,Fitness,,,HIIT / cardio,Under 1km,Group,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+226,19,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,synthetic
+227,26,Male,"Fitness,Dance",,Armenian / Joxovrdakan,HIIT / cardio,Under 5km,Group,High,Intermediate,Social,Structured,synthetic
+228,27,Female,Fitness,,,HIIT / cardio,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Freestyle,synthetic
+229,50,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+230,48,Female,"Yoga,Dance",Hatha,Salsa / latin / ballroom,,Under 5km,No preference,Depends on mood,Beginner,Stress relief,Structured,synthetic
+231,21,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Calm,Beginner,Creative expression,Structured,synthetic
+232,27,Male,"Fitness,Dance",,Armenian / Joxovrdakan,HIIT / cardio,Under 10km,Group,High,Intermediate,Social,Structured,synthetic
+233,19,Female,Fitness,,,Strength training,Under 1km,Private,High,Intermediate,Physical fitness / health,Freestyle,synthetic
+234,26,Male,"Fitness,Dance",,Armenian / Joxovrdakan,HIIT / cardio,Under 10km,Group,High,Intermediate,Social,Structured,synthetic
+235,20,Female,"Fitness,Dance",,,Strength training,Under 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Mix,synthetic
+236,21,Female,Yoga,Aerial,,,Under 5km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+237,18,Male,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,HIIT / cardio,Under 10km,No preference,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+238,51,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+239,21,Male,"Yoga,Fitness,Dance",Restorative,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Intermediate,Stress relief,Freestyle,synthetic
+240,24,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+241,19,Male,"Yoga,Fitness,Dance",Restorative,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Intermediate,Stress relief,Freestyle,synthetic
+242,18,Male,Yoga,Aerial,,,Under 5km,Private,Calm,Beginner,Creative expression,Freestyle,synthetic
+243,24,Female,Dance,,Contemporary / ballet,,Under 5km,Group,Calm,Beginner,Creative expression,Structured,synthetic
+244,24,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+245,21,Female,Dance,,Armenian / Joxovrdakan,,Under 10km,Group,Depends on mood,Advanced,Social,Mix,synthetic
+246,22,Female,Dance,,Contemporary / ballet,,Under 10km,Private,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+247,17,Female,"Yoga,Dance",,Hip-hop / street,,Under 5km,No preference,Depends on mood,Beginner,Learning a new skill,Mix,synthetic
+248,24,Male,"Fitness,Dance",,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Advanced,Learning a new skill,Mix,synthetic
+249,18,Female,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Over 10km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+250,20,Male,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Over 10km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+251,18,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Intermediate,Stress relief,Structured,synthetic
+252,18,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+253,16,Male,"Fitness,Dance",,Hip-hop / street,Strength training,Under 1km,Group,High,Advanced,Learning a new skill,Mix,synthetic
+254,16,Male,"Fitness,Dance",,Hip-hop / street,Strength training,Under 1km,Group,High,Advanced,Learning a new skill,Mix,synthetic
+255,25,Male,Fitness,,,Strength training,Under 10km,No preference,High,Intermediate,Physical fitness / health,Structured,synthetic
+256,51,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+257,21,Male,"Yoga,Dance",Aerial,,,Under 5km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+258,21,Female,Dance,,,,Under 5km,Group,Depends on mood,Intermediate,Stress relief,Mix,synthetic
+259,24,Male,Fitness,,,Strength training,Under 10km,No preference,High,Intermediate,Physical fitness / health,Structured,synthetic
+260,20,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,Private,Calm,Beginner,Physical fitness / health,Mix,synthetic
+261,20,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,synthetic
+262,20,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+263,22,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+264,20,Other,Dance,,Hip-hop / street,,Under 1km,Group,High,Beginner,Social,Mix,synthetic
+265,22,Other,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 10km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+266,18,Female,"Yoga,Fitness",,,Strength training,Under 1km,No preference,Depends on mood,Beginner,Physical fitness / health,Mix,synthetic
+267,17,Male,"Yoga,Fitness,Dance",Restorative,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Intermediate,Stress relief,Freestyle,synthetic
+268,53,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+269,24,Female,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 1km,No preference,High,Advanced,Physical fitness / health,Mix,synthetic
+270,18,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,synthetic
+271,23,Female,Dance,,,,Under 5km,Group,Depends on mood,Intermediate,Stress relief,Mix,synthetic
+272,21,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,synthetic
+273,19,Male,Dance,,Hip-hop / street,,Under 5km,Private,Calm,Beginner,Creative expression,Mix,synthetic
+274,18,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Intermediate,Stress relief,Structured,synthetic
+275,26,Male,Fitness,,,Strength training,Under 5km,Group,High,Intermediate,Physical fitness / health,Structured,synthetic
+276,23,Female,Dance,,Contemporary / ballet,,Over 10km,No preference,High,Intermediate,Stress relief,Structured,synthetic
+277,27,Female,Fitness,,,Pilates,Over 10km,No preference,Calm,Advanced,Stress relief,Mix,synthetic
+278,28,Male,"Fitness,Dance",,Armenian / Joxovrdakan,HIIT / cardio,Under 10km,Group,High,Intermediate,Social,Structured,synthetic
+279,23,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,synthetic
+280,23,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+281,24,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+282,19,Female,"Yoga,Dance",,Hip-hop / street,,Under 5km,No preference,Depends on mood,Beginner,Learning a new skill,Mix,synthetic
+283,23,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,synthetic
+284,29,Female,Fitness,,,Pilates,Over 10km,No preference,Calm,Advanced,Stress relief,Mix,synthetic
+285,21,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+286,23,Male,Fitness,,,Strength training,Under 10km,No preference,High,Intermediate,Physical fitness / health,Structured,synthetic
+287,20,Female,"Yoga,Dance",Aerial,,,Over 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+288,23,Male,Yoga,Aerial,,,Under 5km,Private,Calm,Beginner,Creative expression,Freestyle,synthetic
+289,22,Female,Dance,,Contemporary / ballet,,Under 1km,Private,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+290,18,Female,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,Pilates,Under 1km,Group,Depends on mood,Intermediate,Stress relief,Structured,synthetic
+291,19,Female,"Yoga,Dance",Aerial,,,Under 5km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+292,18,Male,"Yoga,Dance",,Salsa / latin / ballroom,,Under 5km,Group,High,Intermediate,Learning a new skill,Mix,synthetic
+293,20,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+294,18,Female,Dance,,Contemporary / ballet,,Under 10km,Group,High,Advanced,Stress relief,Structured,synthetic
+295,20,Female,"Fitness,Dance",,Hip-hop / street,HIIT / cardio,Under 5km,Group,High,Beginner,Stress relief,Mix,synthetic
+296,24,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+297,17,Female,Fitness,,,Strength training,Under 5km,No preference,Calm,Intermediate,Physical fitness / health,Structured,synthetic
+298,22,Female,Fitness,,,Strength training,Under 5km,No preference,Calm,Intermediate,Physical fitness / health,Structured,synthetic
+299,18,Male,Fitness,,,Strength training,Under 1km,No preference,High,Beginner,Physical fitness / health,Structured,synthetic
+300,20,Male,"Fitness,Dance",,Hip-hop / street,Strength training,Under 1km,Group,High,Advanced,Learning a new skill,Mix,synthetic
+301,20,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,synthetic
+302,20,Male,"Fitness,Dance",,Hip-hop / street,Strength training,Under 1km,Group,High,Advanced,Learning a new skill,Mix,synthetic
+303,22,Male,Fitness,,,Strength training,Under 1km,No preference,High,Beginner,Physical fitness / health,Structured,synthetic
+304,21,Female,Dance,,Contemporary / ballet,,Over 10km,No preference,High,Intermediate,Stress relief,Structured,synthetic
+305,18,Female,Yoga,,,,Under 1km,Group,Calm,Intermediate,Physical fitness / health,Freestyle,synthetic
+306,19,Female,"Yoga,Dance",Aerial,Salsa / latin / ballroom,,Under 10km,Group,Depends on mood,Intermediate,Learning a new skill,Mix,synthetic
+307,20,Female,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 1km,No preference,High,Advanced,Physical fitness / health,Mix,synthetic
+308,52,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+309,18,Female,Dance,,Contemporary / ballet,,Under 10km,Group,High,Advanced,Stress relief,Structured,synthetic
+310,20,Female,Yoga,Aerial,,,Under 10km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+311,20,Male,"Yoga,Fitness,Dance",Restorative,Salsa / latin / ballroom,Strength training,Under 10km,Private,High,Intermediate,Stress relief,Freestyle,synthetic
+312,26,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+313,32,Female,Fitness,,,Pilates,Over 10km,Private,Calm,Advanced,Stress relief,Mix,synthetic
+314,22,Female,"Yoga,Dance",,Salsa / latin / ballroom,,Under 5km,No preference,High,Intermediate,Learning a new skill,Mix,synthetic
+315,18,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,synthetic
+316,20,Female,"Yoga,Dance",,Salsa / latin / ballroom,,Under 5km,Group,High,Intermediate,Learning a new skill,Mix,synthetic
+317,20,Female,"Yoga,Dance",,Contemporary / ballet,,Under 5km,No preference,Calm,Beginner,Physical fitness / health,Mix,synthetic
+318,19,Male,"Fitness,Dance",,Hip-hop / street,Strength training,Over 10km,Group,High,Advanced,Learning a new skill,Mix,synthetic
+319,20,Female,Dance,,Hip-hop / street,,Under 5km,Private,Calm,Beginner,Creative expression,Mix,synthetic
+320,19,Female,Fitness,,,Strength training,Under 5km,No preference,Calm,Intermediate,Physical fitness / health,Structured,synthetic
+321,21,Female,Fitness,,,HIIT / cardio,Over 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+322,22,Female,"Fitness,Dance",,Hip-hop / street,HIIT / cardio,Under 5km,Group,High,Beginner,Stress relief,Mix,synthetic
+323,26,Female,Fitness,,,HIIT / cardio,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Freestyle,synthetic
+324,22,Female,Dance,,Contemporary / ballet,,Under 5km,Group,Calm,Beginner,Creative expression,Structured,synthetic
+325,23,Female,"Yoga,Dance",Aerial,Salsa / latin / ballroom,,Under 10km,Group,Depends on mood,Intermediate,Learning a new skill,Mix,synthetic
+326,27,Female,Yoga,Vinyasa,,,Under 10km,Group,Calm,Advanced,Stress relief,Structured,synthetic
+327,25,Other,"Fitness,Dance",,Salsa / latin / ballroom,Strength training,Under 1km,Private,High,Advanced,Learning a new skill,Mix,synthetic
+328,18,Female,Dance,,Hip-hop / street,,Under 5km,Private,Calm,Beginner,Creative expression,Mix,synthetic
+329,23,Female,"Fitness,Dance",,,Strength training,Under 1km,Private,High,Intermediate,Stress relief,Mix,synthetic
+330,23,Female,Dance,,Armenian / Joxovrdakan,,Under 10km,No preference,Depends on mood,Advanced,Social,Mix,synthetic
+331,19,Male,Fitness,,,Strength training,Under 1km,No preference,High,Beginner,Physical fitness / health,Structured,synthetic
+332,23,Female,Dance,,Hip-hop / street,,Under 5km,Group,Depends on mood,Beginner,Learning a new skill,Structured,synthetic
+333,28,Male,"Fitness,Dance",,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Advanced,Learning a new skill,Mix,synthetic
+334,20,Female,"Yoga,Fitness",,,Strength training,Under 1km,No preference,Depends on mood,Beginner,Physical fitness / health,Mix,synthetic
+335,27,Female,Yoga,Vinyasa,,,Under 10km,Group,Calm,Advanced,Stress relief,Structured,synthetic
+336,21,Female,"Fitness,Dance",,,Strength training,Under 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Mix,synthetic
+337,25,Male,"Fitness,Dance",,Salsa / latin / ballroom,Strength training,Under 5km,Private,High,Advanced,Learning a new skill,Mix,synthetic
+338,21,Female,Dance,,Armenian / Joxovrdakan,,Under 10km,Group,Depends on mood,Advanced,Social,Mix,synthetic
+339,22,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+340,24,Female,Fitness,,,HIIT / cardio,Over 10km,Private,Depends on mood,Beginner,Physical fitness / health,Freestyle,synthetic
+341,47,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Private,High,Intermediate,Stress relief,Mix,synthetic
+342,22,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,synthetic
+343,27,Male,Fitness,,,Strength training,Under 5km,Group,High,Intermediate,Physical fitness / health,Structured,synthetic
+344,20,Female,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 1km,No preference,High,Advanced,Physical fitness / health,Mix,synthetic
+345,22,Male,"Yoga,Fitness,Dance",Aerial,Hip-hop / street,HIIT / cardio,Under 10km,No preference,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+346,22,Female,Dance,,Hip-hop / street,,Under 5km,Group,Depends on mood,Beginner,Learning a new skill,Structured,synthetic
+347,21,Male,Fitness,,,Strength training,Under 1km,No preference,High,Beginner,Physical fitness / health,Structured,synthetic
+348,51,Other,Dance,,Salsa / latin / ballroom,,Over 10km,Group,High,Intermediate,Stress relief,Mix,synthetic
+349,26,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+350,31,Male,Fitness,,,Strength training,Under 10km,Private,Depends on mood,Intermediate,Physical fitness / health,Freestyle,synthetic
+351,20,Female,"Yoga,Fitness",,,Strength training,Under 1km,No preference,Depends on mood,Beginner,Physical fitness / health,Mix,synthetic
+352,19,Female,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Under 1km,No preference,High,Advanced,Physical fitness / health,Mix,synthetic
+353,24,Female,"Fitness,Dance",,Hip-hop / street,HIIT / cardio,Under 5km,Group,High,Beginner,Stress relief,Mix,synthetic
+354,24,Female,"Fitness,Dance",,Hip-hop / street,HIIT / cardio,Under 5km,Group,High,Beginner,Stress relief,Mix,synthetic
+355,16,Female,Dance,,Contemporary / ballet,,Under 10km,Group,High,Advanced,Stress relief,Structured,synthetic
+356,22,Female,"Yoga,Dance",,Hip-hop / street,,Under 5km,No preference,Depends on mood,Beginner,Learning a new skill,Mix,synthetic
+357,24,Female,Fitness,,,HIIT / cardio,Under 1km,Group,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+358,19,Other,Dance,,Contemporary / ballet,,Under 5km,Group,High,Intermediate,Stress relief,Structured,synthetic
+359,22,Female,"Fitness,Dance",,Armenian / Joxovrdakan,Pilates,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Structured,synthetic
+360,21,Other,"Fitness,Dance",,,Strength training,Over 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Mix,synthetic
+361,19,Female,"Yoga,Dance",,Hip-hop / street,,Over 10km,No preference,Depends on mood,Beginner,Learning a new skill,Mix,synthetic
+362,17,Female,Yoga,,,,Under 1km,Group,Calm,Intermediate,Physical fitness / health,Freestyle,synthetic
+363,21,Other,Dance,,Hip-hop / street,,Under 1km,Private,High,Beginner,Social,Mix,synthetic
+364,19,Male,"Fitness,Dance",,Hip-hop / street,Strength training,Under 1km,Group,High,Advanced,Learning a new skill,Mix,synthetic
+365,25,Female,Dance,,Contemporary / ballet,,Under 1km,Private,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+366,26,Female,Fitness,,,HIIT / cardio,Over 10km,Private,Depends on mood,Beginner,Physical fitness / health,Freestyle,synthetic
+367,23,Female,Dance,,Contemporary / ballet,,Under 1km,Private,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+368,21,Female,Yoga,,,,Under 1km,Group,Calm,Intermediate,Physical fitness / health,Freestyle,synthetic
+369,21,Male,"Fitness,Dance",,Salsa / latin / ballroom,HIIT / cardio,Over 10km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+370,22,Male,"Yoga,Dance",Aerial,,,Under 5km,Group,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+371,23,Male,Fitness,,,Strength training,Under 5km,Group,High,Intermediate,Physical fitness / health,Structured,synthetic
+372,20,Female,Fitness,,,HIIT / cardio,Under 5km,Group,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+373,22,Female,"Fitness,Dance",,,Strength training,Under 1km,No preference,High,Intermediate,Stress relief,Mix,synthetic
+374,24,Female,Dance,,Contemporary / ballet,,Under 1km,Group,Depends on mood,Intermediate,Creative expression,Mix,synthetic
+375,20,Female,Fitness,,,HIIT / cardio,Under 1km,Group,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+376,20,Male,Fitness,,,Strength training,Under 10km,No preference,High,Intermediate,Physical fitness / health,Structured,synthetic
+377,21,Female,Dance,,Armenian / Joxovrdakan,,Under 10km,Group,Depends on mood,Advanced,Social,Mix,synthetic
+378,27,Male,Fitness,,,Strength training,Under 5km,Group,High,Intermediate,Physical fitness / health,Structured,synthetic
+379,32,Female,Fitness,,,Pilates,Under 10km,No preference,Calm,Advanced,Stress relief,Mix,synthetic
+380,19,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Intermediate,Stress relief,Structured,synthetic
+381,18,Female,Yoga,Aerial,,,Under 1km,Group,Calm,Beginner,Stress relief,Mix,synthetic
+382,26,Female,Yoga,Vinyasa,,,Under 10km,Group,Calm,Advanced,Stress relief,Structured,synthetic
+383,21,Male,Yoga,Aerial,,,Under 10km,Private,Calm,Beginner,Creative expression,Freestyle,synthetic
+384,29,Female,Fitness,,,HIIT / cardio,Under 5km,Private,Depends on mood,Beginner,Physical fitness / health,Freestyle,synthetic
+385,24,Female,Fitness,,,HIIT / cardio,Under 10km,Group,Depends on mood,Beginner,Physical fitness / health,Freestyle,synthetic
+386,25,Female,Yoga,Vinyasa,,,Under 10km,Private,Calm,Advanced,Stress relief,Structured,synthetic
+387,32,Female,Fitness,,,Pilates,Over 10km,No preference,Calm,Advanced,Stress relief,Mix,synthetic
+388,18,Female,Yoga,,,,Under 1km,Group,Calm,Intermediate,Physical fitness / health,Freestyle,synthetic
+389,21,Female,Dance,,,,Under 5km,Group,Depends on mood,Intermediate,Stress relief,Mix,synthetic
+390,23,Female,"Fitness,Dance",,Hip-hop / street,HIIT / cardio,Under 10km,Group,High,Beginner,Stress relief,Mix,synthetic
+391,22,Female,Dance,,Contemporary / ballet,,Over 10km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+392,21,Female,Dance,,Contemporary / ballet,,Over 10km,Group,High,Intermediate,Stress relief,Structured,synthetic
+393,24,Female,"Yoga,Dance",Aerial,,,Under 5km,No preference,Depends on mood,Intermediate,Physical fitness / health,Structured,synthetic
+394,25,Female,Fitness,,,HIIT / cardio,Under 10km,Private,High,Intermediate,Stress relief,Freestyle,synthetic
+395,22,Female,Dance,,Hip-hop / street,,Under 5km,Private,Calm,Beginner,Creative expression,Mix,synthetic
+396,24,Male,Fitness,,,Strength training,Under 1km,No preference,High,Beginner,Physical fitness / health,Structured,synthetic
+397,36,Male,Fitness,,,Strength training,Under 10km,Private,Depends on mood,Intermediate,Physical fitness / health,Freestyle,synthetic
+398,19,Female,"Fitness,Dance",,,Strength training,Under 10km,No preference,Depends on mood,Intermediate,Physical fitness / health,Mix,synthetic
+399,24,Female,Dance,,Contemporary / ballet,,Under 5km,Private,Depends on mood,Beginner,Creative expression,Freestyle,synthetic
+400,35,Male,Fitness,,,Strength training,Under 10km,Private,Depends on mood,Intermediate,Physical fitness / health,Freestyle,synthetic
