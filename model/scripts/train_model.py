@@ -1,0 +1,68 @@
+"""
+Train multi-class style-bucket classifier across all 9 buckets.
+Compare LR vs RF, save winner by top-3 accuracy.
+"""
+import os
+import pandas as pd
+import joblib
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, top_k_accuracy_score
+
+CATEGORICAL = ["gender", "experience_level", "group_preference",
+               "energy_preference", "structure_preference", "goal"]
+NUMERIC = ["age"]
+
+
+def build_pipeline(clf):
+    prep = ColumnTransformer([
+        ("cat", OneHotEncoder(handle_unknown="ignore"), CATEGORICAL),
+        ("num", StandardScaler(), NUMERIC),
+    ])
+    return Pipeline([("prep", prep), ("clf", clf)])
+
+
+def evaluate(pipe, X_test, y_test, name):
+    y_pred = pipe.predict(X_test)
+    y_proba = pipe.predict_proba(X_test)
+    print(f"\n=== {name} ===")
+    print(classification_report(y_test, y_pred, zero_division=0))
+    classes = pipe.named_steps["clf"].classes_
+    top1 = top_k_accuracy_score(y_test, y_proba, k=1, labels=classes)
+    top3 = top_k_accuracy_score(y_test, y_proba, k=3, labels=classes)
+    print(f"Top-1: {top1:.3f}")
+    print(f"Top-3: {top3:.3f}  ← headline metric")
+    return {"name": name, "top1": top1, "top3": top3}
+
+
+if __name__ == "__main__":
+    src = os.getenv("TRAINING_DATA", "data/training_survey_augmented.csv")
+    out_model = os.getenv("MODEL_PATH", "model/models/style_classifier.pkl")
+    out_metrics = "model/models/metrics.csv"
+    os.makedirs(os.path.dirname(out_model), exist_ok=True)
+
+    df = pd.read_csv(src)
+    X = df.drop(columns=["target_style_bucket"])
+    y = df["target_style_bucket"]
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, stratify=y, random_state=42
+    )
+
+    lr = build_pipeline(LogisticRegression(max_iter=1000, C=1.0))
+    lr.fit(X_train, y_train)
+    lr_m = evaluate(lr, X_test, y_test, "Logistic Regression")
+
+    rf = build_pipeline(RandomForestClassifier(n_estimators=200, max_depth=6,
+                                               random_state=42))
+    rf.fit(X_train, y_train)
+    rf_m = evaluate(rf, X_test, y_test, "Random Forest")
+
+    winner, winner_metrics = (lr, lr_m) if lr_m["top3"] >= rf_m["top3"] else (rf, rf_m)
+    print(f"\nSaving {winner_metrics['name']}")
+    joblib.dump(winner, out_model)
+    pd.DataFrame([lr_m, rf_m]).to_csv(out_metrics, index=False)
