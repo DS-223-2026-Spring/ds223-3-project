@@ -1,28 +1,17 @@
-# Data paths
-DATA_PATH = "data/"
-SURVEY_DATA_FILE = "survey_data.csv"
-STUDIO_DATA_FILE = "studio_data.csv"
-SYNTHETIC_DATA_FILE = "synthetic_data.csv"
+# etl/config.py
+import os
 
-# Model configuration
-MODEL_NAME = "recommendation_model"
-MODEL_PATH = "models/"
+DATA_DIR = os.getenv("DATA_DIR", "data/")
+MODEL_DIR = os.getenv("MODEL_DIR", "model/models/")
 
-# Training parameters
-TRAINING_EPOCHS = 100
-BATCH_SIZE = 32
-LEARNING_RATE = 0.001
+STUDIO_CSV = os.path.join(DATA_DIR, "studios.csv")
+CLASS_CSV = os.path.join(DATA_DIR, "classes.csv")
+SURVEY_CSV = os.path.join(DATA_DIR, "survey.csv")
 
-# Scheduling
-SCHEDULED_TASKS = {
-    "data_ingestion": "daily",
-    "model_training": "weekly",
-    "recommendation_generation": "daily"
+DB_CONFIG = {
+    "host": os.getenv("DB_HOST", "db"),
+    "port": int(os.getenv("DB_PORT", "5432")),
+    "database": os.getenv("DB_NAME", "activityhub"),
+    "user": os.getenv("DB_USER", "admin"),
+    "password": os.getenv("DB_PASSWORD", "admin"),
 }
-
-# Logging
-LOG_FILE_PATH = "logs/orchestration_logs.txt"
-
-# API settings (if applicable)
-API_URL = "http://localhost:8000/predict"
-API_TIMEOUT = 60  # in seconds

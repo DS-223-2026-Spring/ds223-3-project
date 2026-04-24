@@ -1,36 +1,32 @@
-from sklearn.ensemble import RandomForestClassifier
-import pickle
-import pandas as pd
+# Prefect flow: run the ML training pipeline.
+from prefect import flow, task
+import subprocess
 
 
-def train_model(data):
-    """
-    Train a Random Forest model on the provided data.
+@task
+def prepare():
+    subprocess.run(["python", "/app/model/scripts/prepare_survey.py",
+                "model/data/survey.csv", "model/data/training_survey.csv"], check=True)
 
-    Args:
-        data (DataFrame): The data to train the model on.
 
-    Returns:
-        model: The trained model.
-    """
-    # Split the data into features and labels
-    X = data.drop("target", axis=1)  # Replace 'target' with the actual column name
-    y = data["target"]
+@task
+def augment():
+    subprocess.run(["python", "/app/model/scripts/augment_training.py",
+                "model/data/training_survey.csv",
+                "model/data/training_survey_augmented.csv"], check=True)
 
-    # Initialize the model
-    model = RandomForestClassifier(n_estimators=100)
 
-    # Train the model
-    model.fit(X, y)
+@task
+def train():
+    subprocess.run(["python", "/app/model/scripts/train_model.py"], check=True)
 
-    # Save the trained model to a file
-    with open("models/random_forest_model.pkl", "wb") as f:
-        pickle.dump(model, f)
 
-    print("Model trained and saved successfully")
-    return model
+@flow(name="train-model")
+def train_flow():
+    prepare()
+    augment()
+    train()
 
 
 if __name__ == "__main__":
-    data = pd.read_csv("data/survey_data.csv")
-    train_model(data)
+    train_flow()
