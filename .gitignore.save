@@ -9,5 +9,5 @@ model/models/*.pkl__pycache__/
 .DS_Store
 postgres_data/
 .ipynb_checkpoints/
+model/models/*.pkl
 !model/models/.gitkeep
-
