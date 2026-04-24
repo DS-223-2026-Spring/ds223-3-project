@@ -6,9 +6,9 @@ model/data/training_survey_augmented.csv
 model/models/*.pkl__pycache__/
 *.pyc
 .env
-*.pkl
 .DS_Store
 postgres_data/
 .ipynb_checkpoints/
 model/models/*.pkl
 !model/models/.gitkeep
+
