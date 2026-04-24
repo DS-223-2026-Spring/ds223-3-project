@@ -1,0 +1,160 @@
+class_id,studio_id,studio_name,activity_type,style,day,time,duration_min,price_per_session_amd,price_monthly_amd,experience_required,group_or_private,energy_level,structure_level,district
+1,2,Luys Yoga / Kochar,yoga,Vinyasa,"Monday,Wednesday,Friday",9:15,120,4875,39000,Intermediate,Group,High,Structured,Arabkir
+2,2,Luys Yoga / Kochar,yoga,Aerial,"Tuesday,Thursday",15:30,120,4875,39000,Intermediate,Group,High,Structured,Arabkir
+3,2,Luys Yoga / Kochar,yoga,Aerial,Wednesday,18:30,90,4875,39000,Beginner,Group,Mid,Structured,Arabkir
+4,2,Luys Yoga / Kochar,yoga,Power,"Tuesday,Thursday",8:45,120,4875,39000,Advanced,Group,High,Structured,Arabkir
+5,2,Luys Yoga / Kochar,yoga,Restorative,"Monday,Wednesday,Friday",20:00,90,4875,39000,Beginner,Group,Calm,Structured,Arabkir
+6,1,Luys Yoga / Buzand,yoga,Vinyasa,"Monday,Wednesday,Friday",9:30,90,4875,39000,Beginner,Group,High,Structured,Kentron
+7,1,Luys Yoga / Buzand,yoga,Hatha,"Monday,Wednesday,Friday",18:30,90,4875,39000,Beginner,Group,Calm,Structured,Kentron
+8,1,Luys Yoga / Buzand,yoga,Aerial,"Tuesday,Thursday",13:00,120,4875,39000,Intermediate,Group,High,Structured,Kentron
+9,1,Luys Yoga / Buzand,yoga,Power,"Tuesday,Thursday",20:00,90,4875,39000,Advanced,Group,High,Structured,Kentron
+10,1,Luys Yoga / Buzand,yoga,Aerial,Saturday,13:00,120,4875,39000,Advanced,Group,High,Structured,Kentron
+11,1,Luys Yoga / Buzand,yoga,Power,Saturday,17:00,120,4875,39000,Intermediate,Group,High,Structured,Kentron
+12,3,Shoonch Yoga Studio,fitness,Pilates,"Monday,Thursday",11:15,180,6250,50000,Intermediate,Group,Calm,Mix,Kentron
+13,3,Shoonch Yoga Studio,fitness,Pilates,"Monday,Friday",18:30,60,6250,50000,Beginner,Group,Calm,Mix,Kentron
+14,3,Shoonch Yoga Studio,yoga,Hatha,"Monday,Friday",19:30,60,6250,50000,Beginner,Group,Calm,Structured,Kentron
+15,3,Shoonch Yoga Studio,yoga,Power,"Tuesday,Thursday",9:30,90,6250,50000,Intermediate,Group,High,Structured,Kentron
+16,3,Shoonch Yoga Studio,yoga,Vinyasa,"Tuesday,Thursday",18:45,30,6250,50000,Beginner,Group,Mid,Structured,Kentron
+17,3,Shoonch Yoga Studio,yoga,Power,Wednesday,10:00,180,6250,50000,Advanced,Group,High,Structured,Kentron
+18,3,Shoonch Yoga Studio,yoga,Power,Wednesday,20:30,60,6250,50000,Intermediate,Group,Mid,Structured,Kentron
+19,3,Shoonch Yoga Studio,yoga,Power,Saturday,11:30,90,6250,50000,Intermediate,Group,High,Structured,Kentron
+20,3,Shoonch Yoga Studio,yoga,Power,Saturday,16:30,180,6250,50000,Advanced,Group,High,Structured,Kentron
+21,3,Shoonch Yoga Studio,yoga,Vinyasa,Saturday,14:30,120,6250,50000,Intermediate,Group,High,Structured,Kentron
+22,4,Guru Yoga Studio,yoga,Restorative,Monday,8:30,60,5625,45000,Beginner,Group,Calm,Mix,Arabkir
+23,4,Guru Yoga Studio,yoga,Hatha,"Monday,Wednesday",9:45,60,5625,45000,Beginner,Group,Calm,Structured,Arabkir
+24,4,Guru Yoga Studio,yoga,Hatha,"Monday,Friday",19:00,90,5625,45000,Beginner,Group,Mid,Structured,Arabkir
+25,4,Guru Yoga Studio,yoga,Hatha,"Monday,Wednesday",12:30,75,5625,45000,Beginner,Group,Calm,Structured,Arabkir
+26,4,Guru Yoga Studio,yoga,Restorative,Wednesday,19:00,60,5625,45000,Beginner,Group,Calm,Structured,Arabkir
+27,4,Guru Yoga Studio,yoga,Power,Tuesday,8:15,60,5625,45000,Intermediate,Group,High,Structured,Arabkir
+28,4,Guru Yoga Studio,yoga,Hatha,"Tuesday,Thursday",10:00,75,5625,45000,Beginner,Group,Calm,Structured,Arabkir
+29,4,Guru Yoga Studio,yoga,Vinyasa,"Tuesday,Thursday",17:30,75,5625,45000,Intermediate,Group,High,Structured,Arabkir
+30,4,Guru Yoga Studio,fitness,HIIT / cardio,Thursday,8:15,60,5625,45000,Beginner,Group,Mid,Structured,Arabkir
+31,4,Guru Yoga Studio,yoga,Hatha,Saturday,13:00,60,5625,45000,Beginner,Group,Calm,Structured,Arabkir
+32,5,Prana Yoga Studio,yoga,Restorative,"Monday,Wednesday,Friday",9:00,75,6250,50000,Beginner,Group,Calm,Structured,Kentron
+33,5,Prana Yoga Studio,yoga,Aerial,"Tuesday,Thursday",17:00,75,6250,50000,Advanced,Group,Mid,Structured,Kentron
+34,5,Prana Yoga Studio,yoga,Aerial,Saturday,18:30,75,6250,50000,Advanced,Group,High,Mix,Kentron
+35,6,Armat by Nynel,yoga,Power,Wednesday,20:30,60,3625,29000,Intermediate,Group,Mid,Structured,Arabkir
+36,6,Armat by Nynel,yoga,Power,Thursday,19:00,60,3625,29000,Intermediate,Group,High,Structured,Arabkir
+37,7,Namaste Yoga Studio,yoga,Hatha,"Monday,Wednesday,Friday",10:30,60,4375,35000,Beginner,Group,Calm,Structured,Kentron
+38,7,Namaste Yoga Studio,yoga,Hatha,"Monday,Wednesday,Friday",18:15,60,4375,35000,Beginner,Group,Calm,Structured,Kentron
+39,7,Namaste Yoga Studio,yoga,Hatha,"Tuesday,Thursday",9:00,75,4375,35000,Beginner,Group,Mid,Structured,Kentron
+40,7,Namaste Yoga Studio,fitness,Pilates,"Tuesday,Thursday",11:00,60,4375,35000,Beginner,Group,Mid,Mix,Kentron
+41,7,Namaste Yoga Studio,yoga,Hatha,"Tuesday,Thursday",19:00,60,4375,35000,Intermediate,Group,Calm,Structured,Kentron
+42,8,Orange Premium Fitness Club,fitness,HIIT / cardio,Monday,8:00,60,5417,43333,Intermediate,Group,Mid,Structured,Kentron
+43,8,Orange Premium Fitness Club,yoga,Restorative,"Monday,Tuesday,Thursday",9:30,60,5417,43333,Beginner,Group,Calm,Structured,Kentron
+44,8,Orange Premium Fitness Club,yoga,Aerial,Monday,10:30,60,5417,43333,Intermediate,Group,Mid,Structured,Kentron
+45,8,Orange Premium Fitness Club,fitness,HIIT / cardio,"Monday,Wednesday,Friday",10:30,60,5417,43333,Beginner,Group,High,Structured,Kentron
+46,8,Orange Premium Fitness Club,fitness,HIIT / cardio,"Monday,Wednesday,Friday",11:30,60,5417,43333,Intermediate,Group,High,Structured,Kentron
+47,8,Orange Premium Fitness Club,fitness,HIIT / cardio,Monday,12:30,60,5417,43333,Intermediate,Group,Mid,Structured,Kentron
+48,8,Orange Premium Fitness Club,fitness,Strength training,"Monday,Wednesday",19:15,60,5417,43333,Intermediate,Group,High,Structured,Kentron
+49,8,Orange Premium Fitness Club,fitness,Strength training,"Tuesday,Thursday",8:00,90,5417,43333,Intermediate,Group,High,Structured,Kentron
+50,8,Orange Premium Fitness Club,fitness,HIIT / cardio,"Tuesday,Thursday",9:30,60,5417,43333,Beginner,Group,Mid,Structured,Kentron
+51,8,Orange Premium Fitness Club,fitness,Strength training,"Tuesday,Thursday",10:30,75,5417,43333,Intermediate,Group,High,Structured,Kentron
+52,8,Orange Premium Fitness Club,fitness,Pilates,"Tuesday,Thursday",14:30,75,5417,43333,Beginner,Group,High,Structured,Kentron
+53,8,Orange Premium Fitness Club,dance,Salsa / latin / ballroom,Tuesday,14:30,90,5417,43333,Advanced,Group,High,Structured,Kentron
+54,8,Orange Premium Fitness Club,yoga,Restorative,"Tuesday,Thursday",15:45,60,5417,43333,Beginner,Group,Calm,Structured,Kentron
+55,8,Orange Premium Fitness Club,dance,Salsa / latin / ballroom,"Tuesday,Thursday",17:00,120,5417,43333,Intermediate,Group,Mid,Structured,Kentron
+56,8,Orange Premium Fitness Club,fitness,Strength training,"Tuesday,Thursday",18:45,45,5417,43333,Advanced,Group,High,Structured,Kentron
+57,8,Orange Premium Fitness Club,fitness,HIIT / cardio,"Tuesday,Thursday",19:30,60,5417,43333,Intermediate,Group,High,Structured,Kentron
+58,8,Orange Premium Fitness Club,fitness,HIIT / cardio,Tuesday,19:40,60,5417,43333,Intermediate,Group,Mid,Structured,Kentron
+59,8,Orange Premium Fitness Club,yoga,Aerial,"Tuesday,Thursday",20:00,60,5417,43333,Intermediate,Group,Mid,Structured,Kentron
+60,8,Orange Premium Fitness Club,fitness,HIIT / cardio,Wednesday,7:00,60,5417,43333,Intermediate,Group,Mid,Structured,Kentron
+61,8,Orange Premium Fitness Club,fitness,HIIT / cardio,Wednesday,8:00,60,5417,43333,Beginner,Group,Mid,Structured,Kentron
+62,8,Orange Premium Fitness Club,yoga,Restorative,Wednesday,9:00,60,5417,43333,Beginner,Group,Calm,Structured,Kentron
+63,8,Orange Premium Fitness Club,fitness,Pilates,Wednesday,10:00,75,5417,43333,Beginner,Group,High,Structured,Kentron
+64,3,Shoonch Yoga Studio,fitness,Functional training,"Monday,Wednesday",19:30,60,6539,52314,Advanced,Group,Mid,Mix,Kentron
+65,3,Shoonch Yoga Studio,fitness,HIIT / cardio,"Friday,Saturday",8:00,60,8418,,Beginner,Group,High,Structured,Kentron
+66,4,Guru Yoga Studio,fitness,Functional training,"Friday,Saturday",9:30,120,5116,,Advanced,Group,Mid,Mix,Arabkir
+67,4,Guru Yoga Studio,fitness,HIIT / cardio,"Monday,Wednesday",19:30,120,5554,,Intermediate,Group,High,Structured,Arabkir
+68,4,Guru Yoga Studio,fitness,CrossFit,"Tuesday,Thursday",8:00,120,4879,39029,Beginner,Group,High,Structured,Arabkir
+69,6,Armat by Nynel,yoga,Power,"Wednesday,Saturday",19:00,60,2339,18711,Intermediate,Private,High,Structured,Arabkir
+70,8,Orange Premium Fitness Club,dance,Bachata,"Tuesday,Thursday",8:00,75,6787,,Intermediate,Group,High,Structured,Kentron
+71,8,Orange Premium Fitness Club,dance,Jazz funk,"Friday,Saturday",12:00,120,6413,,Advanced,Group,High,Mix,Kentron
+72,8,Orange Premium Fitness Club,dance,Armenian / Joxovrdakan,"Tuesday,Thursday,Saturday",19:30,90,7080,56641,Advanced,Group,Mid,Structured,Kentron
+73,9,Multi Wellness Center,fitness,Functional training,Saturday,19:30,75,5054,40433,Advanced,Group,Mid,Mix,Kentron
+74,9,Multi Wellness Center,fitness,Functional training,"Tuesday,Thursday,Saturday",20:30,60,4114,,Intermediate,Group,Mid,Mix,Kentron
+75,9,Multi Wellness Center,fitness,CrossFit,"Tuesday,Thursday,Saturday",19:30,120,4789,38311,Intermediate,Group,High,Structured,Kentron
+76,9,Multi Wellness Center,fitness,TRX,Saturday,9:30,75,4292,,Advanced,Group,Mid,Structured,Kentron
+77,10,Goldsgym Amiryan,yoga,Vinyasa,"Monday,Wednesday",19:00,120,6898,,Beginner,Group,High,Structured,Kentron
+78,10,Goldsgym Amiryan,yoga,Restorative,"Monday,Wednesday",20:30,120,6626,,Advanced,Private,Calm,Structured,Kentron
+79,10,Goldsgym Amiryan,yoga,Aerial,Saturday,19:00,60,7917,,Advanced,Group,High,Mix,Kentron
+80,10,Goldsgym Amiryan,fitness,TRX,"Monday,Wednesday",17:30,60,7406,59246,Advanced,Group,Mid,Structured,Kentron
+81,10,Goldsgym Amiryan,fitness,Functional training,"Monday,Wednesday",19:00,60,7675,61403,Advanced,Group,Mid,Mix,Kentron
+82,10,Goldsgym Amiryan,fitness,CrossFit,"Tuesday,Thursday,Saturday",9:30,90,8494,,Beginner,Group,High,Structured,Kentron
+83,10,Goldsgym Amiryan,fitness,Functional training,"Monday,Wednesday,Friday",19:00,90,8172,,Intermediate,Private,Mid,Mix,Kentron
+84,11,Goldsgym Komitas,yoga,Aerial,"Tuesday,Thursday,Saturday",19:00,60,5862,46898,Beginner,Group,High,Mix,Arabkir
+85,11,Goldsgym Komitas,yoga,Aerial,"Monday,Wednesday",9:30,120,8181,,Advanced,Group,High,Mix,Arabkir
+86,11,Goldsgym Komitas,yoga,Yin,"Friday,Saturday",9:30,75,8484,,Advanced,Group,Calm,Structured,Arabkir
+87,11,Goldsgym Komitas,fitness,Pilates,"Tuesday,Thursday",12:00,60,6545,52362,Advanced,Group,Calm,Structured,Arabkir
+88,11,Goldsgym Komitas,fitness,Functional training,"Tuesday,Thursday",19:30,60,6029,,Beginner,Private,Mid,Mix,Arabkir
+89,11,Goldsgym Komitas,fitness,Strength training,"Tuesday,Thursday",19:00,75,6978,55827,Intermediate,Group,Mid,Structured,Arabkir
+90,11,Goldsgym Komitas,fitness,Functional training,"Wednesday,Saturday",9:30,120,6167,49335,Intermediate,Group,Mid,Mix,Arabkir
+91,12,Goldsgym Avan,yoga,Hatha,"Monday,Wednesday,Friday",19:30,60,8986,,Beginner,Group,Calm,Structured,Avan
+92,12,Goldsgym Avan,yoga,Power,"Tuesday,Thursday,Saturday",9:30,75,6072,48580,Advanced,Group,High,Structured,Avan
+93,12,Goldsgym Avan,yoga,Power,"Wednesday,Saturday",9:30,60,7140,,Intermediate,Group,High,Structured,Avan
+94,12,Goldsgym Avan,fitness,Pilates,"Tuesday,Thursday,Saturday",9:30,120,6007,48056,Intermediate,Group,Calm,Structured,Avan
+95,12,Goldsgym Avan,fitness,HIIT / cardio,"Monday,Wednesday",17:30,60,6240,,Intermediate,Group,High,Structured,Avan
+96,12,Goldsgym Avan,fitness,Functional training,Saturday,17:30,120,7863,,Beginner,Group,Mid,Mix,Avan
+97,12,Goldsgym Avan,fitness,Functional training,"Monday,Wednesday,Friday",19:30,90,5864,46916,Beginner,Private,Mid,Mix,Avan
+98,13,Reebok Sports Club,yoga,Power,"Tuesday,Thursday",20:30,75,5580,44640,Beginner,Group,High,Structured,Davtashen
+99,13,Reebok Sports Club,yoga,Aerial,"Friday,Saturday",8:00,75,4481,,Advanced,Group,High,Mix,Davtashen
+100,13,Reebok Sports Club,yoga,Restorative,"Monday,Wednesday,Friday,Sunday",12:00,75,4858,,Advanced,Group,Calm,Structured,Davtashen
+101,13,Reebok Sports Club,fitness,CrossFit,"Monday,Wednesday,Friday",17:30,60,3797,30377,Beginner,Group,High,Structured,Davtashen
+102,13,Reebok Sports Club,fitness,Strength training,"Monday,Wednesday,Friday,Sunday",8:00,75,4271,,Intermediate,Group,Mid,Structured,Davtashen
+103,13,Reebok Sports Club,fitness,TRX,Saturday,19:00,60,5112,,Advanced,Group,Mid,Structured,Davtashen
+104,13,Reebok Sports Club,fitness,CrossFit,"Monday,Wednesday",12:00,60,3924,31394,Beginner,Group,High,Structured,Davtashen
+105,14,GoFit,fitness,HIIT / cardio,Saturday,19:00,120,5746,,Intermediate,Group,High,Structured,Kentron
+106,14,GoFit,fitness,CrossFit,"Friday,Saturday",20:30,90,4189,,Beginner,Private,High,Structured,Kentron
+107,14,GoFit,fitness,CrossFit,Saturday,9:30,120,5304,,Advanced,Group,High,Structured,Kentron
+108,14,GoFit,fitness,Strength training,"Tuesday,Thursday",19:30,75,4229,,Advanced,Private,Mid,Structured,Kentron
+109,15,Balance Sport Complex,fitness,Strength training,"Monday,Wednesday,Friday",12:00,75,5910,,Advanced,Group,Mid,Structured,Kentron
+110,15,Balance Sport Complex,fitness,Functional training,"Monday,Wednesday",9:30,75,5164,41316,Beginner,Group,Mid,Mix,Kentron
+111,15,Balance Sport Complex,fitness,Strength training,"Friday,Saturday",20:30,75,4861,38885,Intermediate,Group,Mid,Structured,Kentron
+112,15,Balance Sport Complex,fitness,HIIT / cardio,"Monday,Wednesday,Friday",20:30,120,4783,,Beginner,Group,High,Structured,Kentron
+113,16,Grand Sport Complex,yoga,Aerial,"Monday,Wednesday,Friday",19:30,75,4456,,Intermediate,Group,High,Mix,Shengavit
+114,16,Grand Sport Complex,yoga,Power,Saturday,12:00,120,5980,,Advanced,Group,High,Structured,Shengavit
+115,16,Grand Sport Complex,yoga,Yin,"Monday,Wednesday,Friday",8:00,90,5923,,Beginner,Group,Calm,Structured,Shengavit
+116,16,Grand Sport Complex,dance,Armenian / Joxovrdakan,"Tuesday,Thursday",17:30,75,5047,,Intermediate,Private,Mid,Structured,Shengavit
+117,16,Grand Sport Complex,dance,Salsa / latin / ballroom,"Tuesday,Thursday,Saturday",12:00,120,5064,,Beginner,Group,High,Structured,Shengavit
+118,16,Grand Sport Complex,dance,Jazz funk,"Monday,Wednesday,Friday,Sunday",19:30,60,5276,,Advanced,Group,High,Mix,Shengavit
+119,16,Grand Sport Complex,dance,Hip-hop / street,"Friday,Saturday",12:00,120,5365,,Advanced,Group,High,Mix,Shengavit
+120,16,Grand Sport Complex,dance,Contemporary / ballet,"Friday,Saturday",19:30,75,5222,41777,Advanced,Group,Mid,Structured,Shengavit
+121,16,Grand Sport Complex,fitness,Strength training,"Monday,Wednesday,Friday,Sunday",17:30,120,5242,,Intermediate,Group,Mid,Structured,Shengavit
+122,16,Grand Sport Complex,fitness,Pilates,"Monday,Wednesday",19:30,60,5625,,Intermediate,Group,Calm,Structured,Shengavit
+123,16,Grand Sport Complex,fitness,CrossFit,"Tuesday,Thursday",20:30,75,4686,,Advanced,Group,High,Structured,Shengavit
+124,16,Grand Sport Complex,fitness,CrossFit,"Monday,Wednesday,Friday",8:00,75,4301,,Intermediate,Group,High,Structured,Shengavit
+125,17,Karin Dance Studio,dance,Contemporary / ballet,"Tuesday,Thursday,Saturday",9:30,60,4818,,Beginner,Group,Mid,Structured,Kentron
+126,17,Karin Dance Studio,dance,Hip-hop / street,"Wednesday,Saturday",8:00,75,5622,44972,Beginner,Group,High,Mix,Kentron
+127,17,Karin Dance Studio,dance,Armenian / Joxovrdakan,"Monday,Wednesday,Friday,Sunday",20:30,120,5367,,Advanced,Group,Mid,Structured,Kentron
+128,17,Karin Dance Studio,dance,Jazz funk,"Wednesday,Saturday",9:30,120,4873,,Intermediate,Group,High,Mix,Kentron
+129,17,Karin Dance Studio,dance,Contemporary / ballet,"Wednesday,Saturday",19:30,75,4636,37086,Intermediate,Group,Mid,Structured,Kentron
+130,18,Spanish Club Salsa Yerevan,dance,Contemporary / ballet,"Monday,Wednesday",19:30,75,5069,40551,Beginner,Group,Mid,Structured,Kentron
+131,18,Spanish Club Salsa Yerevan,dance,Bachata,"Friday,Saturday",8:00,75,5408,43267,Intermediate,Group,High,Structured,Kentron
+132,18,Spanish Club Salsa Yerevan,dance,Hip-hop / street,"Monday,Wednesday,Friday",20:30,120,5937,,Intermediate,Private,High,Mix,Kentron
+133,18,Spanish Club Salsa Yerevan,dance,Armenian / Joxovrdakan,"Friday,Saturday",20:30,120,5543,,Advanced,Group,Mid,Structured,Kentron
+134,18,Spanish Club Salsa Yerevan,dance,Salsa / latin / ballroom,"Tuesday,Thursday,Saturday",17:30,75,5235,,Intermediate,Group,High,Structured,Kentron
+135,19,Astghik Dance Studio,dance,Salsa / latin / ballroom,"Monday,Wednesday,Friday",17:30,60,2761,,Beginner,Group,High,Structured,Arabkir
+136,19,Astghik Dance Studio,dance,Hip-hop / street,"Monday,Wednesday",8:00,90,3196,25564,Intermediate,Group,High,Mix,Arabkir
+137,19,Astghik Dance Studio,dance,Contemporary / ballet,"Friday,Saturday",12:00,120,3191,,Intermediate,Group,Mid,Structured,Arabkir
+138,19,Astghik Dance Studio,dance,Hip-hop / street,"Monday,Wednesday,Friday",12:00,75,3604,,Advanced,Private,High,Mix,Arabkir
+139,19,Astghik Dance Studio,dance,Salsa / latin / ballroom,"Monday,Wednesday,Friday",9:30,75,2582,,Beginner,Group,High,Structured,Arabkir
+140,20,Nairi Ballet Studio,dance,Bachata,"Monday,Wednesday",19:00,60,7136,57087,Beginner,Group,High,Structured,Kentron
+141,20,Nairi Ballet Studio,dance,Hip-hop / street,Saturday,19:00,120,5730,45841,Intermediate,Group,High,Mix,Kentron
+142,20,Nairi Ballet Studio,dance,Salsa / latin / ballroom,"Tuesday,Thursday,Saturday",8:00,90,8050,64401,Advanced,Group,High,Structured,Kentron
+143,20,Nairi Ballet Studio,dance,Armenian / Joxovrdakan,"Monday,Wednesday,Friday",12:00,120,7943,63544,Advanced,Group,Mid,Structured,Kentron
+144,20,Nairi Ballet Studio,dance,Hip-hop / street,"Monday,Wednesday,Friday",20:30,120,7397,,Intermediate,Group,High,Mix,Kentron
+145,21,Yerevan Dance Academy,dance,Armenian / Joxovrdakan,Saturday,19:00,120,8664,,Intermediate,Group,Mid,Structured,Kentron
+146,21,Yerevan Dance Academy,dance,Jazz funk,"Monday,Wednesday,Friday,Sunday",20:30,75,7099,,Beginner,Group,High,Mix,Kentron
+147,21,Yerevan Dance Academy,dance,Contemporary / ballet,"Friday,Saturday",12:00,60,7903,,Intermediate,Group,Mid,Structured,Kentron
+148,21,Yerevan Dance Academy,dance,Contemporary / ballet,"Monday,Wednesday,Friday,Sunday",20:30,90,6494,51950,Intermediate,Group,Mid,Structured,Kentron
+149,21,Yerevan Dance Academy,dance,Hip-hop / street,"Monday,Wednesday,Friday",19:00,75,7131,,Beginner,Group,High,Mix,Kentron
+150,22,Barekamutyun Dance Hall,dance,Hip-hop / street,"Tuesday,Thursday",12:00,75,4035,,Intermediate,Group,High,Mix,Arabkir
+151,22,Barekamutyun Dance Hall,dance,Jazz funk,"Wednesday,Saturday",19:00,90,5012,40092,Intermediate,Group,High,Mix,Arabkir
+152,22,Barekamutyun Dance Hall,dance,Bachata,"Wednesday,Saturday",12:00,90,4720,,Intermediate,Group,High,Structured,Arabkir
+153,22,Barekamutyun Dance Hall,dance,Hip-hop / street,"Tuesday,Thursday",19:30,75,4646,,Beginner,Group,High,Mix,Arabkir
+154,22,Barekamutyun Dance Hall,dance,Contemporary / ballet,Saturday,8:00,75,5483,,Intermediate,Group,Mid,Structured,Arabkir
+155,23,Urban Dance Factory,dance,Bachata,"Monday,Wednesday",19:30,120,5428,,Beginner,Group,High,Structured,Shengavit
+156,23,Urban Dance Factory,dance,Salsa / latin / ballroom,"Wednesday,Saturday",17:30,90,4961,,Beginner,Group,High,Structured,Shengavit
+157,23,Urban Dance Factory,dance,Jazz funk,"Tuesday,Thursday",20:30,60,5457,43654,Intermediate,Group,High,Mix,Shengavit
+158,23,Urban Dance Factory,dance,Bachata,"Monday,Wednesday,Friday",9:30,75,5405,,Advanced,Group,High,Structured,Shengavit
+159,23,Urban Dance Factory,dance,Armenian / Joxovrdakan,"Tuesday,Thursday",19:00,120,4516,36132,Advanced,Group,Mid,Structured,Shengavit

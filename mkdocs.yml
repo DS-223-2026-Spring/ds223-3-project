@@ -1,0 +1,11 @@
+site_name: ActivityHub Documentation
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Database: database.md
+  - API: api.md
+  - Frontend: frontend.md
+  - Data Science: ds.md
+  - Orchestration: orchestration.md
+theme:
+  name: readthedocs
