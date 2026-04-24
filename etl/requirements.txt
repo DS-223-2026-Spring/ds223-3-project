@@ -1,0 +1,7 @@
+prefect
+pandas
+sqlalchemy
+psycopg2-binary
+python-dotenv
+joblib
+scikit-learn
