@@ -32,8 +32,8 @@ def augment(df: pd.DataFrame, factor: int = 2, flip_prob: float = 0.10) -> pd.Da
 
 if __name__ == "__main__":
     import sys
-    src = sys.argv[1] if len(sys.argv) > 1 else "data/training_survey.csv"
-    out = sys.argv[2] if len(sys.argv) > 2 else "data/training_survey_augmented.csv"
+    src = sys.argv[1] if len(sys.argv) > 1 else "model/data/training_survey.csv"
+    out = sys.argv[2] if len(sys.argv) > 2 else "model/data/training_survey_augmented.csv"
     orig = pd.read_csv(src)
     aug = augment(orig)
     print(f"Original: {len(orig)} | Augmented: {len(aug)}")

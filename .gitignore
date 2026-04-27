@@ -11,3 +11,6 @@ postgres_data/
 .ipynb_checkpoints/
 !model/models/.gitkeep
 
+.save
+*.save
+data/

@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:15
+    image: postgres:17
     restart: unless-stopped
     ports:
       - "5432:5432"
@@ -8,11 +8,11 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      POSTGRES_DB: ${DB_NAME:-activityhub}
-      POSTGRES_USER: ${DB_USER:-admin}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-admin}
+      POSTGRES_DB: activityhub
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-admin}"]
+      test: ["CMD-SHELL", "pg_isready -U admin -d activityhub"]
       interval: 5s
       timeout: 3s
       retries: 5
@@ -44,7 +44,6 @@ services:
     volumes:
       - ./shared:/app/shared
       - ./model/models:/app/model/models
-      - ./data:/app/data
     depends_on:
       db:
         condition: service_healthy
@@ -62,27 +61,10 @@ services:
     networks:
       - activityhub
 
-  model:
-    build: ./model
-    volumes:
-      - ./data:/app/data
-      - ./model/models:/app/model/models
-      - ./shared:/app/shared
-    environment:
-      DB_HOST: db
-      DB_USER: ${DB_USER:-admin}
-      DB_PASSWORD: ${DB_PASSWORD:-admin}
-      DB_NAME: ${DB_NAME:-activityhub}
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - activityhub
-
   etl:
     build: ./etl
     volumes:
-      - ./data:/app/data
+      - ./model:/app/model
       - ./shared:/app/shared
     environment:
       DB_HOST: db
