@@ -96,7 +96,7 @@ ds223-3-project/
 │           validate_data.py
 │           generate_recommendations.py
 │
-├── model/                  ← Meline
+├── ds/                  ← Meline
 │       Dockerfile
 │       requirements.txt
 │       notebooks/

@@ -21,8 +21,8 @@ def check_file(path, required_cols):
 
 @flow(name="validate-data")
 def validate_flow():
-    s = check_file("model/data/studios.csv", REQUIRED_STUDIO_COLS)
-    c = check_file("model/data/classes.csv", REQUIRED_CLASS_COLS)
+    s = check_file("ds/data/studios.csv", REQUIRED_STUDIO_COLS)
+    c = check_file("ds/data/classes.csv", REQUIRED_CLASS_COLS)
     return [s, c]
 
 

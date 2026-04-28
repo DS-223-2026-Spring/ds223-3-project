@@ -5,20 +5,20 @@ import subprocess
 
 @task
 def prepare():
-    subprocess.run(["python", "/app/model/scripts/prepare_survey.py",
-                "model/data/survey.csv", "model/data/training_survey.csv"], check=True)
+    subprocess.run(["python", "/app/ds/scripts/prepare_survey.py",
+                "ds/data/survey.csv", "ds/data/training_survey.csv"], check=True)
 
 
 @task
 def augment():
-    subprocess.run(["python", "/app/model/scripts/augment_training.py",
-                "model/data/training_survey.csv",
-                "model/data/training_survey_augmented.csv"], check=True)
+    subprocess.run(["python", "/app/ds/scripts/augment_training.py",
+                "ds/data/training_survey.csv",
+                "ds/data/training_survey_augmented.csv"], check=True)
 
 
 @task
 def train():
-    subprocess.run(["python", "/app/model/scripts/train_model.py"], check=True)
+    subprocess.run(["python", "/app/ds/scripts/train_model.py"], check=True)
 
 
 @flow(name="train-model")

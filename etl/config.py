@@ -2,7 +2,7 @@
 import os
 
 DATA_DIR = os.getenv("DATA_DIR", "data/")
-MODEL_DIR = os.getenv("MODEL_DIR", "model/models/")
+MODEL_DIR = os.getenv("MODEL_DIR", "ds/models/")
 
 STUDIO_CSV = os.path.join(DATA_DIR, "studios.csv")
 CLASS_CSV = os.path.join(DATA_DIR, "classes.csv")

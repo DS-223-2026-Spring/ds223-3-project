@@ -28,6 +28,18 @@ by filtering themselves.
 - Fitness-Strength (Strength training, Functional, TRX)
 - Fitness-Controlled (Pilates)
 
+## Data composition
+
+| Dataset | Real | Synthetic | Total |
+|---------|------|-----------|-------|
+| Studios | 17 (Yerevan studios researched manually) | 6 (synthetic dance studios with realistic Yerevan addresses) | 23 |
+| Classes | 63 (real schedules from studio Instagram pages) | 96 (generated from STYLE_ATTRS template) | 159 |
+| Survey  | 44 (Google Form respondents) | 356 (augmented via augment_training.py) | 400 |
+
+Synthetic data is marked with `is_synthetic=True` in studios.csv/classes.csv and `data_source='synthetic'` in survey.csv where applicable.
+
+Generation script: `ds/scripts/generate_data.py` (run once to produce CSVs)
+
 ## Pipeline
 1. `prepare_survey.py` - pivot survey into (features, style_bucket) rows
 2. `augment_training.py` - 2x augmentation with 10% attribute noise
@@ -40,7 +52,6 @@ by filtering themselves.
 - Held-out test set (20%, stratified)
 
 ## Limitations
-- 44 real survey respondents is small; some buckets have few samples
 - Augmentation introduces synthetic variation but not new information
 - The model recommends style buckets, not individual classes - the final
   class ranking combines bucket probability with business filters (budget,

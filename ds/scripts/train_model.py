@@ -40,9 +40,9 @@ def evaluate(pipe, X_test, y_test, name):
 
 
 if __name__ == "__main__":
-    src = os.getenv("TRAINING_DATA", "model/data/training_survey_augmented.csv")
-    out_model = os.getenv("MODEL_PATH", "model/models/style_classifier.pkl")
-    out_metrics = "model/models/metrics.csv"
+    src = os.getenv("TRAINING_DATA", "ds/data/training_survey_augmented.csv")
+    out_model = os.getenv("MODEL_PATH", "ds/models/style_classifier.pkl")
+    out_metrics = "ds/models/metrics.csv"
     os.makedirs(os.path.dirname(out_model), exist_ok=True)
 
     df = pd.read_csv(src)

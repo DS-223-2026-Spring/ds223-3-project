@@ -12,7 +12,7 @@
 | etl | Prefect | — |
 
 ## Data flow
-1. ETL validates and loads `model/data/*.csv` into Postgres
-2. ETL trains style classifier, saves pkl to `model/models/`
+1. ETL validates and loads `ds/data/*.csv` into Postgres
+2. ETL trains style classifier, saves pkl to `ds/models/`
 3. API loads pkl on import, serves recommendations using shared inference module
 4. Frontend submits quiz, displays top-3 recommendations

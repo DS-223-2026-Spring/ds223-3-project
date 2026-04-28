@@ -43,7 +43,7 @@ services:
       DB_PASSWORD: ${DB_PASSWORD:-admin}
     volumes:
       - ./shared:/app/shared
-      - ./model/models:/app/model/models
+      - ./ds/models:/app/ds/models
     depends_on:
       db:
         condition: service_healthy
@@ -64,7 +64,7 @@ services:
   etl:
     build: ./etl
     volumes:
-      - ./model:/app/model
+      - ./ds:/app/ds
       - ./shared:/app/shared
     environment:
       DB_HOST: db

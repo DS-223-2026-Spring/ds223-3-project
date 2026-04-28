@@ -69,8 +69,8 @@ def prepare(survey_df: pd.DataFrame) -> pd.DataFrame:
 
 if __name__ == "__main__":
     import sys
-    src = sys.argv[1] if len(sys.argv) > 1 else "model/data/survey.csv"
-    out = sys.argv[2] if len(sys.argv) > 2 else "model/data/training_survey.csv"
+    src = sys.argv[1] if len(sys.argv) > 1 else "ds/data/survey.csv"
+    out = sys.argv[2] if len(sys.argv) > 2 else "ds/data/training_survey.csv"
     survey = pd.read_csv(src)
     train = prepare(survey)
     print(f"Survey rows: {len(survey)}  →  Training rows: {len(train)}")

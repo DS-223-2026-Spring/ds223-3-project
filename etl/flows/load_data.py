@@ -12,7 +12,7 @@ DB_URL = (
 
 
 @task
-def load_studios(path="model/data/studios.csv"):
+def load_studios(path="ds/data/studios.csv"):
     engine = create_engine(DB_URL)
     df = pd.read_csv(path)
     df.to_sql("studios", engine, if_exists="append", index=False)
@@ -20,7 +20,7 @@ def load_studios(path="model/data/studios.csv"):
 
 
 @task
-def load_classes(path="model/data/classes.csv"):
+def load_classes(path="ds/data/classes.csv"):
     engine = create_engine(DB_URL)
     df = pd.read_csv(path)
     df["price_per_session_amd"] = df["price_per_session_amd"].astype("Int64")
