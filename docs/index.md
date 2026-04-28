@@ -1,17 +1,21 @@
-# Welcome to MkDocs
+# ActivityHub
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+A personalized activity matching platform for Yerevan that connects users with extracurricular studios (yoga, dance, fitness) based on personality, schedule, and budget.
 
-## Commands
+## Architecture
+The product runs as a microservice stack:
+- **api** — FastAPI backend
+- **app** — Streamlit frontend  
+- **db** — PostgreSQL
+- **model** — scikit-learn classifier
+- **etl** — Prefect data pipeline
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Quick start
+```bash
+docker compose up --build
+```
 
-## Project layout
+Visit http://localhost:8501
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Documentation
+See sections in the left nav for each component.

@@ -109,3 +109,10 @@ ds223-3-project/
 ├── Milestone1/             ← deliverables
 │
 └── docs/                   ← mkdocs
+
+
+## Review Expectations
+- PRs reviewed within 24 hours of being opened
+- Reviewer (Anna) checks: docstrings present, no direct main commits, branch matches role, commit messages are descriptive
+- Approvals require either: passing manual test of the changed service, or a clear note in the PR explaining why the change is non-functional
+- Conflicts must be resolved by the PR author before review
