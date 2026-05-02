@@ -41,18 +41,79 @@ Synthetic data is marked with `is_synthetic=True` in studios.csv/classes.csv and
 Generation script: `ds/scripts/generate_data.py` (run once to produce CSVs)
 
 ## Pipeline
-1. `prepare_survey.py` - pivot survey into (features, style_bucket) rows
-2. `augment_training.py` - 2x augmentation with 10% attribute noise
-3. `train_model.py` - train LR + RF, compare, save winner by top-3 accuracy
 
+All scripts are repeatable — re-run any time without breaking state.
+
+### End-to-end (preferred)
+```bash
+python -m ds.scripts.run_pipeline
+```
+Runs generate → combine → prepare → augment → train. Outputs `ds/models/style_classifier.pkl` and `ds/models/metrics.csv`.
+
+### Individual steps
+```bash
+python -m ds.scripts.generate_synthetic_survey   # ~270 persona-based rows
+python -m ds.scripts.prepare_survey              # combined training_survey.csv
+python -m ds.scripts.augment_training            # 1× to 3× rows
+python -m ds.scripts.train_model                 # train + save pkl
+python -m ds.scripts.segment_users               # K-means to DB segments table
+```
+
+## Pipeline outputs (closes #79)
+
+| Output                                   | Format       | Consumed by              |
+|------------------------------------------|--------------|--------------------------|
+| `ds/models/style_classifier.pkl`         | joblib       | `shared/recommend.py`    |
+| `ds/models/metrics.csv`                  | csv          | reporting / docs         |
+| Class-bucket predict_proba (live)        | API response | Frontend recommendations |
+| Confidence scores (per recommendation)   | API response | Frontend match badges    |
+| User personas + sizes                    | DB rows      | Studio dashboard         |
+
+## Synthetic data strategy
+
+We generate synthetic survey rows using **persona templates** rather than just
+adding noise to existing rows. Each persona (e.g. "Yoga Calm Seeker") defines
+realistic ranges for age, energy, goal, etc., and the script samples ~30 rows
+per persona. This gives every style bucket enough samples to train confidently.
+
+| Dataset | Real | Synthetic | Total |
+|---------|------|-----------|-------|
+| Studios | 17 | 6 | 23 |
+| Classes | 63 | 96 | 159 |
+| Survey  | 44 | 270 (persona) | 314 |
+| Training rows after augmentation | — | — | ~600 |
+
+Synthetic rows are tagged `data_source='synthetic'` so they can be filtered
+out for evaluation if needed.
+
+## Feature engineering
+
+| Feature                | Type        | Notes                                 |
+|------------------------|-------------|---------------------------------------|
+| age                    | numeric     | StandardScaler                        |
+| gender                 | categorical | OneHotEncoder                         |
+| experience_level       | categorical | beginner/intermediate/advanced        |
+| group_preference       | categorical | solo/small/large                      |
+| energy_preference      | categorical | low/moderate/high                     |
+| structure_preference   | categorical | structured/free-form                  |
+| goal                   | categorical | stress-relief/fitness/social/etc      |
+
+Activity choice (yoga/dance/fitness) is intentionally NOT a feature, the model
+recommends across all 9 buckets so users discover styles they wouldn't have
+picked themselves.
+
+We also use `class_weight="balanced"` on both LogisticRegression and
+RandomForestClassifier so rare buckets (e.g. Yoga-Calm) get learned despite
+having fewer samples.
+
+## Limitations
+- Synthetic data is template-driven, not behavioral — real users may surprise us
+- The model recommends style buckets, not individual classes — final ranking
+  combines bucket probability with budget/district filters in `shared/recommend.py`
+  
 ## Metrics
 - **Top-3 accuracy**
 - Top-1 accuracy
 - Per-class precision / recall / F1
 - Held-out test set (20%, stratified)
 
-## Limitations
-- Augmentation introduces synthetic variation but not new information
-- The model recommends style buckets, not individual classes - the final
-  class ranking combines bucket probability with business filters (budget,
-  district) in `shared/recommend.py`
