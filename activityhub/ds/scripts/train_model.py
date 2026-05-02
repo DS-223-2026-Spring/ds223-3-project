@@ -53,11 +53,13 @@ if __name__ == "__main__":
         X, y, test_size=0.2, stratify=y, random_state=42
     )
 
-    lr = build_pipeline(LogisticRegression(max_iter=1000, C=1.0))
+    lr = build_pipeline(LogisticRegression(max_iter=1000, C=1.0,
+                                           class_weight="balanced"))
     lr.fit(X_train, y_train)
     lr_m = evaluate(lr, X_test, y_test, "Logistic Regression")
 
     rf = build_pipeline(RandomForestClassifier(n_estimators=200, max_depth=6,
+                                               class_weight="balanced",
                                                random_state=42))
     rf.fit(X_train, y_train)
     rf_m = evaluate(rf, X_test, y_test, "Random Forest")
