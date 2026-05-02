@@ -8,6 +8,7 @@ nav:
   - Frontend: frontend.md
   - Data Science: ds.md
   - Orchestration: orchestration.md
+  - Blockers: blockers.md
 
 
 theme:
