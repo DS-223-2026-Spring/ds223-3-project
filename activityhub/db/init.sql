@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS quiz_responses CASCADE;
 DROP TABLE IF EXISTS classes CASCADE;
 DROP TABLE IF EXISTS studios CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS bookings CASCADE;
 
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
@@ -81,7 +82,17 @@ CREATE TABLE recommendations (
     generated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE bookings (
+    booking_id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
+    class_id INT NOT NULL REFERENCES classes(class_id) ON DELETE CASCADE,
+    feedback VARCHAR(50),
+    booked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 CREATE INDEX idx_classes_studio ON classes(studio_id);
 CREATE INDEX idx_classes_activity ON classes(activity_type);
 CREATE INDEX idx_recs_user ON recommendations(user_id);
 CREATE INDEX idx_quiz_user ON quiz_responses(user_id);
+CREATE INDEX idx_bookings_user ON bookings(user_id);
