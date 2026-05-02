@@ -222,3 +222,124 @@ All endpoints return:
 ## Authentication
 
 None. All endpoints public. Auth out of scope.
+
+# Frontend Component Specification
+
+Each Streamlit page below uses **only built-in components** per issue #90.
+
+---
+
+## Page 1 — Quiz (`pages/1_Quiz.py`)
+
+| Field                  | Component                | Notes                          |
+|------------------------|--------------------------|--------------------------------|
+| Age                    | `st.number_input`        | min=10, max=100                |
+| Gender                 | `st.selectbox`           | M/F/Other                      |
+| District               | `st.selectbox`           | from list of Yerevan districts |
+| Experience level       | `st.radio`               | beginner/intermediate/advanced |
+| Group preference       | `st.radio`               | solo/small/large               |
+| Energy preference      | `st.radio`               | low/moderate/high              |
+| Structure preference   | `st.radio`               | structured/free-form           |
+| Goal                   | `st.selectbox`           | stress-relief/fitness/social/etc |
+| Budget                 | `st.slider`              | 0–50000 AMD step 1000          |
+| Preferred days         | `st.multiselect`         | days of week                   |
+| Preferred time         | `st.radio`               | morning/afternoon/evening      |
+| Max travel             | `st.selectbox`           | 1km/3km/5km/10km/any           |
+| Submit                 | `st.button`              | calls POST /quiz/              |
+
+---
+
+## Page 2 — Recommendations (`pages/2_Recommendations.py`)
+
+| Element                | Component               | Notes                            |
+|------------------------|-------------------------|----------------------------------|
+| Mix summary            | `st.markdown`           | "Your mix: Yoga · Dance"         |
+| Recommendation card    | `st.container(border=True)` | one per recommendation       |
+| Match %                | `st.metric`             | replace HTML with native widget  |
+| "I tried this" button  | `st.button`             | POSTs to /bookings/              |
+| Retake quiz            | `st.button`             | navigates to page 1              |
+
+---
+
+## Page 3 — Studio Dashboard (`pages/3_Studio_Dashboard.py`)
+
+| Element                | Component               | Notes                            |
+|------------------------|-------------------------|----------------------------------|
+| Segment counts chart   | `st.bar_chart`          | data from GET /segments/         |
+| Top studios            | `st.dataframe`          | filterable                       |
+| Booking likelihood KPI | `st.metric`             | per segment                      |
+| Filter by activity     | `st.selectbox`          | yoga/dance/fitness/all           |
+
+---
+
+## What's removed 
+
+- HTML strings inside `st.markdown(unsafe_allow_html=True)` for match % rendering — replaced with `st.metric`
+- Custom CSS — none, only Streamlit defaults
+
+# Data Flow Architecture
+
+How data moves between roles and services.
+
+User
+↓ (fills quiz in browser)
+Frontend (Streamlit)
+↓ POST /quiz/
+Backend (FastAPI)
+↓ INSERT users, quiz_responses
+Postgres (DB)
+User
+↓ (clicks "Get Recommendations")
+Frontend
+↓ POST /recommend/ {user_id}
+Backend
+↓ SELECT quiz, classes
+Postgres
+↓ (returns rows)
+Backend
+↓ calls shared.recommend.recommend_top_k(user, classes, k=3)
+Shared inference module
+↓ loads /app/ds/models/style_classifier.pkl
+↓ returns ranked classes
+Backend
+↓ INSERT recommendations
+Postgres
+↓ returns response
+Frontend (renders cards)
+User clicks "I tried this"
+↓ POST /bookings/
+Backend
+↓ INSERT bookings
+Postgres
+ETL (daily, scheduled by Prefect)
+↓ pulls fresh quiz_responses + bookings + survey_responses
+↓ runs prepare → augment → train
+↓ writes new style_classifier.pkl
+DS pipeline
+
+## Role responsibilities
+
+| Role           | Owns                                       | Depends on                       |
+|----------------|--------------------------------------------|----------------------------------|
+| DB (Liana)     | init.sql, crud.py, connection.py, schemas  | PM endpoint spec                 |
+| DS (Meline)    | model training, K-means, recommend_top_k   | DB tables, ETL pipeline trigger  |
+| Backend (Ani)  | FastAPI routes, request/response schemas   | DB CRUD, DS inference function   |
+| Frontend (Maria) | Streamlit pages, user-facing flow        | Backend endpoints, frontend spec |
+| Orch (Hmayak)  | Prefect flows, scheduling, retraining      | DS scripts, DB connection        |
+| PM (Anna)      | Specs, alignment, blockers, integration    | All                              |
+
+## Key contracts
+
+1. **`/recommend/` request shape** is fixed — `{ user_id: int }`. Frontend can't deviate; Backend can't add required fields.
+2. **`recommend_top_k(user, classes_df, k)` signature** — DS owns this; Backend imports it; both must keep it stable.
+3. **`segments` table schema** — DS writes K-means output here; Backend exposes via `/segments/`; Frontend renders.
+4. **`bookings` table** — Backend writes on POST `/bookings/`; ETL reads as feature for retraining.
+5. **Model file path** — `/app/ds/models/style_classifier.pkl` — agreed by DS + Backend, must not move.
+
+## Failure-mode contracts
+
+If a service is down, others should fail gracefully:
+- Frontend without Backend → show "Service unavailable" not blank page
+- Backend without DB → return 503 not 500
+- Backend without model pkl → return 503 with "model not loaded"
+- ETL without DB → fail flow, log error, exit non-zero
