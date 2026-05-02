@@ -26,5 +26,5 @@
 
 - [ ] Booking loop: just log, or train on bookings?
 - [ ] Studio dashboard: real K-means or demo page?
-- [ ] api → back rename: do it or push back on Karen?
+- [ ] api → back rename: do it or no?
 - [ ] Match% spread: which fix approach?
