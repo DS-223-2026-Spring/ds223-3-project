@@ -1,45 +1,85 @@
-# Orchestration Component
+# Orchestration (Prefect)
 
-This folder contains the orchestration scripts that manage the entire pipeline of data processing, model training, and recommendation generation for the project.
+ETL service runs the full production pipeline once on container start, then exits.
 
-## Folder Structure:
+## Flows
 
-- **flows/load_data.py**: 
-    - Responsible for loading raw data into the system, either by reading from files, databases, or external APIs.
-  
-- **flows/validate_data.py**: 
-    - Handles data validation and preprocessing, ensuring that the incoming data is clean and meets the required format before it’s passed to the model.
-  
-- **flows/train_model.py**: 
-    - Contains the logic for training the machine learning model. It uses the preprocessed data to train the model and outputs a trained model that can be used for predictions.
-  
-- **flows/generate_recommendations.py**: 
-    - Generates recommendations based on the trained model. It takes input from the user or system and uses the trained model to suggest relevant classes or services.
-  
-- **config.py**: 
-    - Configuration file for orchestration settings. This will include paths to datasets, model parameters, API keys, or other configuration options that the scripts rely on.
-  
-- **Dockerfile**: 
-    - Defines the environment and dependencies required to run the orchestration pipeline in a containerized setup. This ensures consistency across environments.
+| Flow                  | Inputs                                       | Outputs                                |
+|-----------------------|----------------------------------------------|----------------------------------------|
+| `validate_data.py`    | `ds/data/studios.csv`, `ds/data/classes.csv` | dict of {path, rows, cols_ok} or raises|
+| `load_data.py`        | studios.csv, classes.csv                     | rows in studios + classes tables       |
+| `train_model.py`      | `ds/data/survey.csv`                         | `ds/models/style_classifier.pkl`, metrics.csv |
+| `segment_users.py`    | `ds/data/survey_combined.csv` (or survey.csv)| rows in segments table                 |
+| `pipeline.py`         | (chains all above)                           | full DB + model state                  |
+| `dev_pipeline.py`     | studios.csv, classes.csv only                | DB rows only (fast iteration)          |
 
-## Plan:
-The orchestration pipeline will automate several key tasks:
-1. **Data Ingestion**: Automatically collect raw data (e.g., survey responses, studio data) from various sources.
-2. **Data Validation and Preprocessing**: Ensure that the data is clean, formatted correctly, and ready for model training.
-3. **Model Training**: Automatically train the machine learning model using the validated data.
-4. **Recommendation Generation**: Use the trained model to provide personalized recommendations to users.
-5. **Automation and Scheduling**: Using tools like Apache Airflow or Prefect, tasks like data updates, model retraining, and recommendation generation will be scheduled and automated.
+Each task uses `retries=1` or `retries=2` so transient DB connection issues don't fail the whole run.
 
-## How It Works:
-- **Data Flow**: Once data is ingested via `load_data.py`, it will be validated in `validate_data.py`. After validation, it will be passed to `train_model.py` for model training.
-- **Model Execution**: After training, `generate_recommendations.py` will use the trained model to provide recommendations.
-- **Automation**: The entire pipeline will be orchestrated through scheduled jobs that run automatically, ensuring smooth operation with minimal manual intervention.
+## How to run
 
-## Future Steps:
-- **Task Automation**: Automate the running of these workflows using Apache Airflow or Prefect.
-- **Model Updates**: Schedule periodic retraining of the model as new data becomes available.
-- **User Feedback Integration**: Integrate user feedback to continually improve recommendation accuracy.
+### Production (default — runs on `docker compose up`)
+The `etl` service auto-runs `pipeline.py` on container start:
+```bash
+docker compose up --build
+```
+Watch for `etl-1 exited with code 0` — that's success.
 
----
+### Manual one-shot run
+After the stack is up, trigger any flow individually:
+```bash
+docker compose run --rm etl python flows/pipeline.py
+docker compose run --rm etl python flows/dev_pipeline.py     # fast: validate + load only
+docker compose run --rm etl python flows/segment_users.py    # just segmentation
+```
 
-**Note**: This folder is part of a larger project to provide personalized recommendations to extracurricular activity studios, ensuring better targeting of users and optimized marketing spend.# Orchestration
+### Local (no Docker)
+From repo root:
+```bash
+cd activityhub/etl
+pip install -r requirements.txt
+
+# DB must be running:
+docker compose up -d db
+
+# Set env vars
+export DB_HOST=localhost
+export DB_USER=admin
+export DB_PASSWORD=admin
+export DB_NAME=activityhub
+
+python -m flows.pipeline
+```
+
+## Logs and run statuses
+
+Prefect logs every task with timestamps and run status.
+Each flow run gets a unique name and color-coded status (Completed / Failed).
+
+Inside Docker, logs stream to stdout — watch the `etl-1` lines in `docker compose up`.
+
+To see a Prefect flow's logs from a finished run:
+```bash
+docker compose logs etl
+```
+
+## Verifying success
+
+After `etl-1 exited with code 0`, verify:
+
+```bash
+# DB populated
+docker compose exec db psql -U admin -d activityhub \
+  -c "SELECT COUNT(*) FROM studios; SELECT COUNT(*) FROM classes; SELECT COUNT(*) FROM segments;"
+
+# Should return: 23 studios, 159 classes, 4 segments
+
+# Model artifact present
+docker compose exec api ls -la /app/ds/models/
+# Should show: style_classifier.pkl, metrics.csv
+```
+
+## Failure handling
+
+- Tasks have built-in retries (1–2 attempts).
+- The full `pipeline.py` flow itself retries once on any uncaught exception.
+- If a CSV is missing or the DB is unreachable, the flow logs the error and exits non-zero. Other services (api, app) keep running but recommendations may fail until the next pipeline run.
