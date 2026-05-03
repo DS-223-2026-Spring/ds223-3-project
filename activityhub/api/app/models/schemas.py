@@ -107,3 +107,14 @@ class SegmentCreate(BaseModel):
     description: str
     size: int
     booking_likelihood: float
+
+
+class BookingRequest(BaseModel):
+    user_id: int
+    class_id: int
+    feedback: Optional[str] = None
+
+
+class BookingResponse(BaseModel):
+    booking_id: int
+    message: str
