@@ -66,6 +66,7 @@ services:
     volumes:
       - ./activityhub/ds:/app/ds
       - ./activityhub/shared:/app/shared
+      - ./activityhub/db:/app/db
     environment:
       DB_HOST: db
       DB_USER: ${DB_USER:-admin}
