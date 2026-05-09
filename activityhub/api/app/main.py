@@ -12,7 +12,10 @@ app.include_router(segments.router, prefix="/segments", tags=["segments"])
 app.include_router(bookings.router, prefix="/bookings", tags=["bookings"])
 
 
-@app.get("/")
+@app.get("/", summary="Health check")
 def health_check():
-    """Service liveness check."""
+    """
+    Returns {"status": "ok", "service": "ActivityHub Backend"} if the service is running.
+    Use this endpoint to verify the backend is reachable before making other API calls.
+    """
     return {"status": "ok", "service": "ActivityHub Backend"}

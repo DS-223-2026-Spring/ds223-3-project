@@ -15,9 +15,13 @@ sys.path.insert(0, "/app/shared")
 router = APIRouter()
 
 
-@router.post("/", response_model=RecommendResponse)
+@router.post("/", response_model=RecommendResponse, summary="Generate class recommendations")
 def recommend(body: RecommendRequest, db: Session = Depends(get_db)):
-    """Generate top-3 recommendations across all activities for a user."""
+    """
+    Accepts user_id in the request body, reads the user's latest quiz preferences, and runs them through the ActivityHub matching model against all available Yerevan studio classes.
+    Returns the top-3 ranked results, each containing class_id, studio_name, activity_type, style, day, time, price_amd, score, and rank.
+    Results are saved to the database and can be retrieved later via GET /recommend/{user_id}.
+    """
     try:
         from recommend import recommend_top_k
     except Exception as e:
@@ -89,9 +93,13 @@ def recommend(body: RecommendRequest, db: Session = Depends(get_db)):
     return RecommendResponse(user_id=body.user_id, recommendations=recs)
 
 
-@router.get("/{user_id}", response_model=RecommendResponse)
+@router.get("/{user_id}", response_model=RecommendResponse, summary="Get saved recommendations")
 def get_recommendations(user_id: int, db: Session = Depends(get_db)):
-    """Return the most recent saved recommendations for a user."""
+    """
+    Accepts user_id as a path parameter and returns the most recently generated top-3 class recommendations for that user.
+    Each recommendation includes class_id, studio_name, activity_type, style, day, time, price_amd, score, and rank (1–3).
+    Call POST /recommend first to generate results — returns 404 if none exist yet.
+    """
     rows = db.execute(
         text("""SELECT r.class_id, r.score, r.rank,
                        c.studio_name, c.activity_type, c.style, c.day, c.time,
