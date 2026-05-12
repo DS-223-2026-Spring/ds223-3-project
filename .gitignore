@@ -3,7 +3,8 @@ model/data/training_survey.csv
 model/data/training_survey_augmented.csv
 
 # model outputs
-model/models/*.pkl__pycache__/
+model/models/*.pkl
+__pycache__/
 *.pyc
 .env
 .DS_Store
@@ -13,4 +14,4 @@ postgres_data/
 
 .save
 *.save
-data/
+data/.Rhistory

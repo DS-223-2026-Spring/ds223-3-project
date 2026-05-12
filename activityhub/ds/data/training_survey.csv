@@ -1,0 +1,509 @@
+age,gender,experience_level,group_preference,energy_preference,structure_preference,goal,target_style_bucket
+20,Female,Intermediate,Group,Depends on mood,Mix,Learning a new skill,Yoga-Aerial
+20,Female,Intermediate,Group,Depends on mood,Mix,Learning a new skill,Dance-Latin
+20,Female,Beginner,Private,Calm,Mix,Creative expression,Dance-Urban
+19,Female,Intermediate,No preference,Calm,Structured,Physical fitness / health,Fitness-Strength
+21,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+21,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+21,Female,Intermediate,Group,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+23,Female,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+20,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Yoga-Aerial
+20,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Fitness-HighIntensity
+20,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Dance-Urban
+20,Male,Intermediate,Private,High,Freestyle,Stress relief,Yoga-Calm
+20,Male,Intermediate,Private,High,Freestyle,Stress relief,Fitness-Strength
+20,Male,Intermediate,Private,High,Freestyle,Stress relief,Dance-Latin
+26,Male,Advanced,Private,High,Mix,Learning a new skill,Fitness-Strength
+26,Male,Advanced,Private,High,Mix,Learning a new skill,Dance-Latin
+18,Female,Advanced,Group,High,Structured,Stress relief,Dance-Classical
+21,Female,Beginner,Group,Calm,Structured,Creative expression,Dance-Classical
+24,Female,Intermediate,Private,High,Freestyle,Stress relief,Fitness-HighIntensity
+20,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Yoga-Aerial
+20,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Fitness-Controlled
+20,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Dance-Urban
+22,Female,Advanced,Group,Depends on mood,Mix,Social,Dance-Classical
+30,Female,Advanced,No preference,Calm,Mix,Stress relief,Fitness-Controlled
+18,Other,Beginner,Group,High,Mix,Social,Dance-Urban
+21,Female,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Yoga-Aerial
+21,Male,Beginner,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+18,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+23,Male,Intermediate,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+21,Female,Advanced,No preference,High,Mix,Physical fitness / health,Fitness-HighIntensity
+21,Female,Advanced,No preference,High,Mix,Physical fitness / health,Dance-Latin
+20,Male,Beginner,Private,Calm,Freestyle,Creative expression,Yoga-Aerial
+50,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+26,Female,Beginner,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-HighIntensity
+49,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Yoga-Calm
+49,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Dance-Latin
+34,Male,Intermediate,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-Strength
+26,Female,Advanced,Group,Calm,Structured,Stress relief,Yoga-Dynamic
+29,Male,Intermediate,Group,High,Structured,Social,Fitness-HighIntensity
+29,Male,Intermediate,Group,High,Structured,Social,Dance-Classical
+18,Male,Advanced,Group,High,Mix,Learning a new skill,Fitness-Strength
+18,Male,Advanced,Group,High,Mix,Learning a new skill,Dance-Urban
+23,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+21,Female,Intermediate,Private,High,Freestyle,Physical fitness / health,Fitness-Strength
+20,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+20,Female,Intermediate,Group,High,Mix,Learning a new skill,Dance-Latin
+20,Female,Beginner,No preference,Depends on mood,Mix,Learning a new skill,Dance-Urban
+19,Female,Beginner,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+21,Male,Beginner,Group,Calm,Mix,Stress relief,Fitness-HighIntensity
+21,Male,Beginner,Group,Calm,Mix,Stress relief,Dance-Latin
+25,Male,Intermediate,Group,High,Structured,Physical fitness / health,Fitness-Strength
+20,Female,Beginner,Group,Depends on mood,Structured,Learning a new skill,Dance-Urban
+21,Female,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+22,Female,Beginner,Group,High,Mix,Stress relief,Fitness-HighIntensity
+22,Female,Beginner,Group,High,Mix,Stress relief,Dance-Urban
+21,Female,Intermediate,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+21,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+21,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+22,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+22,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+20,Other,Beginner,Group,High,Mix,Social,Dance-Urban
+34,Male,Intermediate,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-Strength
+23,Female,Beginner,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+22,Female,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+18,Female,Beginner,No preference,Depends on mood,Mix,Learning a new skill,Dance-Urban
+18,Female,Intermediate,Group,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+21,Male,Beginner,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+21,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+24,Other,Intermediate,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+22,Male,Beginner,Group,Calm,Mix,Stress relief,Fitness-HighIntensity
+22,Male,Beginner,Group,Calm,Mix,Stress relief,Dance-Latin
+22,Female,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Yoga-Aerial
+19,Female,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Yoga-Aerial
+23,Female,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+17,Female,Advanced,Group,High,Structured,Stress relief,Dance-Classical
+52,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Yoga-Calm
+52,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Dance-Latin
+20,Male,Intermediate,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+22,Female,Intermediate,No preference,Depends on mood,Mix,Learning a new skill,Yoga-Aerial
+22,Female,Intermediate,No preference,Depends on mood,Mix,Learning a new skill,Dance-Latin
+51,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+19,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Yoga-Aerial
+19,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Fitness-Controlled
+19,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Dance-Urban
+18,Female,Intermediate,Private,High,Freestyle,Physical fitness / health,Fitness-Strength
+21,Female,Intermediate,Group,Depends on mood,Mix,Learning a new skill,Yoga-Aerial
+21,Female,Intermediate,Group,Depends on mood,Mix,Learning a new skill,Dance-Latin
+20,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Yoga-Aerial
+20,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Fitness-HighIntensity
+20,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Dance-Urban
+22,Male,Beginner,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+21,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+21,Female,Beginner,Private,Depends on mood,Structured,Learning a new skill,Dance-Urban
+24,Female,Advanced,No preference,High,Mix,Physical fitness / health,Fitness-HighIntensity
+24,Female,Advanced,No preference,High,Mix,Physical fitness / health,Dance-Latin
+21,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+26,Male,Advanced,Private,High,Mix,Learning a new skill,Fitness-Strength
+26,Male,Advanced,Private,High,Mix,Learning a new skill,Dance-Latin
+20,Female,Beginner,No preference,Depends on mood,Mix,Learning a new skill,Dance-Urban
+31,Female,Advanced,No preference,Calm,Mix,Stress relief,Fitness-Controlled
+25,Male,Intermediate,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+24,Female,Intermediate,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+17,Female,Intermediate,No preference,Calm,Structured,Physical fitness / health,Fitness-Strength
+26,Male,Intermediate,Group,High,Structured,Social,Fitness-HighIntensity
+26,Male,Intermediate,Group,High,Structured,Social,Dance-Classical
+37,Male,Intermediate,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-Strength
+17,Other,Beginner,Private,High,Mix,Social,Dance-Urban
+24,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+24,Female,Intermediate,Private,High,Freestyle,Physical fitness / health,Fitness-Strength
+20,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+16,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+24,Male,Advanced,Private,High,Mix,Learning a new skill,Fitness-Strength
+24,Male,Advanced,Private,High,Mix,Learning a new skill,Dance-Latin
+16,Female,Advanced,Group,High,Structured,Stress relief,Dance-Classical
+23,Male,Intermediate,Group,High,Structured,Physical fitness / health,Fitness-Strength
+18,Female,Intermediate,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+18,Female,Beginner,No preference,Depends on mood,Mix,Learning a new skill,Dance-Urban
+28,Female,Advanced,Group,Calm,Structured,Stress relief,Yoga-Dynamic
+29,Female,Beginner,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-HighIntensity
+20,Male,Beginner,Group,Calm,Mix,Stress relief,Fitness-HighIntensity
+20,Male,Beginner,Group,Calm,Mix,Stress relief,Dance-Latin
+21,Female,Intermediate,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+22,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+22,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+23,Female,Advanced,Group,Depends on mood,Mix,Social,Dance-Classical
+20,Other,Beginner,Group,High,Mix,Social,Dance-Urban
+22,Male,Intermediate,Private,High,Freestyle,Stress relief,Yoga-Calm
+22,Male,Intermediate,Private,High,Freestyle,Stress relief,Fitness-Strength
+22,Male,Intermediate,Private,High,Freestyle,Stress relief,Dance-Latin
+24,Male,Intermediate,Group,High,Structured,Physical fitness / health,Fitness-Strength
+32,Male,Intermediate,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-Strength
+51,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+26,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+16,Male,Advanced,Group,High,Mix,Learning a new skill,Fitness-Strength
+16,Male,Advanced,Group,High,Mix,Learning a new skill,Dance-Urban
+52,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Yoga-Calm
+52,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Dance-Latin
+19,Female,Intermediate,Group,Depends on mood,Mix,Learning a new skill,Yoga-Aerial
+19,Female,Intermediate,Group,Depends on mood,Mix,Learning a new skill,Dance-Latin
+20,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+20,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+18,Female,Beginner,Private,Calm,Mix,Stress relief,Yoga-Aerial
+52,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+27,Male,Intermediate,Group,High,Structured,Physical fitness / health,Fitness-Strength
+22,Female,Intermediate,Private,High,Freestyle,Physical fitness / health,Fitness-Strength
+20,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Yoga-Aerial
+20,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Fitness-Controlled
+20,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Dance-Urban
+20,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+48,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Yoga-Calm
+48,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Dance-Latin
+25,Female,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+24,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+24,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+17,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Yoga-Aerial
+17,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Fitness-Controlled
+17,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Dance-Urban
+21,Female,Advanced,Group,Depends on mood,Mix,Social,Dance-Classical
+24,Female,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Yoga-Aerial
+18,Female,Beginner,Group,Calm,Structured,Creative expression,Dance-Classical
+31,Female,Advanced,No preference,Calm,Mix,Stress relief,Fitness-Controlled
+35,Male,Intermediate,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-Strength
+21,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+19,Female,Intermediate,Private,High,Mix,Learning a new skill,Dance-Latin
+49,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Yoga-Calm
+49,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Dance-Latin
+18,Female,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+22,Female,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+19,Female,Intermediate,No preference,High,Mix,Learning a new skill,Dance-Latin
+23,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Yoga-Aerial
+23,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Fitness-HighIntensity
+23,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Dance-Urban
+20,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Yoga-Aerial
+20,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Fitness-Controlled
+20,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Dance-Urban
+18,Male,Advanced,Group,High,Mix,Learning a new skill,Fitness-Strength
+18,Male,Advanced,Group,High,Mix,Learning a new skill,Dance-Urban
+17,Other,Beginner,Group,High,Mix,Social,Dance-Urban
+26,Other,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+21,Male,Intermediate,Private,High,Freestyle,Stress relief,Yoga-Calm
+21,Male,Intermediate,Private,High,Freestyle,Stress relief,Fitness-Strength
+21,Male,Intermediate,Private,High,Freestyle,Stress relief,Dance-Latin
+24,Female,Intermediate,Private,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+19,Female,Beginner,Group,Depends on mood,Structured,Learning a new skill,Dance-Urban
+21,Other,Intermediate,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+22,Female,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Yoga-Aerial
+24,Male,Intermediate,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+17,Female,Beginner,No preference,Calm,Mix,Stress relief,Yoga-Aerial
+46,Other,Beginner,Group,Depends on mood,Structured,Stress relief,Yoga-Calm
+46,Other,Beginner,Group,Depends on mood,Structured,Stress relief,Dance-Latin
+34,Male,Intermediate,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-Strength
+22,Male,Beginner,Group,Calm,Mix,Stress relief,Fitness-HighIntensity
+22,Male,Beginner,Group,Calm,Mix,Stress relief,Dance-Latin
+23,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+23,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+29,Male,Intermediate,Private,High,Structured,Social,Fitness-HighIntensity
+29,Male,Intermediate,Private,High,Structured,Social,Dance-Classical
+19,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Yoga-Aerial
+19,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Fitness-HighIntensity
+19,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Dance-Urban
+16,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+16,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+17,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Yoga-Aerial
+17,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Fitness-HighIntensity
+17,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Dance-Urban
+23,Female,Advanced,Group,Depends on mood,Mix,Social,Dance-Classical
+52,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Yoga-Calm
+52,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Dance-Latin
+24,Female,Intermediate,Group,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+21,Female,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+21,Female,Advanced,Group,High,Structured,Stress relief,Dance-Classical
+47,Male,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+17,Female,Intermediate,Group,High,Mix,Learning a new skill,Dance-Latin
+24,Female,Advanced,No preference,High,Mix,Physical fitness / health,Fitness-HighIntensity
+24,Female,Advanced,No preference,High,Mix,Physical fitness / health,Dance-Latin
+19,Male,Beginner,Private,Calm,Freestyle,Creative expression,Yoga-Aerial
+27,Female,Advanced,No preference,Calm,Mix,Stress relief,Fitness-Controlled
+19,Female,Beginner,Group,High,Mix,Stress relief,Fitness-HighIntensity
+19,Female,Beginner,Group,High,Mix,Stress relief,Dance-Urban
+25,Male,Intermediate,Group,High,Structured,Physical fitness / health,Fitness-Strength
+21,Female,Intermediate,Group,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+20,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+20,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+20,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+20,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+20,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+19,Female,Intermediate,No preference,Calm,Structured,Physical fitness / health,Fitness-Strength
+20,Female,Beginner,Group,Depends on mood,Structured,Learning a new skill,Dance-Urban
+23,Other,Advanced,No preference,High,Mix,Physical fitness / health,Fitness-HighIntensity
+23,Other,Advanced,No preference,High,Mix,Physical fitness / health,Dance-Latin
+30,Male,Intermediate,Group,High,Structured,Social,Fitness-HighIntensity
+30,Male,Intermediate,Group,High,Structured,Social,Dance-Classical
+21,Male,Beginner,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+23,Female,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+25,Female,Beginner,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-HighIntensity
+23,Female,Beginner,Private,Depends on mood,Structured,Learning a new skill,Dance-Urban
+20,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+22,Female,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+22,Male,Intermediate,Private,High,Freestyle,Stress relief,Yoga-Calm
+22,Male,Intermediate,Private,High,Freestyle,Stress relief,Fitness-Strength
+22,Male,Intermediate,Private,High,Freestyle,Stress relief,Dance-Latin
+17,Female,Intermediate,Group,High,Mix,Learning a new skill,Dance-Latin
+49,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+22,Female,Intermediate,Private,High,Freestyle,Stress relief,Fitness-HighIntensity
+21,Female,Intermediate,Private,Calm,Structured,Physical fitness / health,Fitness-Strength
+24,Male,Advanced,Private,High,Mix,Learning a new skill,Fitness-Strength
+24,Male,Advanced,Private,High,Mix,Learning a new skill,Dance-Latin
+23,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+27,Male,Intermediate,Group,High,Structured,Social,Fitness-HighIntensity
+27,Male,Intermediate,Group,High,Structured,Social,Dance-Classical
+26,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+27,Female,Beginner,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-HighIntensity
+18,Male,Beginner,Group,Depends on mood,Structured,Learning a new skill,Dance-Urban
+16,Female,Beginner,Group,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+17,Female,Advanced,Group,High,Structured,Stress relief,Dance-Classical
+21,Female,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+31,Male,Intermediate,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-Strength
+22,Female,Intermediate,No preference,Depends on mood,Mix,Creative expression,Dance-Classical
+21,Female,Beginner,Group,High,Mix,Stress relief,Fitness-HighIntensity
+21,Female,Beginner,Group,High,Mix,Stress relief,Dance-Urban
+25,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+21,Female,Beginner,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+29,Female,Advanced,No preference,Calm,Mix,Stress relief,Fitness-Controlled
+16,Male,Advanced,No preference,High,Mix,Learning a new skill,Fitness-Strength
+16,Male,Advanced,No preference,High,Mix,Learning a new skill,Dance-Urban
+19,Male,Beginner,Private,Calm,Mix,Stress relief,Fitness-HighIntensity
+19,Male,Beginner,Private,Calm,Mix,Stress relief,Dance-Latin
+31,Female,Advanced,Private,Calm,Mix,Stress relief,Fitness-Controlled
+22,Female,Intermediate,Group,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+20,Male,Beginner,Private,Calm,Mix,Creative expression,Dance-Urban
+20,Other,Beginner,Group,High,Mix,Social,Dance-Urban
+18,Female,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+18,Female,Intermediate,No preference,Calm,Structured,Physical fitness / health,Fitness-Strength
+21,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+17,Male,Intermediate,Group,High,Freestyle,Stress relief,Yoga-Calm
+17,Male,Intermediate,Group,High,Freestyle,Stress relief,Fitness-Strength
+17,Male,Intermediate,Group,High,Freestyle,Stress relief,Dance-Latin
+22,Female,Intermediate,No preference,Calm,Structured,Physical fitness / health,Fitness-Strength
+52,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Yoga-Calm
+52,Female,Beginner,Group,Depends on mood,Structured,Stress relief,Dance-Latin
+23,Female,Intermediate,Private,High,Freestyle,Stress relief,Fitness-HighIntensity
+20,Female,Advanced,No preference,High,Mix,Physical fitness / health,Fitness-HighIntensity
+20,Female,Advanced,No preference,High,Mix,Physical fitness / health,Dance-Latin
+29,Male,Intermediate,Group,High,Structured,Social,Fitness-HighIntensity
+29,Male,Intermediate,Group,High,Structured,Social,Dance-Classical
+53,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+23,Female,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+20,Male,Intermediate,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+24,Female,Advanced,Private,Calm,Structured,Stress relief,Yoga-Dynamic
+23,Female,Intermediate,Group,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+19,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+26,Male,Intermediate,Group,High,Structured,Social,Fitness-HighIntensity
+26,Male,Intermediate,Group,High,Structured,Social,Dance-Classical
+27,Female,Beginner,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-HighIntensity
+50,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+48,Female,Beginner,No preference,Depends on mood,Structured,Stress relief,Yoga-Calm
+48,Female,Beginner,No preference,Depends on mood,Structured,Stress relief,Dance-Latin
+21,Female,Beginner,Private,Calm,Structured,Creative expression,Dance-Classical
+27,Male,Intermediate,Group,High,Structured,Social,Fitness-HighIntensity
+27,Male,Intermediate,Group,High,Structured,Social,Dance-Classical
+19,Female,Intermediate,Private,High,Freestyle,Physical fitness / health,Fitness-Strength
+26,Male,Intermediate,Group,High,Structured,Social,Fitness-HighIntensity
+26,Male,Intermediate,Group,High,Structured,Social,Dance-Classical
+20,Female,Intermediate,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+21,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+18,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Yoga-Aerial
+18,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Fitness-HighIntensity
+18,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Dance-Urban
+51,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+21,Male,Intermediate,Private,High,Freestyle,Stress relief,Yoga-Calm
+21,Male,Intermediate,Private,High,Freestyle,Stress relief,Fitness-Strength
+21,Male,Intermediate,Private,High,Freestyle,Stress relief,Dance-Latin
+24,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+19,Male,Intermediate,Private,High,Freestyle,Stress relief,Yoga-Calm
+19,Male,Intermediate,Private,High,Freestyle,Stress relief,Fitness-Strength
+19,Male,Intermediate,Private,High,Freestyle,Stress relief,Dance-Latin
+18,Male,Beginner,Private,Calm,Freestyle,Creative expression,Yoga-Aerial
+24,Female,Beginner,Group,Calm,Structured,Creative expression,Dance-Classical
+24,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+24,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+21,Female,Advanced,Group,Depends on mood,Mix,Social,Dance-Classical
+22,Female,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+17,Female,Beginner,No preference,Depends on mood,Mix,Learning a new skill,Dance-Urban
+24,Male,Advanced,Private,High,Mix,Learning a new skill,Fitness-Strength
+24,Male,Advanced,Private,High,Mix,Learning a new skill,Dance-Latin
+18,Female,Beginner,Group,Calm,Mix,Stress relief,Fitness-HighIntensity
+18,Female,Beginner,Group,Calm,Mix,Stress relief,Dance-Latin
+20,Male,Beginner,Group,Calm,Mix,Stress relief,Fitness-HighIntensity
+20,Male,Beginner,Group,Calm,Mix,Stress relief,Dance-Latin
+18,Female,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+18,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+16,Male,Advanced,Group,High,Mix,Learning a new skill,Fitness-Strength
+16,Male,Advanced,Group,High,Mix,Learning a new skill,Dance-Urban
+16,Male,Advanced,Group,High,Mix,Learning a new skill,Fitness-Strength
+16,Male,Advanced,Group,High,Mix,Learning a new skill,Dance-Urban
+25,Male,Intermediate,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+51,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+21,Male,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Yoga-Aerial
+24,Male,Intermediate,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+20,Female,Beginner,Private,Calm,Mix,Physical fitness / health,Dance-Classical
+20,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+20,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+20,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+22,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+20,Other,Beginner,Group,High,Mix,Social,Dance-Urban
+22,Other,Beginner,Group,Calm,Mix,Stress relief,Fitness-HighIntensity
+22,Other,Beginner,Group,Calm,Mix,Stress relief,Dance-Latin
+18,Female,Beginner,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+17,Male,Intermediate,Private,High,Freestyle,Stress relief,Yoga-Calm
+17,Male,Intermediate,Private,High,Freestyle,Stress relief,Fitness-Strength
+17,Male,Intermediate,Private,High,Freestyle,Stress relief,Dance-Latin
+53,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+24,Female,Advanced,No preference,High,Mix,Physical fitness / health,Fitness-HighIntensity
+24,Female,Advanced,No preference,High,Mix,Physical fitness / health,Dance-Latin
+18,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+21,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+19,Male,Beginner,Private,Calm,Mix,Creative expression,Dance-Urban
+18,Female,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+26,Male,Intermediate,Group,High,Structured,Physical fitness / health,Fitness-Strength
+23,Female,Intermediate,No preference,High,Structured,Stress relief,Dance-Classical
+27,Female,Advanced,No preference,Calm,Mix,Stress relief,Fitness-Controlled
+28,Male,Intermediate,Group,High,Structured,Social,Fitness-HighIntensity
+28,Male,Intermediate,Group,High,Structured,Social,Dance-Classical
+23,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+23,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+23,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+24,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+19,Female,Beginner,No preference,Depends on mood,Mix,Learning a new skill,Dance-Urban
+23,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+29,Female,Advanced,No preference,Calm,Mix,Stress relief,Fitness-Controlled
+21,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+23,Male,Intermediate,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+20,Female,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Yoga-Aerial
+23,Male,Beginner,Private,Calm,Freestyle,Creative expression,Yoga-Aerial
+22,Female,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+18,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Yoga-Aerial
+18,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Fitness-Controlled
+18,Female,Intermediate,Group,Depends on mood,Structured,Stress relief,Dance-Urban
+19,Female,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Yoga-Aerial
+18,Male,Intermediate,Group,High,Mix,Learning a new skill,Dance-Latin
+20,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+18,Female,Advanced,Group,High,Structured,Stress relief,Dance-Classical
+20,Female,Beginner,Group,High,Mix,Stress relief,Fitness-HighIntensity
+20,Female,Beginner,Group,High,Mix,Stress relief,Dance-Urban
+24,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+24,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+17,Female,Intermediate,No preference,Calm,Structured,Physical fitness / health,Fitness-Strength
+22,Female,Intermediate,No preference,Calm,Structured,Physical fitness / health,Fitness-Strength
+18,Male,Beginner,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+20,Male,Advanced,Group,High,Mix,Learning a new skill,Fitness-Strength
+20,Male,Advanced,Group,High,Mix,Learning a new skill,Dance-Urban
+20,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+20,Male,Advanced,Group,High,Mix,Learning a new skill,Fitness-Strength
+20,Male,Advanced,Group,High,Mix,Learning a new skill,Dance-Urban
+22,Male,Beginner,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+21,Female,Intermediate,No preference,High,Structured,Stress relief,Dance-Classical
+19,Female,Intermediate,Group,Depends on mood,Mix,Learning a new skill,Yoga-Aerial
+19,Female,Intermediate,Group,Depends on mood,Mix,Learning a new skill,Dance-Latin
+20,Female,Advanced,No preference,High,Mix,Physical fitness / health,Fitness-HighIntensity
+20,Female,Advanced,No preference,High,Mix,Physical fitness / health,Dance-Latin
+52,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+18,Female,Advanced,Group,High,Structured,Stress relief,Dance-Classical
+20,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+20,Male,Intermediate,Private,High,Freestyle,Stress relief,Yoga-Calm
+20,Male,Intermediate,Private,High,Freestyle,Stress relief,Fitness-Strength
+20,Male,Intermediate,Private,High,Freestyle,Stress relief,Dance-Latin
+26,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+32,Female,Advanced,Private,Calm,Mix,Stress relief,Fitness-Controlled
+22,Female,Intermediate,No preference,High,Mix,Learning a new skill,Dance-Latin
+18,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+20,Female,Intermediate,Group,High,Mix,Learning a new skill,Dance-Latin
+20,Female,Beginner,No preference,Calm,Mix,Physical fitness / health,Dance-Classical
+19,Male,Advanced,Group,High,Mix,Learning a new skill,Fitness-Strength
+19,Male,Advanced,Group,High,Mix,Learning a new skill,Dance-Urban
+20,Female,Beginner,Private,Calm,Mix,Creative expression,Dance-Urban
+19,Female,Intermediate,No preference,Calm,Structured,Physical fitness / health,Fitness-Strength
+21,Female,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+22,Female,Beginner,Group,High,Mix,Stress relief,Fitness-HighIntensity
+22,Female,Beginner,Group,High,Mix,Stress relief,Dance-Urban
+26,Female,Beginner,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-HighIntensity
+22,Female,Beginner,Group,Calm,Structured,Creative expression,Dance-Classical
+23,Female,Intermediate,Group,Depends on mood,Mix,Learning a new skill,Yoga-Aerial
+23,Female,Intermediate,Group,Depends on mood,Mix,Learning a new skill,Dance-Latin
+27,Female,Advanced,Group,Calm,Structured,Stress relief,Yoga-Dynamic
+25,Other,Advanced,Private,High,Mix,Learning a new skill,Fitness-Strength
+25,Other,Advanced,Private,High,Mix,Learning a new skill,Dance-Latin
+18,Female,Beginner,Private,Calm,Mix,Creative expression,Dance-Urban
+23,Female,Intermediate,Private,High,Mix,Stress relief,Fitness-Strength
+23,Female,Advanced,No preference,Depends on mood,Mix,Social,Dance-Classical
+19,Male,Beginner,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+23,Female,Beginner,Group,Depends on mood,Structured,Learning a new skill,Dance-Urban
+28,Male,Advanced,Private,High,Mix,Learning a new skill,Fitness-Strength
+28,Male,Advanced,Private,High,Mix,Learning a new skill,Dance-Latin
+20,Female,Beginner,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+27,Female,Advanced,Group,Calm,Structured,Stress relief,Yoga-Dynamic
+21,Female,Intermediate,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+25,Male,Advanced,Private,High,Mix,Learning a new skill,Fitness-Strength
+25,Male,Advanced,Private,High,Mix,Learning a new skill,Dance-Latin
+21,Female,Advanced,Group,Depends on mood,Mix,Social,Dance-Classical
+22,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+22,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+24,Female,Beginner,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-HighIntensity
+47,Other,Intermediate,Private,High,Mix,Stress relief,Dance-Latin
+22,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+27,Male,Intermediate,Group,High,Structured,Physical fitness / health,Fitness-Strength
+20,Female,Advanced,No preference,High,Mix,Physical fitness / health,Fitness-HighIntensity
+20,Female,Advanced,No preference,High,Mix,Physical fitness / health,Dance-Latin
+22,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Yoga-Aerial
+22,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Fitness-HighIntensity
+22,Male,Intermediate,No preference,Depends on mood,Mix,Creative expression,Dance-Urban
+22,Female,Beginner,Group,Depends on mood,Structured,Learning a new skill,Dance-Urban
+21,Male,Beginner,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+51,Other,Intermediate,Group,High,Mix,Stress relief,Dance-Latin
+26,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+31,Male,Intermediate,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-Strength
+20,Female,Beginner,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+19,Female,Advanced,No preference,High,Mix,Physical fitness / health,Fitness-HighIntensity
+19,Female,Advanced,No preference,High,Mix,Physical fitness / health,Dance-Latin
+24,Female,Beginner,Group,High,Mix,Stress relief,Fitness-HighIntensity
+24,Female,Beginner,Group,High,Mix,Stress relief,Dance-Urban
+24,Female,Beginner,Group,High,Mix,Stress relief,Fitness-HighIntensity
+24,Female,Beginner,Group,High,Mix,Stress relief,Dance-Urban
+16,Female,Advanced,Group,High,Structured,Stress relief,Dance-Classical
+22,Female,Beginner,No preference,Depends on mood,Mix,Learning a new skill,Dance-Urban
+24,Female,Intermediate,Group,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+19,Other,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+22,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Fitness-Controlled
+22,Female,Beginner,Private,Depends on mood,Structured,Physical fitness / health,Dance-Classical
+21,Other,Intermediate,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+19,Female,Beginner,No preference,Depends on mood,Mix,Learning a new skill,Dance-Urban
+21,Other,Beginner,Private,High,Mix,Social,Dance-Urban
+19,Male,Advanced,Group,High,Mix,Learning a new skill,Fitness-Strength
+19,Male,Advanced,Group,High,Mix,Learning a new skill,Dance-Urban
+25,Female,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+26,Female,Beginner,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-HighIntensity
+23,Female,Intermediate,Private,Depends on mood,Mix,Creative expression,Dance-Classical
+21,Male,Beginner,Group,Calm,Mix,Stress relief,Fitness-HighIntensity
+21,Male,Beginner,Group,Calm,Mix,Stress relief,Dance-Latin
+22,Male,Intermediate,Group,Depends on mood,Structured,Physical fitness / health,Yoga-Aerial
+23,Male,Intermediate,Group,High,Structured,Physical fitness / health,Fitness-Strength
+20,Female,Intermediate,Group,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+22,Female,Intermediate,No preference,High,Mix,Stress relief,Fitness-Strength
+24,Female,Intermediate,Group,Depends on mood,Mix,Creative expression,Dance-Classical
+20,Female,Intermediate,Group,Depends on mood,Structured,Physical fitness / health,Fitness-HighIntensity
+20,Male,Intermediate,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+21,Female,Advanced,Group,Depends on mood,Mix,Social,Dance-Classical
+27,Male,Intermediate,Group,High,Structured,Physical fitness / health,Fitness-Strength
+32,Female,Advanced,No preference,Calm,Mix,Stress relief,Fitness-Controlled
+19,Female,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+18,Female,Beginner,Group,Calm,Mix,Stress relief,Yoga-Aerial
+26,Female,Advanced,Group,Calm,Structured,Stress relief,Yoga-Dynamic
+21,Male,Beginner,Private,Calm,Freestyle,Creative expression,Yoga-Aerial
+29,Female,Beginner,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-HighIntensity
+24,Female,Beginner,Group,Depends on mood,Freestyle,Physical fitness / health,Fitness-HighIntensity
+25,Female,Advanced,Private,Calm,Structured,Stress relief,Yoga-Dynamic
+32,Female,Advanced,No preference,Calm,Mix,Stress relief,Fitness-Controlled
+23,Female,Beginner,Group,High,Mix,Stress relief,Fitness-HighIntensity
+23,Female,Beginner,Group,High,Mix,Stress relief,Dance-Urban
+22,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+21,Female,Intermediate,Group,High,Structured,Stress relief,Dance-Classical
+24,Female,Intermediate,No preference,Depends on mood,Structured,Physical fitness / health,Yoga-Aerial
+25,Female,Intermediate,Private,High,Freestyle,Stress relief,Fitness-HighIntensity
+22,Female,Beginner,Private,Calm,Mix,Creative expression,Dance-Urban
+24,Male,Beginner,No preference,High,Structured,Physical fitness / health,Fitness-Strength
+36,Male,Intermediate,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-Strength
+19,Female,Intermediate,No preference,Depends on mood,Mix,Physical fitness / health,Fitness-Strength
+24,Female,Beginner,Private,Depends on mood,Freestyle,Creative expression,Dance-Classical
+35,Male,Intermediate,Private,Depends on mood,Freestyle,Physical fitness / health,Fitness-Strength
