@@ -1,6 +1,6 @@
 # training data (DO NOT TRACK)
-model/data/training_survey.csv
-model/data/training_survey_augmented.csv
+ds/data/training_survey.csv
+ds/data/training_survey_augmented.csv
 
 # model outputs
 model/models/*.pkl
