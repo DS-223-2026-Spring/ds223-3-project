@@ -15,3 +15,7 @@ postgres_data/
 .save
 *.save
 data/.Rhistory
+
+# Generated model artifacts
+activityhub/ds/models/*.pkl
+activityhub/ds/models/metrics.csv
