@@ -11,16 +11,25 @@ from app.models.schemas import Segment, SegmentCreate
 router = APIRouter()
 
 
-@router.get("/", response_model=list[Segment])
+@router.get("/", response_model=list[Segment], summary="List all segments")
 def list_segments(db: Session = Depends(get_db)):
+    """
+    Returns an array of all ActivityHub user segments ordered by size (largest first).
+    Each object includes segment_id, segment_name, description, size (number of users), and booking_likelihood.
+    Used by the studio dashboard to display audience cluster breakdowns and targeting insights.
+    """
     rows = db.execute(
         text("SELECT * FROM segments ORDER BY size DESC")
     ).mappings().all()
     return [Segment(**dict(r)) for r in rows]
 
 
-@router.get("/{segment_id}", response_model=Segment)
+@router.get("/{segment_id}", response_model=Segment, summary="Get segment by ID")
 def get_segment(segment_id: int, db: Session = Depends(get_db)):
+    """
+    Accepts segment_id as a path parameter and returns one segment's full details: segment_id, segment_name, description, size (user count), and booking_likelihood (float 0–1 probability).
+    Returns 404 if the segment does not exist.
+    """
     row = db.execute(
         text("SELECT * FROM segments WHERE segment_id = :sid"),
         {"sid": segment_id},
@@ -30,8 +39,13 @@ def get_segment(segment_id: int, db: Session = Depends(get_db)):
     return Segment(**dict(row))
 
 
-@router.post("/")
+@router.post("/", summary="Create a segment")
 def create_segment(body: SegmentCreate, db: Session = Depends(get_db)):
+    """
+    Accepts segment_name (str), description (str), size (int), and booking_likelihood (float 0–1) in the request body.
+    Creates a new ActivityHub user segment record and returns the generated segment_id.
+    Segments are normally produced by the automated segmentation pipeline — use this endpoint for manual additions or testing.
+    """
     row = db.execute(
         text("""INSERT INTO segments
                 (segment_name, description, size, booking_likelihood)
@@ -44,8 +58,12 @@ def create_segment(body: SegmentCreate, db: Session = Depends(get_db)):
     return {"segment_id": row[0], "message": "Segment created successfully"}
 
 
-@router.delete("/{segment_id}")
+@router.delete("/{segment_id}", summary="Delete a segment")
 def delete_segment(segment_id: int, db: Session = Depends(get_db)):
+    """
+    Accepts segment_id as a path parameter and permanently removes the segment record.
+    Returns 404 if no segment with that ID exists.
+    """
     result = db.execute(
         text("DELETE FROM segments WHERE segment_id = :sid"),
         {"sid": segment_id},
