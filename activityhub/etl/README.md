@@ -2,6 +2,17 @@
 
 ETL service runs the full production pipeline once on container start, then exits.
 
+## Inputs & Outputs
+
+| Flow | Inputs | Outputs |
+|------|--------|---------|
+| validate_data | ds/data/studios.csv, ds/data/classes.csv | raises if schema/empty fails |
+| load_data | studios.csv, classes.csv | rows in studios + classes tables (idempotent via TRUNCATE) |
+| train_model | ds/data/survey.csv | ds/models/style_classifier.pkl, metrics.csv, survey_combined.csv |
+| segment_users | ds/data/survey_combined.csv | rows in segments table |
+| pipeline | (all above) | full DB + model state |
+| dev_pipeline | studios.csv, classes.csv | DB rows only (fast iteration) |
+
 ## Flows
 
 | Flow                  | Inputs                                       | Outputs                                |
