@@ -15,6 +15,8 @@ DB_URL = (
 def load_studios(path="ds/data/studios.csv"):
     engine = create_engine(DB_URL)
     df = pd.read_csv(path)
+    with engine.begin() as conn:
+        conn.execute(text("TRUNCATE TABLE studios CASCADE"))
     df.to_sql("studios", engine, if_exists="append", index=False)
     return len(df)
 
@@ -25,6 +27,8 @@ def load_classes(path="ds/data/classes.csv"):
     df = pd.read_csv(path)
     df["price_per_session_amd"] = df["price_per_session_amd"].astype("Int64")
     df["price_monthly_amd"] = df["price_monthly_amd"].astype("Int64")
+    with engine.begin() as conn:
+        conn.execute(text("TRUNCATE TABLE classes CASCADE"))
     df.to_sql("classes", engine, if_exists="append", index=False)
     return len(df)
 
