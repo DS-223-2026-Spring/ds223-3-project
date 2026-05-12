@@ -1,17 +1,17 @@
-from typing import Optional
-from pydantic import BaseModel
+from typing import Optional, List
+from pydantic import BaseModel, Field, field_validator
 
 
-# User schemas
+# ── User ──────────────────────────────
 class UserCreate(BaseModel):
     age: int
     gender: str
     district: Optional[str] = None
 
 
-# Quiz schemas
+# ── Quiz ──────────────────────────────
 class QuizRequest(BaseModel):
-    age: int
+    age: int = Field(ge=10, le=100)
     gender: str
     district: Optional[str] = None
     experience_level: str
@@ -19,10 +19,15 @@ class QuizRequest(BaseModel):
     energy_preference: str
     structure_preference: str
     goal: str
-    budget_max_amd: Optional[int] = None
-    preferred_days: Optional[list[str]] = None
+    budget_max_amd: Optional[int] = Field(ge=0, default=None)
+    preferred_days: Optional[List[str]] = None
     preferred_time: Optional[str] = None
     max_travel_km: Optional[str] = None
+
+    @field_validator("gender")
+    @classmethod
+    def lowercase_gender(cls, v: str) -> str:
+        return v.lower()
 
 
 class QuizResponse(BaseModel):
@@ -30,8 +35,10 @@ class QuizResponse(BaseModel):
     message: str
 
 
-# Studio schemas
+# ── Studios ───────────────────────────
 class Studio(BaseModel):
+    model_config = {"from_attributes": True}
+
     studio_id: int
     studio_name: str
     district: Optional[str] = None
@@ -55,8 +62,10 @@ class StudioResponse(BaseModel):
     studio_id: int
 
 
-# Class schemas
+# ── Classes ───────────────────────────
 class Class(BaseModel):
+    model_config = {"from_attributes": True}
+
     class_id: int
     studio_id: int
     activity_type: str
@@ -71,30 +80,35 @@ class Class(BaseModel):
     structure_level: str
 
 
-# Recommendation schemas
+# ── Recommendations ───────────────────
 class RecommendRequest(BaseModel):
+    """Triggers ML recommendation pipeline for the given user."""
     user_id: int
 
 
 class RecommendationResponse(BaseModel):
+    model_config = {"from_attributes": True}
+
     class_id: int
     studio_name: str
     activity_type: str
     style: str
     day: str
     time: str
-    price_amd: int
-    score: float
-    rank: int
+    price_amd: int = Field(ge=0)
+    score: float = Field(ge=0.0, le=1.0)
+    rank: int = Field(ge=1)
 
 
 class RecommendResponse(BaseModel):
     user_id: int
-    recommendations: list[RecommendationResponse]
+    recommendations: List[RecommendationResponse]
 
 
-# Segment schemas
+# ── Segments ──────────────────────────
 class Segment(BaseModel):
+    model_config = {"from_attributes": True}
+
     segment_id: int
     segment_name: str
     description: str
@@ -109,6 +123,7 @@ class SegmentCreate(BaseModel):
     booking_likelihood: float
 
 
+# ── Bookings ──────────────────────────
 class BookingRequest(BaseModel):
     user_id: int
     class_id: int
