@@ -5,8 +5,9 @@ st.set_page_config(page_title="ActivityHub", layout="wide")
 st.title("ActivityHub")
 st.subheader("Find the perfect class for you in Yerevan")
 st.markdown(
-    "Take a 2-minute quiz and get personalized recommendations for dance, "
-    "yoga, and fitness classes that match your personality, schedule, and goals."
+    "Finding the right class shouldn't take three weeks of trial-and-error. "
+    "Tell us about you in 2 minutes, we'll surface 3 classes you wouldn't "
+    "have found yourself across yoga, dance, and fitness."
 )
 
 st.divider()

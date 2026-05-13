@@ -18,16 +18,18 @@ st.caption(
 
 user_id = st.session_state.get("user_id")
 if not user_id:
-    st.warning("No quiz found. Please take the quiz first.")
-    if st.button("Go to Quiz"):
+    st.info("Take the quiz first to see your matches!")
+    st.caption("It only takes 2 minutes.")
+    if st.button("Take the Quiz", type="primary", use_container_width=True):
         st.switch_page("pages/1_Quiz.py")
     st.stop()
 
 try:
-    r = requests.post(f"{API_URL}/recommend/", json={"user_id": user_id}, timeout=15)
-    r.raise_for_status()
-    data = r.json()
-    recs = data.get("recommendations", [])
+    with st.spinner("Finding your matches..."):
+        r = requests.post(f"{API_URL}/recommend/", json={"user_id": user_id}, timeout=10)
+        r.raise_for_status()
+        data = r.json()
+        recs = data.get("recommendations", [])
 except requests.RequestException as e:
     st.error(f"Couldn't load recommendations: {e}")
     st.stop()
@@ -54,7 +56,8 @@ for rec in recs:
             )
         with c2:
             pct = int(rec["score"] * 100)
-            st.metric(label="Match", value=f"{pct}%")
+            delta = f"+{pct - 50}" if pct > 50 else None
+            st.metric(label="Match", value=f"{pct}%", delta=delta)
         with c3:
             if st.button("I tried this", key=f"book_{rec['class_id']}"):
                 try:
@@ -67,6 +70,7 @@ for rec in recs:
                         f"{API_URL}/bookings/", json=payload, timeout=10
                     ).raise_for_status()
                     st.success("Thanks! Your feedback helps us improve.")
+                    st.balloons()
                 except requests.RequestException as e:
                     st.error(f"Couldn't save: {e}")
 

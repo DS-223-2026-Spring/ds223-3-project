@@ -1,9 +1,10 @@
 # training data (DO NOT TRACK)
-model/data/training_survey.csv
-model/data/training_survey_augmented.csv
+ds/data/training_survey.csv
+ds/data/training_survey_augmented.csv
 
 # model outputs
-model/models/*.pkl__pycache__/
+model/models/*.pkl
+__pycache__/
 *.pyc
 .env
 .DS_Store
@@ -13,4 +14,8 @@ postgres_data/
 
 .save
 *.save
-data/
+data/.Rhistory
+
+# Generated model artifacts
+activityhub/ds/models/*.pkl
+activityhub/ds/models/metrics.csv
