@@ -38,6 +38,9 @@ if not recs:
     st.info("No matches found. Try adjusting your budget or district.")
     st.stop()
 
+if len(recs) < 3:
+    st.info(f"We found {len(recs)} strong match{'es' if len(recs) > 1 else ''} for you. Try widening your budget or district to see more.")
+
 # Activity mix summary
 activities_in_recs = [rec["activity_type"].title() for rec in recs]
 st.markdown(f"**Your mix:** {' · '.join(activities_in_recs)}")
@@ -75,6 +78,22 @@ for rec in recs:
                     st.error(f"Couldn't save: {e}")
 
 st.divider()
+
+# Show user's booking history
+try:
+    bookings_r = requests.get(f"{API_URL}/bookings/{user_id}", timeout=10)
+    bookings_r.raise_for_status()
+    bookings = bookings_r.json()
+except requests.RequestException:
+    bookings = []
+
+if bookings:
+    st.divider()
+    st.subheader("Classes you've tried")
+    st.caption("Your feedback helps us learn what matches your preferences.")
+    for b in bookings[:5]:  # show last 5
+        st.write(f"• **{b['style']}** at {b['studio_name']} ({b['activity_type']})")
+        
 c1, c2 = st.columns(2)
 with c1:
     if st.button("Retake Quiz"):

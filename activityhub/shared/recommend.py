@@ -88,6 +88,63 @@ def recommend_top_k(user: dict, classes_df: pd.DataFrame, k: int = 3) -> pd.Data
     if user_district:
         df.loc[df["district"] == user_district, "score"] += 0.05
 
-    # 5. Sort & return top-k
-    df = df.sort_values("score", ascending=False).head(k).reset_index(drop=True)
-    return df
+    # 5. Soft preference: day match (+0.03 per matching day)
+    user_days = user.get("preferred_days")
+    if user_days:
+        # preferred_days can be a list or comma-joined string from the DB
+        if isinstance(user_days, str):
+            user_days_list = [d.strip().lower() for d in user_days.split(",")]
+        else:
+            user_days_list = [d.strip().lower() for d in user_days]
+
+        def count_day_matches(class_day):
+            if not class_day or pd.isna(class_day):
+                return 0
+            class_day_str = str(class_day).lower()
+            # Match by checking if any preferred day appears in the class day string
+            return sum(1 for d in user_days_list if d in class_day_str)
+
+        df["day_matches"] = df["day"].apply(count_day_matches)
+        df["score"] = df["score"] + (df["day_matches"] * 0.03)
+        df = df.drop(columns=["day_matches"])
+
+    # 6. Soft preference: time match (+0.03 if class falls in preferred window)
+    user_time = user.get("preferred_time")
+    if user_time and user_time.lower() != "any":
+        time_windows = {
+            "morning": (6, 12),
+            "afternoon": (12, 17),
+            "evening": (17, 23),
+        }
+        window = time_windows.get(user_time.lower())
+        if window:
+            def time_in_window(class_time):
+                if not class_time or pd.isna(class_time):
+                    return False
+                try:
+                    hour = int(str(class_time).split(":")[0])
+                    return window[0] <= hour < window[1]
+                except (ValueError, IndexError):
+                    return False
+            df["time_match"] = df["time"].apply(time_in_window)
+            df.loc[df["time_match"], "score"] += 0.03
+            df = df.drop(columns=["time_match"])
+
+    # 7. Cap score at 1.0 to satisfy Pydantic schema
+    df["score"] = df["score"].clip(upper=1.0)
+
+    # 8. Filter out near-zero matches (below 5%)
+    MIN_SCORE = 0.05
+    qualifying = df[df["score"] >= MIN_SCORE]
+
+    # 9. Sort & return top-k, but never fewer than 1 if any class survives
+    if len(qualifying) >= k:
+        result = qualifying.sort_values("score", ascending=False).head(k)
+    elif len(qualifying) > 0:
+        # Return what we have rather than padding with bad matches
+        result = qualifying.sort_values("score", ascending=False)
+    else:
+        # Last resort: return top-1 from full set so user sees something
+        result = df.sort_values("score", ascending=False).head(1)
+
+    return result.reset_index(drop=True)
