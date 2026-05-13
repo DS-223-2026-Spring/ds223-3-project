@@ -25,6 +25,18 @@ Wait for `etl-1 exited with code 0`. Then open:
 
 > If port 5050 is in use, set `PGADMIN_PORT=5051` in your `.env` and rerun.
 
+## Screenshots
+
+### User-facing recommendations
+![Recommendations](docs/imgs/recommendations.png)
+
+### Studio audience insights
+![Dashboard](docs/imgs/dashboard.png)
+
+### API documentation
+![Swagger](docs/imgs/swagger-1.png)
+![Swagger](docs/imgs/swagger-2.png)
+
 ## What's in here
 
 | Service | Folder | Purpose |
