@@ -89,6 +89,7 @@ services:
       - "4200:4200"
     environment:
       PREFECT_SERVER_API_HOST: 0.0.0.0
+      PREFECT_UI_API_URL: http://localhost:4200/api
     healthcheck:
       test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:4200/api/health')\" || exit 1"]
       interval: 5s
