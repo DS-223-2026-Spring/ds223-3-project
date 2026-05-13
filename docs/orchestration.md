@@ -1,6 +1,6 @@
 # Orchestration
 
-Prefect-based ETL pipeline that runs end-to-end on container start.
+Prefect-based ETL pipeline that runs end-to-end on container start. Flow runs are visible in the Prefect UI at **http://localhost:4200** once the stack is up.
 
 ## Inputs & Outputs
 
@@ -57,8 +57,12 @@ Should return 23, 159, 4.
 
 ## Logs
 
-Prefect logs to stdout. View with:
+Two ways to inspect Prefect flow runs:
 
+**1. Prefect UI (recommended)** — http://localhost:4200
+View flow run history, per-task logs, retry attempts, and run status with timestamps.
+
+**2. Container stdout**
 ```bash
 docker compose logs etl
 ```

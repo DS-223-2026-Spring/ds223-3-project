@@ -22,7 +22,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     ports:
-      - "5050:80"
+      - "${PGADMIN_PORT:-5050}:80"
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@admin.com}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
@@ -67,14 +67,28 @@ services:
       - ./activityhub/ds:/app/ds
       - ./activityhub/shared:/app/shared
       - ./activityhub/db:/app/db
+      - ./activityhub/etl/flows:/app/flows
     environment:
       DB_HOST: db
       DB_USER: ${DB_USER:-admin}
       DB_PASSWORD: ${DB_PASSWORD:-admin}
       DB_NAME: ${DB_NAME:-activityhub}
+      PREFECT_API_URL: http://prefect-server:4200/api
     depends_on:
       db:
         condition: service_healthy
+      prefect-server:
+        condition: service_started
+    networks:
+      - activityhub
+    
+  prefect-server:
+    image: prefecthq/prefect:3-latest
+    command: prefect server start --host 0.0.0.0
+    ports:
+      - "4200:4200"
+    environment:
+      PREFECT_SERVER_API_HOST: 0.0.0.0
     networks:
       - activityhub
 

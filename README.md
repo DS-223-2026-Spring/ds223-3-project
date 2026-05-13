@@ -20,7 +20,10 @@ Wait for `etl-1 exited with code 0`. Then open:
 
 - **App (Streamlit):** http://localhost:8501
 - **API docs (Swagger):** http://localhost:8000/docs
+- **Prefect UI:** http://localhost:4200 (flow runs, logs, retries)
 - **pgAdmin:** http://localhost:5050 (admin@admin.com / admin)
+
+> If port 5050 is in use, set `PGADMIN_PORT=5051` in your `.env` and rerun.
 
 ## What's in here
 
