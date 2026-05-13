@@ -15,6 +15,20 @@ def create_booking(body: BookingRequest, db: Session = Depends(get_db)):
     Records that the user attended a class at an ActivityHub partner studio and stores their feedback for recommendation model improvement.
     Returns the generated booking_id.
     """
+    user = db.execute(
+        text("SELECT user_id FROM users WHERE user_id = :uid"),
+        {"uid": body.user_id}
+    ).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    cls = db.execute(
+        text("SELECT class_id FROM classes WHERE class_id = :cid"),
+        {"cid": body.class_id}
+    ).first()
+    if not cls:
+        raise HTTPException(status_code=404, detail="Class not found — ETL pipeline may not have run yet")
+
     row = db.execute(
         text("""INSERT INTO bookings (user_id, class_id, feedback)
                 VALUES (:uid, :cid, :fb)
