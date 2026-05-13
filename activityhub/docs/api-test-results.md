@@ -27,8 +27,10 @@ All endpoints tested manually via Swagger UI at http://localhost:8000/docs.
 - GET /segments/{id} → 200 / 404
 
 ## Bookings
-- POST /bookings/ → 200, returns booking_id
-- GET /bookings/{user_id} → 200, returns user history
+- POST /bookings/ → 200, returns booking_id ✅ verified working after ETL pipeline run
+- POST /bookings/ → 404 "User not found" if user_id doesn't exist ✅ proper error handling
+- POST /bookings/ → 404 "Class not found — ETL pipeline may not have run yet" if class_id doesn't exist ✅ proper error handling
+- GET /bookings/{user_id} → 200, returns user history ✅
 
 ## Users
 - GET /users/ → 200
@@ -37,3 +39,10 @@ All endpoints tested manually via Swagger UI at http://localhost:8000/docs.
 - DELETE /users/{id} → 200
 
 All response shapes match Pydantic schemas in app/models/schemas.py. Verified via FastAPI auto-validation.
+
+---
+
+## Notes
+- All endpoints require the ETL pipeline to have run first for recommendations and bookings to work
+- POST /bookings/ previously returned HTTP 500 due to missing bookings table — fixed by resetting the Docker volume
+- Backend validates user_id and class_id existence before inserting, returning clear 404 errors instead of 500
