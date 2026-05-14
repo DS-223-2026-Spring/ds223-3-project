@@ -58,6 +58,7 @@ Each category has a defined data path: DS computes → DB stores → Backend ser
 
 ## Data Flow Diagram
 
+```text
 User quiz
 ↓
 POST /quiz/    ──── writes quiz_responses ────► DB
@@ -95,6 +96,7 @@ POST /bookings/   ──── writes bookings ──► DB
 │
 │ (feeds future retraining)
 ▼
+```
 
 ## Adding a New Visual
 

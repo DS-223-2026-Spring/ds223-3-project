@@ -12,11 +12,11 @@ The frontend talks to the backend via the `API_URL` env var (set in compose to `
 
 # Frontend Component Specification
 
-Each Streamlit page below uses **only built-in components** per issue #90.
+Each Streamlit page below uses **only built-in components**
 
 ---
 
-## Page 1 — Quiz (`pages/1_Quiz.py`)
+## Page 1: Quiz (`pages/1_Quiz.py`)
 
 | Field                  | Component                | Notes                          |
 |------------------------|--------------------------|--------------------------------|
@@ -36,7 +36,7 @@ Each Streamlit page below uses **only built-in components** per issue #90.
 
 ---
 
-## Page 2 — Recommendations (`pages/2_Recommendations.py`)
+## Page 2: Recommendations (`pages/2_Recommendations.py`)
 
 | Element                | Component               | Notes                            |
 |------------------------|-------------------------|----------------------------------|
@@ -48,7 +48,7 @@ Each Streamlit page below uses **only built-in components** per issue #90.
 
 ---
 
-## Page 3 — Studio Dashboard (`pages/3_Studio_Dashboard.py`)
+## Page 3: Studio Dashboard (`pages/3_Studio_Dashboard.py`)
 
 | Element                | Component               | Notes                            |
 |------------------------|-------------------------|----------------------------------|
@@ -58,8 +58,3 @@ Each Streamlit page below uses **only built-in components** per issue #90.
 | Filter by activity     | `st.selectbox`          | yoga/dance/fitness/all           |
 
 ---
-
-## What's removed 
-
-- HTML strings inside `st.markdown(unsafe_allow_html=True)` for match % rendering — replaced with `st.metric`
-- Custom CSS — none, only Streamlit defaults
