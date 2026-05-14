@@ -53,4 +53,8 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: ["."]
+          paths:
+            - activityhub/shared
+            - activityhub/api/app
+            - activityhub/ds/scripts
+            - activityhub/etl/flows

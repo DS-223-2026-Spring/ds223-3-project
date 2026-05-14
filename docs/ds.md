@@ -76,6 +76,27 @@ studio-facing dashboard:
 Clustering features: experience_level, group_preference, energy_preference,
 structure_preference, goal.
 
+---
+
+---
+
+## Module reference
+
+::: recommend
+
+### Training
+
+::: train_model
+
+### Segmentation
+
+::: segment_users
+
+### Survey
+
+::: prepare_survey
+
+
 ## Limitations
 
 - Synthetic data is template-driven, not behavioral
