@@ -12,11 +12,9 @@ OpenAPI docs: `http://localhost:8000/docs`
 | /quiz       | POST, GET /{user_id}                   | User onboarding flow                     |
 | /recommend  | POST, GET /{user_id}                   | Top-3 class recommendations              |
 | /studios    | GET, GET /{id}, POST                   | Studio listing                           |
-| /classes    | GET, GET /{id}                         | Browse all classes (Studio Dashboard)    |
 | /segments   | GET                                    | User personas (Studio Dashboard)         |
 | /bookings   | POST                                   | Feedback loop ("I tried this class")     |
 | /users      | GET, GET /{id}, POST                   | Internal admin                           |
-| /survey     | POST                                   | Add real survey response (M3 retraining) |
 
 ---
 
@@ -93,38 +91,6 @@ Return saved recommendation history for a user (latest 10).
 
 ---
 
-## /classes
-
-### `GET /classes/`
-List all classes. Optional query params: `activity_type`, `studio_id`, `district`.
-
-**Response (200):**
-```json
-[
-  {
-    "class_id": 17,
-    "studio_id": 3,
-    "studio_name": "Akhtanak Yoga",
-    "activity_type": "yoga",
-    "style": "Hatha",
-    "day": "Wednesday",
-    "time": "18:00",
-    "price_per_session_amd": 12000,
-    "price_monthly_amd": null,
-    "experience_required": "any",
-    "group_or_private": "group",
-    "energy_level": "low",
-    "structure_level": "structured",
-    "district": "Kentron"
-  }
-]
-```
-
-### `GET /classes/{class_id}`
-Fetch one class.
-
----
-
 ## /studios
 
 ### `GET /studios/`
@@ -188,15 +154,6 @@ Log when a user tries a recommended class. Used as positive signal for next trai
 ```json
 { "booking_id": 99, "message": "Feedback recorded" }
 ```
-
----
-
-## /survey
-
-### `POST /survey/`
-Add a new survey response (used when a real user fills out the form). Triggers data flow into `survey_responses` table.
-
-**Request:** same shape as `/quiz/` POST plus `yoga_style`, `dance_style`, `fitness_style` if applicable.
 
 ---
 
