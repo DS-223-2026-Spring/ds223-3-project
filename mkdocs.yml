@@ -2,6 +2,8 @@ site_name: ActivityHub Demo
 site_description: Personalized activity matching for Yerevan (DS223 group project)
 site_author: Group 3, AUA Spring 2026
 site_url: https://ds-223-2026-spring.github.io/ds223-3-project/
+repo_url: https://github.com/DS-223-2026-Spring/ds223-3-project
+repo_name: DS-223-2026-Spring/ds223-3-project
 
 nav:
   - Home: index.md
@@ -10,8 +12,7 @@ nav:
   - API: api.md
   - Frontend: frontend.md
   - Data Science: ds.md
-  - Orchestration: orchestration.md
-  - Blockers: blockers.md
+  - Orchestration: orchestration.m
   - Visual Analytics Guide: visual-analytics-guide.md
 
 
@@ -20,12 +21,16 @@ theme:
   logo: imgs/activityhub_logo.png
   favicon: imgs/activityhub_logo.png
   features:
+    - navigation.instant
+    - navigation.instant.prefetch
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - toc.integrate
     - navigation.top
+    - toc.integrate
     - search.suggest
     - search.highlight
+    - search.share
     - content.tabs.link
     - content.code.annotation
     - content.code.copy

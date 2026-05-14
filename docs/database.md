@@ -5,15 +5,16 @@
 ![ERD](imgs/ActivityHub_model_ERD.png)
 
 ## Schema notes
-The schema implements 7 tables:
+The schema implements 8 tables:
 
-- **users** — created on quiz submission, stores demographics + data_source flag
+- **users** — created on quiz submission, stores demographics and data_source flag
 - **quiz_responses** — preferences + practical filters, FK to users
 - **studios** — 23 real Yerevan studios (yoga, dance, fitness)
 - **classes** — 159 classes, each FK to a studio
-- **segments** — user personas from K-means clustering (M3)
-- **user_segments** — many-to-many join table
+- **segments** — user personas from K-means clustering
+- **user_segments** — many-to-many join table for cluster assignments
 - **recommendations** — log of model outputs per user with score + rank
+- **bookings** — "I tried this" feedback records, feeds future retraining
 
 ## ERD Validation
 
