@@ -1,18 +1,46 @@
 # Architecture
 
+ActivityHub runs as a microservice stack orchestrated through Docker Compose.
+
 ![Architecture](imgs/project_architecture_diagram.svg)
 
 ## Services
-| Service | Tech | Port |
-|---------|------|------|
-| db | Postgres 17 | 5432 |
-| pgadmin | pgAdmin 4 | 5050 |
-| api | FastAPI | 8000 |
-| app | Streamlit | 8501 |
-| etl | Prefect | — |
+
+| Service | Tech | Role | Port |
+|---------|------------|------|------|
+| `app` | Streamlit | User-facing dashboard - quiz, recommendations, studio insights | 8501 |
+| `api` | FastAPI | REST API exposing quiz, recommend, studios, segments, bookings | 8000 |
+| `db` | PostgreSQL 17 | Storage for users, quiz responses, classes, recommendations, segments, bookings | 5432 |
+| `etl` | Prefect | Pipeline: validate → load → train → segment. Runs once on container start | — |
+| `prefect-server` | Prefect | Orchestration UI for flow run history and logs | 4200 |
+| `pgadmin` | pgAdmin 4 | Database browser | 5050 |
 
 ## Data flow
-1. ETL validates and loads `ds/data/*.csv` into Postgres
-2. ETL trains style classifier, saves pkl to `ds/models/`
-3. API loads pkl on import, serves recommendations using shared inference module
-4. Frontend submits quiz, displays top-3 recommendations
+
+```text
+ETL pipeline
+│
+│ 1. Validates and loads CSVs into Postgres
+│ 2. Trains style classifier, saves pkl
+│ 3. Runs K-means segmentation
+▼
+PostgreSQL
+│
+│ 4. Stores all persistent state
+▼
+FastAPI
+│
+│ 5. Reads from DB, calls shared inference module for recommendations
+▼
+Streamlit
+6. Calls FastAPI endpoints and renders pages at http://localhost:8501
+```
+
+## Local URLs
+
+| Service | URL |
+|---------|-----|
+| Frontend | http://localhost:8501 |
+| API Swagger | http://localhost:8000/docs |
+| Prefect UI | http://localhost:4200 |
+| pgAdmin | http://localhost:5050 |

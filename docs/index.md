@@ -35,6 +35,10 @@ docker compose up --build
 
 Visit http://localhost:8501 for the user-facing app, http://localhost:8000/docs for API documentation.
 
+## What it looks like
+
+![ActivityHub recommendations](imgs/recommendations.png)
+
 ## Documentation
 
 See sections in the left nav for each component.

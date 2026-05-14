@@ -1,4 +1,7 @@
-site_name: My Docs
+site_name: ActivityHub Demo
+site_description: Personalized activity matching for Yerevan (DS223 group project)
+site_author: Group 3, AUA Spring 2026
+site_url: https://ds-223-2026-spring.github.io/ds223-3-project/
 
 nav:
   - Home: index.md
@@ -14,6 +17,8 @@ nav:
 
 theme:
   name: material
+  logo: imgs/activityhub_logo.png
+  favicon: imgs/activityhub_logo.png
   features:
     - navigation.tabs
     - navigation.sections
