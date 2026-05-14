@@ -36,6 +36,28 @@ Wait for `etl-1 exited with code 0`. Then open:
 | ETL | `activityhub/etl/` | Prefect pipeline (validate → load → train → segment) |
 | Shared | `activityhub/shared/` | Inference module shared between API and DS |
 
+## Team
+
+Group 3, DS-223 Spring 2026, AUA.
+
+| Member | Role |
+|---------|--------|
+| Anna Khurshudyan | Product Manager |
+| Liana Zhamkochyan | Database Developer |
+| Meline Mamikonyan | Data Scientist |
+| Ani Kirakosyan | Backend Dev |
+| Maria Petrosyan | Frontend Dev |
+| Hmayak Paravyan | Orchestration Engineer |
+
+## Resetting state
+
+```bash
+docker compose down -v
+docker compose up --build
+```
+
+That wipes the Postgres volume and reruns the full ETL pipeline.
+
 ## Repository Structure
 
 ```text
@@ -143,28 +165,6 @@ ds223-3-project/
     ├── ActivityHub_UI_Prototype.pdf
     ├── MoSCoW.png
 ```
-
-## Team
-
-Group 3, DS-223 Spring 2026, AUA.
-
-| Member | Role |
-|---------|--------|
-| Anna Khurshudyan | Product Manager |
-| Liana Zhamkochyan | Database Developer |
-| Meline Mamikonyan | Data Scientist |
-| Ani Kirakosyan | Backend Dev |
-| Maria Petrosyan | Frontend Dev |
-| Hmayak Paravyan | Orchestration Engineer |
-
-## Resetting state
-
-```bash
-docker compose down -v
-docker compose up --build
-```
-
-That wipes the Postgres volume and reruns the full ETL pipeline.
 
 ## Screenshots
 
