@@ -54,6 +54,8 @@ Bad:
 - Data files: `studios.csv`, `synthetic_users.csv`
 
 ## Folder Structure
+
+```text
 ds223-3-project/
 │   .env.example
 │   .gitignore
@@ -178,7 +180,7 @@ ds223-3-project/
         project_architecture_diagram.svg
         Roadmap_Flowchart.png
         UI_Prototype.html
-
+```
 
 ## Review Expectations
 - PRs reviewed within 24 hours of being opened
