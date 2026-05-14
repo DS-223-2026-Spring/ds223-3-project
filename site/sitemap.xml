@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://ds-223-2026-spring.github.io/ds223-3-project/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://ds-223-2026-spring.github.io/ds223-3-project/api/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://ds-223-2026-spring.github.io/ds223-3-project/architecture/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://ds-223-2026-spring.github.io/ds223-3-project/database/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://ds-223-2026-spring.github.io/ds223-3-project/ds/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://ds-223-2026-spring.github.io/ds223-3-project/frontend/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://ds-223-2026-spring.github.io/ds223-3-project/orchestration/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://ds-223-2026-spring.github.io/ds223-3-project/visual-analytics-guide/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+</urlset>

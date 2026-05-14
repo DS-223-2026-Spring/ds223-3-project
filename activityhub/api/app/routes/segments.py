@@ -24,6 +24,30 @@ def list_segments(db: Session = Depends(get_db)):
     return [Segment(**dict(r)) for r in rows]
 
 
+@router.get("/studio/{studio_id}", response_model=list[Segment], summary="Segments by studio")
+def segments_by_studio(studio_id: int, db: Session = Depends(get_db)):
+    """
+    Returns segments composed of users whose recommendations include classes
+    from the given studio. Joins recommendations -> classes -> studios and
+    aggregates by user_segments.
+    """
+    rows = db.execute(
+        text("""
+            SELECT s.segment_id, s.segment_name, s.description,
+                   COUNT(DISTINCT us.user_id) AS size,
+                   s.booking_likelihood
+            FROM recommendations r
+            JOIN classes c ON r.class_id = c.class_id
+            JOIN user_segments us ON r.user_id = us.user_id
+            JOIN segments s ON us.segment_id = s.segment_id
+            WHERE c.studio_id = :sid
+            GROUP BY s.segment_id, s.segment_name, s.description, s.booking_likelihood
+            ORDER BY size DESC
+        """),
+        {"sid": studio_id},
+    ).mappings().all()
+    return [Segment(**dict(r)) for r in rows]
+
 @router.get("/{segment_id}", response_model=Segment, summary="Get segment by ID")
 def get_segment(segment_id: int, db: Session = Depends(get_db)):
     """

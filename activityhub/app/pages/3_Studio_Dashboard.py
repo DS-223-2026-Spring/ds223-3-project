@@ -12,13 +12,34 @@ st.set_page_config(page_title="Studio Dashboard - ActivityHub", layout="wide")
 st.title("Studio Audience Insights")
 st.caption("Which user segments are most likely to book your classes")
 
+# Studio selector
+try:
+    studios_r = requests.get(f"{API_URL}/studios/", timeout=10)
+    studios_r.raise_for_status()
+    all_studios = studios_r.json()
+except requests.RequestException:
+    all_studios = []
+
+studio_options = ["All studios (platform-wide)"] + [s["studio_name"] for s in all_studios]
+selected = st.selectbox("View segments for:", studio_options)
+
+if selected == "All studios (platform-wide)":
+    endpoint = f"{API_URL}/segments/"
+else:
+    studio_id = next(s["studio_id"] for s in all_studios if s["studio_name"] == selected)
+    endpoint = f"{API_URL}/segments/studio/{studio_id}"
+
 # Load segments
 try:
-    r = requests.get(f"{API_URL}/segments/", timeout=10)
+    r = requests.get(endpoint, timeout=10)
     r.raise_for_status()
     segments = r.json()
 except requests.RequestException as e:
     st.error(f"Couldn't load segments: {e}")
+    st.stop()
+
+if not segments:
+    st.info(f"No segment data yet for {selected}. Run a few more quizzes to populate recommendations for this studio's classes.")
     st.stop()
 
 if not segments:

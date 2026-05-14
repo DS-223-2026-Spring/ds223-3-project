@@ -1,0 +1,3012 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personalized activity matching for Yerevan (DS223 group project)">
+      
+      
+        <meta name="author" content="Group 3, AUA Spring 2026">
+      
+      
+        <link rel="canonical" href="https://ds-223-2026-spring.github.io/ds223-3-project/api/">
+      
+      
+        <link rel="prev" href="../database/">
+      
+      
+        <link rel="next" href="../frontend/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../imgs/activityhub_logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>API - ActivityHub Demo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#activityhub-api-specification" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ActivityHub Demo" class="md-header__button md-logo" aria-label="ActivityHub Demo" data-md-component="logo">
+      
+  <img src="../imgs/activityhub_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ActivityHub Demo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DS-223-2026-Spring/ds223-3-project" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DS-223-2026-Spring/ds223-3-project
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../frontend/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Frontend
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ds/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Data Science
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../orchestration/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Orchestration
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../visual-analytics-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Visual Analytics Guide
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ActivityHub Demo" class="md-nav__button md-logo" aria-label="ActivityHub Demo" data-md-component="logo">
+      
+  <img src="../imgs/activityhub_logo.png" alt="logo">
+
+    </a>
+    ActivityHub Demo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DS-223-2026-Spring/ds223-3-project" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DS-223-2026-Spring/ds223-3-project
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resource-feature-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource - Feature mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.quiz.delete_quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        delete_quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.quiz.get_quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.quiz.submit_quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        submit_quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.quiz.update_quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update_quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.recommend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        recommend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.recommend.get_recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_recommendations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.recommend.recommend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        recommend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.bookings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bookings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.bookings.create_booking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_booking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.bookings.list_user_bookings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list_user_bookings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        segments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.segments.create_segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_segment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.segments.delete_segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        delete_segment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.segments.get_segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_segment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.segments.list_segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list_segments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.studios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        studios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.studios.create_studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_studio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.studios.delete_studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        delete_studio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.studios.get_studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_studio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.studios.list_studios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list_studios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.studios.update_studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update_studio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.users.create_user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_user
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.users.delete_user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        delete_user
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.users.get_user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_user
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes.users.list_users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list_users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /quiz
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="/quiz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /quiz/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-quizuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /quiz/{user_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /recommend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="/recommend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-recommend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /recommend/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-recommenduser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /recommend/{user_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#studios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /studios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="/studios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-studios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /studios/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-studiosstudio_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /studios/{studio_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-studios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /studios/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /segments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="/segments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /segments/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bookings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /bookings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="/bookings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-bookings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /bookings/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error responses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Science
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visual-analytics-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Analytics Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="activityhub-api-specification">ActivityHub - API Specification</h1>
+<p>Authoritative list of all API endpoints, their request/response shapes, and which product feature each one supports.</p>
+<p>Base URL: <code>http://localhost:8000</code> (Docker), <code>http://api:8000</code> (inside Docker network)
+OpenAPI docs: <code>http://localhost:8000/docs</code></p>
+<h2 id="resource-feature-mapping">Resource - Feature mapping</h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Endpoints</th>
+<th>Product feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/quiz</td>
+<td>POST, GET /{user_id}</td>
+<td>User onboarding flow</td>
+</tr>
+<tr>
+<td>/recommend</td>
+<td>POST, GET /{user_id}</td>
+<td>Top-3 class recommendations</td>
+</tr>
+<tr>
+<td>/studios</td>
+<td>GET, GET /{id}, POST</td>
+<td>Studio listing</td>
+</tr>
+<tr>
+<td>/segments</td>
+<td>GET</td>
+<td>User personas (Studio Dashboard)</td>
+</tr>
+<tr>
+<td>/bookings</td>
+<td>POST</td>
+<td>Feedback loop ("I tried this class")</td>
+</tr>
+<tr>
+<td>/users</td>
+<td>GET, GET /{id}, POST</td>
+<td>Internal admin</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<hr />
+<hr />
+<h2 id="module-reference">Module reference</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="routes.quiz"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.quiz.delete_quiz" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">delete_quiz</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts user_id as a path parameter and permanently deletes the user along with all quiz responses, recommendations, and bookings.
+Returns 404 if the user does not exist. This action is irreversible.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\quiz.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Delete user and quiz&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">delete_quiz</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts user_id as a path parameter and permanently deletes the user along with all quiz responses, recommendations, and bookings.</span>
+<span class="sd">    Returns 404 if the user does not exist. This action is irreversible.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;DELETE FROM users WHERE user_id = :uid&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;User not found&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;User and quiz history deleted successfully&quot;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.quiz.get_quiz" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_quiz</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts user_id as a path parameter and returns the user's most recent quiz submission as a flat object.
+The response combines demographics (age, gender, district) with all preference fields: experience_level, group_preference, energy_preference, structure_preference, goal, budget_max_amd, preferred_days, preferred_time, max_travel_km, and submitted_at.
+Returns 404 if no quiz has been submitted for this user.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\quiz.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Get quiz by user ID&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_quiz</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts user_id as a path parameter and returns the user&#39;s most recent quiz submission as a flat object.</span>
+<span class="sd">    The response combines demographics (age, gender, district) with all preference fields: experience_level, group_preference, energy_preference, structure_preference, goal, budget_max_amd, preferred_days, preferred_time, max_travel_km, and submitted_at.</span>
+<span class="sd">    Returns 404 if no quiz has been submitted for this user.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;SELECT u.user_id, u.age, u.gender, u.district, u.data_source,</span>
+<span class="s2">                       q.experience_level, q.group_preference, q.energy_preference,</span>
+<span class="s2">                       q.structure_preference, q.goal,</span>
+<span class="s2">                       q.budget_max_amd, q.preferred_days, q.preferred_time,</span>
+<span class="s2">                       q.max_travel_km, q.submitted_at</span>
+<span class="s2">                FROM users u</span>
+<span class="s2">                JOIN quiz_responses q ON u.user_id = q.user_id</span>
+<span class="s2">                WHERE u.user_id = :uid</span>
+<span class="s2">                ORDER BY q.submitted_at DESC LIMIT 1&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">row</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Quiz not found for user&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.quiz.submit_quiz" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">submit_quiz</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts quiz answers: age, gender, district, experience_level, group_preference, energy_preference, structure_preference, goal, budget_max_amd, preferred_days (list of strings), preferred_time, and max_travel_km.
+Creates a new ActivityHub user and stores their onboarding preferences in one step.
+Returns user_id — the frontend must save this value to call the recommend endpoint next.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\quiz.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">QuizResponse</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Submit onboarding quiz&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">submit_quiz</span><span class="p">(</span><span class="n">body</span><span class="p">:</span> <span class="n">QuizRequest</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts quiz answers: age, gender, district, experience_level, group_preference, energy_preference, structure_preference, goal, budget_max_amd, preferred_days (list of strings), preferred_time, and max_travel_km.</span>
+<span class="sd">    Creates a new ActivityHub user and stores their onboarding preferences in one step.</span>
+<span class="sd">    Returns user_id — the frontend must save this value to call the recommend endpoint next.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user_row</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;INSERT INTO users (age, gender, district, data_source)</span>
+<span class="s2">                VALUES (:age, :gender, :district, &#39;real&#39;)</span>
+<span class="s2">                RETURNING user_id&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">gender</span><span class="p">,</span> <span class="s2">&quot;district&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">district</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">user_row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;INSERT INTO quiz_responses (</span>
+<span class="s2">                    user_id, experience_level, group_preference, energy_preference,</span>
+<span class="s2">                    structure_preference, goal,</span>
+<span class="s2">                    budget_max_amd, preferred_days, preferred_time, max_travel_km)</span>
+<span class="s2">                VALUES (:uid, :exp, :gp, :ep, :sp, :goal,</span>
+<span class="s2">                        :budget, :days, :time, :travel)&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">,</span>
+            <span class="s2">&quot;exp&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">experience_level</span><span class="p">,</span>
+            <span class="s2">&quot;gp&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">group_preference</span><span class="p">,</span>
+            <span class="s2">&quot;ep&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">energy_preference</span><span class="p">,</span>
+            <span class="s2">&quot;sp&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">structure_preference</span><span class="p">,</span>
+            <span class="s2">&quot;goal&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">goal</span><span class="p">,</span>
+            <span class="s2">&quot;budget&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">budget_max_amd</span><span class="p">,</span>
+            <span class="s2">&quot;days&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">preferred_days</span><span class="p">)</span> <span class="k">if</span> <span class="n">body</span><span class="o">.</span><span class="n">preferred_days</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">preferred_time</span><span class="p">,</span>
+            <span class="s2">&quot;travel&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">max_travel_km</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">QuizResponse</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Quiz submitted successfully&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.quiz.update_quiz" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update_quiz</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts user_id as a path parameter and a full quiz body (same fields as POST /quiz), then inserts a new quiz_responses row making it the active preference profile for class matching.
+After updating, call POST /recommend to regenerate recommendations with the new preferences.
+Returns 404 if the user does not exist.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\quiz.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">QuizResponse</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Update user quiz&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">update_quiz</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="n">QuizRequest</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts user_id as a path parameter and a full quiz body (same fields as POST /quiz), then inserts a new quiz_responses row making it the active preference profile for class matching.</span>
+<span class="sd">    After updating, call POST /recommend to regenerate recommendations with the new preferences.</span>
+<span class="sd">    Returns 404 if the user does not exist.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT user_id FROM users WHERE user_id = :uid&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;User not found&quot;</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;INSERT INTO quiz_responses (</span>
+<span class="s2">                    user_id, experience_level, group_preference, energy_preference,</span>
+<span class="s2">                    structure_preference, goal,</span>
+<span class="s2">                    budget_max_amd, preferred_days, preferred_time, max_travel_km)</span>
+<span class="s2">                VALUES (:uid, :exp, :gp, :ep, :sp, :goal,</span>
+<span class="s2">                        :budget, :days, :time, :travel)&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">,</span>
+            <span class="s2">&quot;exp&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">experience_level</span><span class="p">,</span>
+            <span class="s2">&quot;gp&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">group_preference</span><span class="p">,</span>
+            <span class="s2">&quot;ep&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">energy_preference</span><span class="p">,</span>
+            <span class="s2">&quot;sp&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">structure_preference</span><span class="p">,</span>
+            <span class="s2">&quot;goal&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">goal</span><span class="p">,</span>
+            <span class="s2">&quot;budget&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">budget_max_amd</span><span class="p">,</span>
+            <span class="s2">&quot;days&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">preferred_days</span><span class="p">)</span> <span class="k">if</span> <span class="n">body</span><span class="o">.</span><span class="n">preferred_days</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">preferred_time</span><span class="p">,</span>
+            <span class="s2">&quot;travel&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">max_travel_km</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">QuizResponse</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Quiz updated successfully&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="routes.recommend"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.recommend.get_recommendations" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_recommendations</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts user_id as a path parameter and returns the most recently generated top-3 class recommendations for that user.
+Each recommendation includes class_id, studio_name, activity_type, style, day, time, price_amd, score, and rank (1–3).
+Call POST /recommend first to generate results — returns 404 if none exist yet.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\recommend.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">RecommendResponse</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Get saved recommendations&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_recommendations</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts user_id as a path parameter and returns the most recently generated top-3 class recommendations for that user.</span>
+<span class="sd">    Each recommendation includes class_id, studio_name, activity_type, style, day, time, price_amd, score, and rank (1–3).</span>
+<span class="sd">    Call POST /recommend first to generate results — returns 404 if none exist yet.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;SELECT r.class_id, r.score, r.rank,</span>
+<span class="s2">                       c.studio_name, c.activity_type, c.style, c.day, c.time,</span>
+<span class="s2">                       c.price_per_session_amd</span>
+<span class="s2">                FROM recommendations r</span>
+<span class="s2">                JOIN classes c ON r.class_id = c.class_id</span>
+<span class="s2">                WHERE r.user_id = :uid</span>
+<span class="s2">                ORDER BY r.generated_at DESC, r.rank ASC</span>
+<span class="s2">                LIMIT 3&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;No recommendations found for user&quot;</span><span class="p">)</span>
+
+    <span class="n">recs</span> <span class="o">=</span> <span class="p">[</span><span class="n">RecommendationResponse</span><span class="p">(</span>
+        <span class="n">class_id</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;class_id&quot;</span><span class="p">]),</span>
+        <span class="n">studio_name</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;studio_name&quot;</span><span class="p">],</span>
+        <span class="n">activity_type</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;activity_type&quot;</span><span class="p">],</span>
+        <span class="n">style</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">],</span>
+        <span class="n">day</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">time</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">price_amd</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;price_per_session_amd&quot;</span><span class="p">])</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;price_per_session_amd&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">score</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]),</span>
+        <span class="n">rank</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;rank&quot;</span><span class="p">]),</span>
+    <span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">RecommendResponse</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">,</span> <span class="n">recommendations</span><span class="o">=</span><span class="n">recs</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.recommend.recommend" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">recommend</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts user_id in the request body, reads the user's latest quiz preferences, and runs them through the ActivityHub matching model against all available Yerevan studio classes.
+Returns the top-3 ranked results, each containing class_id, studio_name, activity_type, style, day, time, price_amd, score, and rank.
+Results are saved to the database and can be retrieved later via GET /recommend/{user_id}.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\recommend.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">RecommendResponse</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Generate class recommendations&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">recommend</span><span class="p">(</span><span class="n">body</span><span class="p">:</span> <span class="n">RecommendRequest</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts user_id in the request body, reads the user&#39;s latest quiz preferences, and runs them through the ActivityHub matching model against all available Yerevan studio classes.</span>
+<span class="sd">    Returns the top-3 ranked results, each containing class_id, studio_name, activity_type, style, day, time, price_amd, score, and rank.</span>
+<span class="sd">    Results are saved to the database and can be retrieved later via GET /recommend/{user_id}.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">recommend</span> <span class="kn">import</span> <span class="n">recommend_top_k</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="mi">503</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Model not available yet: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">quiz</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;SELECT u.age, u.gender, u.district,</span>
+<span class="s2">                       q.experience_level, q.group_preference, q.energy_preference,</span>
+<span class="s2">                       q.structure_preference, q.goal,</span>
+<span class="s2">                       q.budget_max_amd</span>
+<span class="s2">                FROM users u</span>
+<span class="s2">                JOIN quiz_responses q ON u.user_id = q.user_id</span>
+<span class="s2">                WHERE u.user_id = :uid</span>
+<span class="s2">                ORDER BY q.submitted_at DESC LIMIT 1&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">user_id</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">quiz</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Quiz not found for user&quot;</span><span class="p">)</span>
+
+    <span class="n">classes_rows</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        SELECT c.class_id, c.studio_id, c.studio_name, c.activity_type, c.style,</span>
+<span class="s2">               c.day, c.time, c.duration_min,</span>
+<span class="s2">               c.price_per_session_amd, c.experience_required,</span>
+<span class="s2">               c.group_or_private, c.energy_level, c.structure_level, c.district</span>
+<span class="s2">        FROM classes c</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">classes_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="nb">dict</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">classes_rows</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">classes_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="mi">503</span><span class="p">,</span> <span class="s2">&quot;No classes loaded yet&quot;</span><span class="p">)</span>
+
+    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="n">quiz</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;gender&quot;</span><span class="p">:</span> <span class="n">quiz</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;district&quot;</span><span class="p">:</span> <span class="n">quiz</span><span class="p">[</span><span class="s2">&quot;district&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;experience_level&quot;</span><span class="p">:</span> <span class="n">quiz</span><span class="p">[</span><span class="s2">&quot;experience_level&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;group_preference&quot;</span><span class="p">:</span> <span class="n">quiz</span><span class="p">[</span><span class="s2">&quot;group_preference&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;energy_preference&quot;</span><span class="p">:</span> <span class="n">quiz</span><span class="p">[</span><span class="s2">&quot;energy_preference&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;structure_preference&quot;</span><span class="p">:</span> <span class="n">quiz</span><span class="p">[</span><span class="s2">&quot;structure_preference&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;goal&quot;</span><span class="p">:</span> <span class="n">quiz</span><span class="p">[</span><span class="s2">&quot;goal&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;budget_max_amd&quot;</span><span class="p">:</span> <span class="n">quiz</span><span class="p">[</span><span class="s2">&quot;budget_max_amd&quot;</span><span class="p">],</span>
+    <span class="p">}</span>
+
+    <span class="n">top</span> <span class="o">=</span> <span class="n">recommend_top_k</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">classes_df</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="n">recs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">top</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(),</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">recs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">RecommendationResponse</span><span class="p">(</span>
+            <span class="n">class_id</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">class_id</span><span class="p">),</span>
+            <span class="n">studio_name</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">studio_name</span><span class="p">,</span>
+            <span class="n">activity_type</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">activity_type</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">style</span><span class="p">,</span>
+            <span class="n">day</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">day</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">time</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">time</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">price_amd</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">price_per_session_amd</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">price_per_session_amd</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">score</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">score</span><span class="p">),</span>
+            <span class="n">rank</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
+        <span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">recs</span><span class="p">:</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+            <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;INSERT INTO recommendations (user_id, class_id, score, rank)</span>
+<span class="s2">                    VALUES (:uid, :cid, :score, :rank)&quot;&quot;&quot;</span><span class="p">),</span>
+            <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">class_id</span><span class="p">,</span>
+             <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="s2">&quot;rank&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">rank</span><span class="p">},</span>
+        <span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">RecommendResponse</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">recommendations</span><span class="o">=</span><span class="n">recs</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="routes.bookings"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.bookings.create_booking" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">create_booking</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts user_id, class_id, and an optional feedback score in the request body.
+Records that the user attended a class at an ActivityHub partner studio and stores their feedback for recommendation model improvement.
+Returns the generated booking_id.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\bookings.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">BookingResponse</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Record a class booking&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">create_booking</span><span class="p">(</span><span class="n">body</span><span class="p">:</span> <span class="n">BookingRequest</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts user_id, class_id, and an optional feedback score in the request body.</span>
+<span class="sd">    Records that the user attended a class at an ActivityHub partner studio and stores their feedback for recommendation model improvement.</span>
+<span class="sd">    Returns the generated booking_id.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT user_id FROM users WHERE user_id = :uid&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">user_id</span><span class="p">}</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;User not found&quot;</span><span class="p">)</span>
+
+    <span class="bp">cls</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT class_id FROM classes WHERE class_id = :cid&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">class_id</span><span class="p">}</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">cls</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Class not found — ETL pipeline may not have run yet&quot;</span><span class="p">)</span>
+
+    <span class="n">row</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;INSERT INTO bookings (user_id, class_id, feedback)</span>
+<span class="s2">                VALUES (:uid, :cid, :fb)</span>
+<span class="s2">                RETURNING booking_id&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">class_id</span><span class="p">,</span> <span class="s2">&quot;fb&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">feedback</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">BookingResponse</span><span class="p">(</span><span class="n">booking_id</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Feedback recorded&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.bookings.list_user_bookings" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">list_user_bookings</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts user_id as a path parameter and returns a list of all classes the user has booked.
+Each entry is enriched with studio_name, activity_type, style, feedback score, and booked_at timestamp, ordered most recent first.
+Returns an empty list if the user has no bookings yet.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\bookings.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;List user bookings&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">list_user_bookings</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts user_id as a path parameter and returns a list of all classes the user has booked.</span>
+<span class="sd">    Each entry is enriched with studio_name, activity_type, style, feedback score, and booked_at timestamp, ordered most recent first.</span>
+<span class="sd">    Returns an empty list if the user has no bookings yet.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;SELECT b.booking_id, b.class_id, b.feedback, b.booked_at,</span>
+<span class="s2">                       c.studio_name, c.activity_type, c.style</span>
+<span class="s2">                FROM bookings b</span>
+<span class="s2">                JOIN classes c ON b.class_id = c.class_id</span>
+<span class="s2">                WHERE b.user_id = :uid</span>
+<span class="s2">                ORDER BY b.booked_at DESC&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="routes.segments"></a>
+    <div class="doc doc-contents first">
+
+        <p>Reads from segments table ds/scripts/segment_users.py.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.segments.create_segment" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">create_segment</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts segment_name (str), description (str), size (int), and booking_likelihood (float 0–1) in the request body.
+Creates a new ActivityHub user segment record and returns the generated segment_id.
+Segments are normally produced by the automated segmentation pipeline — use this endpoint for manual additions or testing.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\segments.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Create a segment&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">create_segment</span><span class="p">(</span><span class="n">body</span><span class="p">:</span> <span class="n">SegmentCreate</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts segment_name (str), description (str), size (int), and booking_likelihood (float 0–1) in the request body.</span>
+<span class="sd">    Creates a new ActivityHub user segment record and returns the generated segment_id.</span>
+<span class="sd">    Segments are normally produced by the automated segmentation pipeline — use this endpoint for manual additions or testing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;INSERT INTO segments</span>
+<span class="s2">                (segment_name, description, size, booking_likelihood)</span>
+<span class="s2">                VALUES (:n, :d, :s, :b)</span>
+<span class="s2">                RETURNING segment_id&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">segment_name</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+         <span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">booking_likelihood</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;segment_id&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Segment created successfully&quot;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.segments.delete_segment" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">delete_segment</span><span class="p">(</span><span class="n">segment_id</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts segment_id as a path parameter and permanently removes the segment record.
+Returns 404 if no segment with that ID exists.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\segments.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{segment_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Delete a segment&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">delete_segment</span><span class="p">(</span><span class="n">segment_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts segment_id as a path parameter and permanently removes the segment record.</span>
+<span class="sd">    Returns 404 if no segment with that ID exists.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;DELETE FROM segments WHERE segment_id = :sid&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;sid&quot;</span><span class="p">:</span> <span class="n">segment_id</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Segment not found&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Segment deleted successfully&quot;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.segments.get_segment" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_segment</span><span class="p">(</span><span class="n">segment_id</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts segment_id as a path parameter and returns one segment's full details: segment_id, segment_name, description, size (user count), and booking_likelihood (float 0–1 probability).
+Returns 404 if the segment does not exist.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\segments.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{segment_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">Segment</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Get segment by ID&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_segment</span><span class="p">(</span><span class="n">segment_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts segment_id as a path parameter and returns one segment&#39;s full details: segment_id, segment_name, description, size (user count), and booking_likelihood (float 0–1 probability).</span>
+<span class="sd">    Returns 404 if the segment does not exist.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM segments WHERE segment_id = :sid&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;sid&quot;</span><span class="p">:</span> <span class="n">segment_id</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">row</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Segment not found&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Segment</span><span class="p">(</span><span class="o">**</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.segments.list_segments" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">list_segments</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Returns an array of all ActivityHub user segments ordered by size (largest first).
+Each object includes segment_id, segment_name, description, size (number of users), and booking_likelihood.
+Used by the studio dashboard to display audience cluster breakdowns and targeting insights.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\segments.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="nb">list</span><span class="p">[</span><span class="n">Segment</span><span class="p">],</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;List all segments&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">list_segments</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns an array of all ActivityHub user segments ordered by size (largest first).</span>
+<span class="sd">    Each object includes segment_id, segment_name, description, size (number of users), and booking_likelihood.</span>
+<span class="sd">    Used by the studio dashboard to display audience cluster breakdowns and targeting insights.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM segments ORDER BY size DESC&quot;</span><span class="p">)</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">Segment</span><span class="p">(</span><span class="o">**</span><span class="nb">dict</span><span class="p">(</span><span class="n">r</span><span class="p">))</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="routes.studios"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.studios.create_studio" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">create_studio</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts studio_name, district, address, instagram, price_tier, and studio_type in the request body.
+Registers a new partner studio on the ActivityHub platform and returns the newly assigned studio_id along with a confirmation message.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\studios.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">StudioResponse</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Create a studio&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">create_studio</span><span class="p">(</span><span class="n">body</span><span class="p">:</span> <span class="n">StudioCreate</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts studio_name, district, address, instagram, price_tier, and studio_type in the request body.</span>
+<span class="sd">    Registers a new partner studio on the ActivityHub platform and returns the newly assigned studio_id along with a confirmation message.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">next_id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT COALESCE(MAX(studio_id), 0) + 1 FROM studios&quot;</span><span class="p">)</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">scalar</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;INSERT INTO studios (studio_id, studio_name, district, address,</span>
+<span class="s2">                                     instagram, price_tier, studio_type)</span>
+<span class="s2">                VALUES (:sid, :name, :dist, :addr, :ig, :tier, :stype)&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;sid&quot;</span><span class="p">:</span> <span class="n">next_id</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">studio_name</span><span class="p">,</span> <span class="s2">&quot;dist&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">district</span><span class="p">,</span>
+         <span class="s2">&quot;addr&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">address</span><span class="p">,</span> <span class="s2">&quot;ig&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">instagram</span><span class="p">,</span>
+         <span class="s2">&quot;tier&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">price_tier</span><span class="p">,</span> <span class="s2">&quot;stype&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">studio_type</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">StudioResponse</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s2">&quot;Studio created&quot;</span><span class="p">,</span> <span class="n">studio_id</span><span class="o">=</span><span class="n">next_id</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.studios.delete_studio" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">delete_studio</span><span class="p">(</span><span class="n">studio_id</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts studio_id as a path parameter and permanently removes the studio record from the ActivityHub platform.
+Returns 404 if no studio with that ID exists.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\studios.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{studio_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Delete a studio&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">delete_studio</span><span class="p">(</span><span class="n">studio_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts studio_id as a path parameter and permanently removes the studio record from the ActivityHub platform.</span>
+<span class="sd">    Returns 404 if no studio with that ID exists.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;DELETE FROM studios WHERE studio_id = :sid&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;sid&quot;</span><span class="p">:</span> <span class="n">studio_id</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Studio not found&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Studio deleted successfully&quot;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.studios.get_studio" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_studio</span><span class="p">(</span><span class="n">studio_id</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts studio_id as a path parameter and returns full profile details for one studio: studio_id, studio_name, district, address, instagram, price_tier, and studio_type.
+Returns 404 if no studio with that ID exists on the ActivityHub platform.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\studios.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{studio_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">Studio</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Get studio by ID&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_studio</span><span class="p">(</span><span class="n">studio_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts studio_id as a path parameter and returns full profile details for one studio: studio_id, studio_name, district, address, instagram, price_tier, and studio_type.</span>
+<span class="sd">    Returns 404 if no studio with that ID exists on the ActivityHub platform.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM studios WHERE studio_id = :sid&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;sid&quot;</span><span class="p">:</span> <span class="n">studio_id</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">row</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Studio not found&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Studio</span><span class="p">(</span><span class="o">**</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.studios.list_studios" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">list_studios</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Returns an array of all ActivityHub partner studios in Yerevan.
+Each object includes studio_id, studio_name, district, address, instagram, price_tier, and studio_type.
+Use this to populate studio browse or filter views in the frontend.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\studios.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="nb">list</span><span class="p">[</span><span class="n">Studio</span><span class="p">],</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;List all studios&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">list_studios</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns an array of all ActivityHub partner studios in Yerevan.</span>
+<span class="sd">    Each object includes studio_id, studio_name, district, address, instagram, price_tier, and studio_type.</span>
+<span class="sd">    Use this to populate studio browse or filter views in the frontend.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM studios&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">Studio</span><span class="p">(</span><span class="o">**</span><span class="nb">dict</span><span class="p">(</span><span class="n">r</span><span class="p">))</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.studios.update_studio" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update_studio</span><span class="p">(</span><span class="n">studio_id</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts studio_id as a path parameter and a full studio body (studio_name, district, address, instagram, price_tier, studio_type).
+Replaces all existing fields on the studio record with the provided values.
+Returns 404 if no studio with that ID exists.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\studios.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{studio_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Update studio details&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">update_studio</span><span class="p">(</span><span class="n">studio_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="n">StudioCreate</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts studio_id as a path parameter and a full studio body (studio_name, district, address, instagram, price_tier, studio_type).</span>
+<span class="sd">    Replaces all existing fields on the studio record with the provided values.</span>
+<span class="sd">    Returns 404 if no studio with that ID exists.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;UPDATE studios</span>
+<span class="s2">                SET studio_name = :name, district = :dist, address = :addr,</span>
+<span class="s2">                    instagram = :ig, price_tier = :tier, studio_type = :stype</span>
+<span class="s2">                WHERE studio_id = :sid&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;sid&quot;</span><span class="p">:</span> <span class="n">studio_id</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">studio_name</span><span class="p">,</span> <span class="s2">&quot;dist&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">district</span><span class="p">,</span>
+         <span class="s2">&quot;addr&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">address</span><span class="p">,</span> <span class="s2">&quot;ig&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">instagram</span><span class="p">,</span>
+         <span class="s2">&quot;tier&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">price_tier</span><span class="p">,</span> <span class="s2">&quot;stype&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">studio_type</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Studio not found&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Studio updated successfully&quot;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="routes.users"></a>
+    <div class="doc doc-contents first">
+
+        <p>User endpoints internal admin CRUD.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.users.create_user" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">create_user</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts age (int), gender (str), and district (str) in the request body and creates a new ActivityHub user record.
+Returns the generated user_id — the frontend should store this and immediately redirect to the quiz submission flow.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\users.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">QuizResponse</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Create a new user&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">create_user</span><span class="p">(</span><span class="n">body</span><span class="p">:</span> <span class="n">UserCreate</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts age (int), gender (str), and district (str) in the request body and creates a new ActivityHub user record.</span>
+<span class="sd">    Returns the generated user_id — the frontend should store this and immediately redirect to the quiz submission flow.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;INSERT INTO users (age, gender, district, data_source)</span>
+<span class="s2">                VALUES (:a, :g, :d, &#39;real&#39;)</span>
+<span class="s2">                RETURNING user_id&quot;&quot;&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">gender</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">district</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">QuizResponse</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;User created successfully&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.users.delete_user" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">delete_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts user_id as a path parameter and permanently removes the user along with all associated data (quiz responses, recommendations, bookings).
+Returns 404 if the user does not exist. This action cannot be undone.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\users.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Delete user by ID&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">delete_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts user_id as a path parameter and permanently removes the user along with all associated data (quiz responses, recommendations, bookings).</span>
+<span class="sd">    Returns 404 if the user does not exist. This action cannot be undone.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;DELETE FROM users WHERE user_id = :uid&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;User not found&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;User and all related data deleted&quot;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.users.get_user" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Accepts user_id as a path parameter and returns the matching user's profile fields: user_id, age, gender, district, and data_source.
+Returns 404 if no user with that ID exists in the ActivityHub database.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\users.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Get user by ID&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Accepts user_id as a path parameter and returns the matching user&#39;s profile fields: user_id, age, gender, district, and data_source.</span>
+<span class="sd">    Returns 404 if no user with that ID exists in the ActivityHub database.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users WHERE user_id = :uid&quot;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">},</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">row</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;User not found&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="routes.users.list_users" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">list_users</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">))</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Returns an array of all registered ActivityHub users with fields: user_id, age, gender, district, and data_source.
+Intended for internal admin use only — not exposed in the user-facing app.
+Each record reflects the user's demographic information and whether they are a real or synthetic data entry.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>activityhub\api\app\routes\users.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;List all users&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">list_users</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns an array of all registered ActivityHub users with fields: user_id, age, gender, district, and data_source.</span>
+<span class="sd">    Intended for internal admin use only — not exposed in the user-facing app.</span>
+<span class="sd">    Each record reflects the user&#39;s demographic information and whether they are a real or synthetic data entry.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="quiz">/quiz</h2>
+<h3 id="post-quiz"><code>POST /quiz/</code></h3>
+<p>Submit user quiz answers. Creates a new user row + quiz_responses row, returns <code>user_id</code>.</p>
+<p><strong>Request:</strong></p>
+<pre><code class="language-json">{
+  &quot;age&quot;: 22,
+  &quot;gender&quot;: &quot;female&quot;,
+  &quot;district&quot;: &quot;Kentron&quot;,
+  &quot;experience_level&quot;: &quot;beginner&quot;,
+  &quot;group_preference&quot;: &quot;small group&quot;,
+  &quot;energy_preference&quot;: &quot;low energy&quot;,
+  &quot;structure_preference&quot;: &quot;structured&quot;,
+  &quot;goal&quot;: &quot;stress relief&quot;,
+  &quot;budget_max_amd&quot;: 15000,
+  &quot;preferred_days&quot;: [&quot;Monday&quot;, &quot;Wednesday&quot;],
+  &quot;preferred_time&quot;: &quot;evening&quot;,
+  &quot;max_travel_km&quot;: &quot;5km&quot;
+}
+</code></pre>
+<p><strong>Response (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;user_id&quot;: 42,
+  &quot;message&quot;: &quot;Quiz submitted successfully&quot;
+}
+</code></pre>
+<h3 id="get-quizuser_id"><code>GET /quiz/{user_id}</code></h3>
+<p>Fetch the most recent quiz for a user.</p>
+<p><strong>Response (200):</strong> same shape as request body, plus <code>submitted_at</code> timestamp.</p>
+<hr />
+<h2 id="recommend">/recommend</h2>
+<h3 id="post-recommend"><code>POST /recommend/</code></h3>
+<p>Generate top-3 recommendations for a user based on their quiz.</p>
+<p><strong>Request:</strong></p>
+<pre><code class="language-json">{ &quot;user_id&quot;: 42 }
+</code></pre>
+<p><strong>Response (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;user_id&quot;: 42,
+  &quot;recommendations&quot;: [
+    {
+      &quot;class_id&quot;: 17,
+      &quot;studio_name&quot;: &quot;Akhtanak Yoga&quot;,
+      &quot;activity_type&quot;: &quot;yoga&quot;,
+      &quot;style&quot;: &quot;Hatha&quot;,
+      &quot;day&quot;: &quot;Wednesday&quot;,
+      &quot;time&quot;: &quot;18:00&quot;,
+      &quot;price_amd&quot;: 12000,
+      &quot;score&quot;: 0.31,
+      &quot;rank&quot;: 1
+    }
+  ]
+}
+</code></pre>
+<h3 id="get-recommenduser_id"><code>GET /recommend/{user_id}</code></h3>
+<p>Return saved recommendation history for a user (latest 10).</p>
+<hr />
+<h2 id="studios">/studios</h2>
+<h3 id="get-studios"><code>GET /studios/</code></h3>
+<p>List all studios.</p>
+<h3 id="get-studiosstudio_id"><code>GET /studios/{studio_id}</code></h3>
+<p>Fetch one studio.</p>
+<h3 id="post-studios"><code>POST /studios/</code></h3>
+<p>Add a studio. Used by data loading.</p>
+<p><strong>Request:</strong></p>
+<pre><code class="language-json">{
+  &quot;studio_name&quot;: &quot;New Yoga&quot;,
+  &quot;district&quot;: &quot;Kentron&quot;,
+  &quot;address&quot;: &quot;12 Sayat Nova&quot;,
+  &quot;instagram&quot;: &quot;@newyoga&quot;,
+  &quot;price_tier&quot;: &quot;mid&quot;,
+  &quot;studio_type&quot;: &quot;yoga&quot;
+}
+</code></pre>
+<hr />
+<h2 id="segments">/segments</h2>
+<h3 id="get-segments"><code>GET /segments/</code></h3>
+<p>List user segments (personas) computed by K-means on quiz_responses.</p>
+<p><strong>Response (200):</strong></p>
+<pre><code class="language-json">[
+  {
+    &quot;segment_id&quot;: 1,
+    &quot;segment_name&quot;: &quot;Calm Yoga Beginner&quot;,
+    &quot;description&quot;: &quot;Low energy, beginner experience, prefers structured classes&quot;,
+    &quot;size&quot;: 47,
+    &quot;booking_likelihood&quot;: 0.62
+  }
+]
+</code></pre>
+<hr />
+<h2 id="bookings">/bookings</h2>
+<h3 id="post-bookings"><code>POST /bookings/</code></h3>
+<p>Log when a user tries a recommended class. Used as positive signal for next training round.</p>
+<p><strong>Request:</strong></p>
+<pre><code class="language-json">{
+  &quot;user_id&quot;: 42,
+  &quot;class_id&quot;: 17,
+  &quot;feedback&quot;: &quot;loved it&quot;
+}
+</code></pre>
+<p><strong>Response (200):</strong></p>
+<pre><code class="language-json">{ &quot;booking_id&quot;: 99, &quot;message&quot;: &quot;Feedback recorded&quot; }
+</code></pre>
+<hr />
+<h2 id="users">/users</h2>
+<p>Internal endpoints. CRUD for users table.
+- <code>GET /users/</code>
+- <code>GET /users/{user_id}</code>
+- <code>POST /users/</code></p>
+<hr />
+<h2 id="error-responses">Error responses</h2>
+<p>All endpoints return:
+- <code>400</code> — invalid request body (Pydantic validation)
+- <code>404</code> — resource not found
+- <code>503</code> — model not loaded (recommend endpoint only)
+- <code>500</code> — server error (logged, generic message returned)</p>
+<hr />
+<h2 id="authentication">Authentication</h2>
+<p>None. All endpoints public. Auth out of scope.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
