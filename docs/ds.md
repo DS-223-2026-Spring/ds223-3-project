@@ -78,7 +78,6 @@ structure_preference, goal.
 
 ---
 
----
 
 ## Module reference
 

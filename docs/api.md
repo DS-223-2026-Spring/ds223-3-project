@@ -18,24 +18,6 @@ OpenAPI docs: `http://localhost:8000/docs`
 
 ---
 
----
-
----
-
-## Module reference
-
-::: routes.quiz
-
-::: routes.recommend
-
-::: routes.bookings
-
-::: routes.segments
-
-::: routes.studios
-
-::: routes.users
-
 ## /quiz
 
 ### `POST /quiz/`
@@ -193,6 +175,20 @@ All endpoints return:
 - `500` — server error (logged, generic message returned)
 
 ---
+
+## Module reference
+
+::: routes.quiz
+
+::: routes.recommend
+
+::: routes.bookings
+
+::: routes.segments
+
+::: routes.studios
+
+::: routes.users
 
 ## Authentication
 
